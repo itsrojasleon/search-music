@@ -1,0 +1,22 @@
+{
+  "name": "react-spotify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "next": "^2.4.9",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-keydown": "^1.9.1",
+    "trae": "^1.4.2"
+  }
+}
