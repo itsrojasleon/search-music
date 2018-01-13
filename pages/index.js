@@ -124,14 +124,14 @@ export default class Home extends Component {
             padding: 40px;
             box-shadow: 0 0 10px 2px #C7C7C7;
             margin-bottom: 30px;
-            height: 120vh;
+            height: 80vh;
             width: 100vw;
             background-attachment: fixed;
           }
           .image-logo {
             background-image: url('https://image.ibb.co/mcfhvG/logo.png');
             height: 20vh;
-            background-repeat: no-repeat; 
+            background-repeat: no-repeat;
           }
           .container-search-bar {
             display: flex;
