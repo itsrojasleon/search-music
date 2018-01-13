@@ -3,6 +3,7 @@ import trackService from '../services/track';
 import Track from '../components/Track';
 import Head from 'next/head';
 import Loading from '../components/shared/Loading';
+import Banner from '../components/shared/Banner';
 import Player from '../components/Player';
 
 export default class Home extends Component {
@@ -65,7 +66,9 @@ export default class Home extends Component {
           <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
         </Head>
+        {/*<Banner />*/}
         <div className="columns container-music">
+        <img src={'https://image.ibb.co/mcfhvG/logo.png'} />
           <div className="column is-8">
             <div className="field">
               <div className="control">
@@ -115,15 +118,20 @@ export default class Home extends Component {
         )}
         <style jsx>{`
           .container-music {
-            background-image: url('https://image.ibb.co/dwV3mv/200.jpg');
+            background-image: url('http://www.thebostoncalendar.com/system/events/photos/000/111/997/original/15626282_1265806610150656_195814471174752819_o.jpg?1483524751');
             display: flex;
             align-items: center;
             padding: 40px;
             box-shadow: 0 0 10px 2px #C7C7C7;
             margin-bottom: 30px;
-            height: 75vh;
-            width: 100%;
+            height: 120vh;
+            width: 100vw;
             background-attachment: fixed;
+          }
+          .image-logo {
+            background-image: url('https://image.ibb.co/mcfhvG/logo.png');
+            height: 20vh;
+            background-repeat: no-repeat; 
           }
           .container-search-bar {
             display: flex;
