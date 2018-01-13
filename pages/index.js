@@ -68,7 +68,6 @@ export default class Home extends Component {
         </Head>
         {/*<Banner />*/}
         <div className="columns container-music">
-        <img src={'https://image.ibb.co/mcfhvG/logo.png'} />
           <div className="column is-8">
             <div className="field">
               <div className="control">
@@ -118,15 +117,15 @@ export default class Home extends Component {
         )}
         <style jsx>{`
           .container-music {
-            background-image: url('http://www.thebostoncalendar.com/system/events/photos/000/111/997/original/15626282_1265806610150656_195814471174752819_o.jpg?1483524751');
             display: flex;
             align-items: center;
             padding: 40px;
-            box-shadow: 0 0 10px 2px #C7C7C7;
+            box-shadow: 0 0 10px 5px #ccc;
             margin-bottom: 30px;
-            height: 80vh;
+            height: 30vh;
             width: 100vw;
             background-attachment: fixed;
+            background: linear-gradient(to right, #F44336, #EF9A9A);
           }
           .image-logo {
             background-image: url('https://image.ibb.co/mcfhvG/logo.png');
