@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import trackService from '../services/track';
-import Track from '../components/Track';
-import Head from 'next/head';
-import Loading from '../components/shared/Loading';
-import Banner from '../components/shared/Banner';
-import Player from '../components/Player';
+import React, { Component } from 'react'
+import trackService from '../services/track'
+import Track from '../components/Track'
+import Head from 'next/head'
+import Loading from '../components/shared/Loading'
+import Banner from '../components/shared/Banner'
+import Player from '../components/Player'
+import SearchBar from '../components/SearchBar'
 
 export default class Home extends Component {
   state = {
@@ -60,26 +61,7 @@ export default class Home extends Component {
           <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
         </Head>
-        {/*<Banner />*/}
-        <div className="columns container-music">
-          <div className="column is-8">
-            <div className="field">
-              <div className="control">
-                <form onSubmit={this.handleClick} className="container-search-bar">
-                  <input
-                    className="input is-danger is-medium"
-                    type="text"
-                    placeholder="Busca tu canción favorita"
-                    onChange={this.handleSearch}
-                  />
-                </form>
-              </div>
-            </div>
-          </div>
-          <div className="column container-button">
-            <a onClick={this.handleClick} className="button is-danger is-medium">Buscar</a>
-          </div>
-        </div>
+        <SearchBar query={this.handleClick} search={this.handleSearch} />
         {this.state.songCounter > 0 && (
           <div className="notification is-danger">
             <p className="is-size-4 results">Resultados: {this.state.songCounter}</p>
