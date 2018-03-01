@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 const SearchBar = ({ query, search }) => {
   return (
-    <div className="columns container-music">
-      <div className="column is-8">
-        <div className="field">
-          <div className="control">
+    <div>
+      <div>
+        <div>
+          <div>
             <form onSubmit={query} className="container-search-bar">
               <input
                 className="input is-danger is-medium"
@@ -17,8 +17,8 @@ const SearchBar = ({ query, search }) => {
           </div>
         </div>
       </div>
-      <div className="column container-button">
-        <a onClick={this.handleClick} className="button is-danger is-medium">Buscar</a>
+      <div>
+        <a onClick={query} className="button is-danger is-medium">Buscar</a>
       </div>
     </div>
   )

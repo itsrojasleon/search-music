@@ -157,8 +157,7 @@ var _default = Player;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/rojas/Desktop/find-music-by-spotify-demo/components/SearchBar.js",
-    _this = this;
+var _jsxFileName = "/Users/rojas/Desktop/find-music-by-spotify-demo/components/SearchBar.js";
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
@@ -174,28 +173,32 @@ var SearchBar = function SearchBar(_ref) {
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     "div",
-    { className: "columns container-music", __source: {
+    {
+      __source: {
         fileName: _jsxFileName,
         lineNumber: 5
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
-      { className: "column is-8", __source: {
+      {
+        __source: {
           fileName: _jsxFileName,
           lineNumber: 6
         }
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
-        { className: "field", __source: {
+        {
+          __source: {
             fileName: _jsxFileName,
             lineNumber: 7
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
-          { className: "control", __source: {
+          {
+            __source: {
               fileName: _jsxFileName,
               lineNumber: 8
             }
@@ -223,14 +226,15 @@ var SearchBar = function SearchBar(_ref) {
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
-      { className: "column container-button", __source: {
+      {
+        __source: {
           fileName: _jsxFileName,
           lineNumber: 20
         }
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "a",
-        { onClick: _this.handleClick, className: "button is-danger is-medium", __source: {
+        { onClick: query, className: "button is-danger is-medium", __source: {
             fileName: _jsxFileName,
             lineNumber: 21
           }
