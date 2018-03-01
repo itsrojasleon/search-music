@@ -7,28 +7,22 @@ import Banner from '../components/shared/Banner';
 import Player from '../components/Player';
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchQuery: '',
-      tracks: [],
-      loading: false,
-      selectedTrack: '',
-      songCounter: null,
-    };
-    this.handleSearch = this.handleSearch.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.setSelectedTrack = this.setSelectedTrack.bind(this);
-  }
+  state = {
+    searchQuery: '',
+    tracks: [],
+    loading: false,
+    selectedTrack: '',
+    songCounter: null,
+  };
 
-  handleSearch(event) {
+  handleSearch = (event) =>{
     this.setState({
       searchQuery: event.target.value,
     });
   }
 
 
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
     if(!this.state.searchQuery) {
       return null;
@@ -48,7 +42,7 @@ export default class Home extends Component {
       });
   }
 
-  setSelectedTrack(data) {
+  setSelectedTrack = (data) => {
     if(!data) {
       return null
     }
