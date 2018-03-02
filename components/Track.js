@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-import Head from 'next/head';
+import React, { Component } from 'react'
+import Head from 'next/head'
 
 export default class Track extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      previewUrl: '',
-      disabled: '',
-      time: this.props.duration_ms,
-    };
-    this.selectTrack = this.selectTrack.bind(this);
+  state = {
+    previewUrl: '',
+    disabled: '',
+    time: this.props.duration_ms,
   }
-  selectTrack() {
-    this.props.onClick(this.props);
+  selectTrack = () => {
+    this.props.onClick(this.props)
   };
 
   componentDidMount() {
@@ -20,15 +16,13 @@ export default class Track extends Component {
       this.setState({
         previewUrl: 'preview-url',
         disabled: 'is-static',
-      });
+      })
     }
 
-    const minutes = Math.floor(this.state.time / 60000);
-    const seconds = (this.state.time % 60000 / 1000).toFixed(0);
-    const time = `${minutes}:${seconds}`;
-    this.setState({
-      time
-    });
+    const minutes = Math.floor(this.state.time / 60000)
+    const seconds = (this.state.time % 60000 / 1000).toFixed(0)
+    const time = `${minutes}:${seconds}`
+    this.setState({ time })
   }
 
   render() {
