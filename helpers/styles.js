@@ -12,6 +12,8 @@ export const Input = styled.input`
   padding: 3px 6px 3px 6px;
   font-size: 18px;
   max-height: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 `
 export const ButtonSubmit = styled.button`
   background: green;
