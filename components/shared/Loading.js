@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import Head from 'next/head';
+import React, { Component } from 'react'
 
-const Loading = () => {
-  
-}
+const Loading = () => (
+  <div>
+    Loading...
+  </div>
+)
+export default Loading

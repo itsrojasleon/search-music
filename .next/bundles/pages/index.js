@@ -593,8 +593,8 @@ var _default = Banner;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
+var _jsxFileName = '/Users/rojas/Desktop/find-music-by-spotify-demo/components/shared/Loading.js';
+
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
 
@@ -603,8 +603,20 @@ var _default = Banner;
 
 
 
-
-var Loading = function Loading() {};
+var Loading = function Loading() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 4
+      }
+    },
+    'Loading...'
+  );
+};
+var _default = Loading;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
 
 (function () {
@@ -617,6 +629,7 @@ var Loading = function Loading() {};
   }
 
   reactHotLoader.register(Loading, 'Loading', '/Users/rojas/Desktop/find-music-by-spotify-demo/components/shared/Loading.js');
+  reactHotLoader.register(_default, 'default', '/Users/rojas/Desktop/find-music-by-spotify-demo/components/shared/Loading.js');
   leaveModule(module);
 })();
 
@@ -12277,7 +12290,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_head__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_shared_Loading__ = __webpack_require__("./components/shared/Loading.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_shared_Loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_shared_Loading__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_shared_Banner__ = __webpack_require__("./components/shared/Banner.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Player__ = __webpack_require__("./components/Player.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_SearchBar__ = __webpack_require__("./components/SearchBar.js");
@@ -12512,7 +12524,7 @@ var Home = function (_Component) {
             }
           })
         ),
-        this.state.loading ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_shared_Loading__["default"], {
+        this.state.loading ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_shared_Loading__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 84
