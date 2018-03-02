@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import trackService from '../services/track'
-import Track from '../components/Track'
 import Head from 'next/head'
 import Loading from '../components/shared/Loading'
 import Banner from '../components/shared/Banner'
 import Player from '../components/Player'
 import SearchBar from '../components/SearchBar'
+import Card from '../components/card'
 
 export default class Home extends Component {
   state = {
@@ -44,11 +44,9 @@ export default class Home extends Component {
   }
 
   setSelectedTrack = (data) => {
-    if(!data) {
-      return null
-    }
+    if(!data) return null
     this.setState({
-      selectedTrack: data,
+      selectedTrack: data
     });
   }
 
@@ -83,11 +81,7 @@ export default class Home extends Component {
         </div>
         {this.state.loading ? <Loading /> : (
           <div className="columns is-multiline">
-            {this.state.tracks.map((track) =>
-              <div className="column scale is-3" key={track.id}>
-                <Track onClick={this.setSelectedTrack} {...track} />
-              </div>
-            )}
+            <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
           </div>
         )}
         <style jsx>{`
