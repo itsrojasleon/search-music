@@ -27,3 +27,6 @@ export const ButtonSubmit = styled.button`
     cursor: pointer;
   }
 `
+export const GridCard = styled.div`
+  
+`

@@ -80,9 +80,7 @@ export default class Home extends Component {
           <Player selectedTrack={this.state.selectedTrack} />
         </div>
         {this.state.loading ? <Loading /> : (
-          <div className="columns is-multiline">
-            <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
-          </div>
+          <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
         )}
         <style jsx>{`
           .container-music {
