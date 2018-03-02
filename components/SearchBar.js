@@ -1,27 +1,21 @@
 import React, { Component } from 'react'
-import { Search } from '../helpers/styles'
+import {
+  Form,
+  Input,
+  ButtonSubmit
+} from '../helpers/styles'
 
 const SearchBar = ({ query, search }) => {
   return (
-    <div>
-      <div>
-        <div>
-          <Search>
-            <form onSubmit={query} className="container-search-bar">
-              <input
-                className="input is-danger is-medium"
-                type="text"
-                placeholder="Busca tu canción favorita"
-                onChange={search}
-              />
-            </form>
-          </Search>
-        </div>
-      </div>
-      <div>
-        <a onClick={query} className="button is-danger is-medium">Buscar</a>
-      </div>
-    </div>
+    <Form onSubmit={query} className="container-search-bar">
+      <Input
+        className="input is-danger is-medium"
+        type="text"
+        placeholder="Busca tu canción favorita"
+        onChange={search}
+      />
+      <ButtonSubmit onClick={query}>Buscar</ButtonSubmit>
+    </Form>
   )
 }
 export default SearchBar

@@ -57,7 +57,6 @@ export default class Home extends Component {
       <div className="container-react-spotify">
         <Head>
           <title>React Spotify</title>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" />
           <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
         </Head>
