@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { Search } from '../helpers/styles'
 
 const SearchBar = ({ query, search }) => {
   return (
     <div>
       <div>
         <div>
-          <div>
+          <Search>
             <form onSubmit={query} className="container-search-bar">
               <input
                 className="input is-danger is-medium"
@@ -14,7 +15,7 @@ const SearchBar = ({ query, search }) => {
                 onChange={search}
               />
             </form>
-          </div>
+          </Search>
         </div>
       </div>
       <div>

@@ -199,7 +199,9 @@ var Player = function Player(_ref) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/rojas/Desktop/find-music-by-spotify-demo/components/SearchBar.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_styles__ = __webpack_require__("./helpers/styles.js");
+var _jsxFileName = '/Users/rojas/Desktop/find-music-by-spotify-demo/components/SearchBar.js';
+
 
 
 var SearchBar = function SearchBar(_ref) {
@@ -207,52 +209,52 @@ var SearchBar = function SearchBar(_ref) {
       search = _ref.search;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    "div",
+    'div',
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 5
+        lineNumber: 6
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
+      'div',
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 7
         }
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
+        'div',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 7
+            lineNumber: 8
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "div",
+          __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["a" /* Search */],
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 8
+              lineNumber: 9
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "form",
-            { onSubmit: query, className: "container-search-bar", __source: {
+            'form',
+            { onSubmit: query, className: 'container-search-bar', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 9
+                lineNumber: 10
               }
             },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-              className: "input is-danger is-medium",
-              type: "text",
-              placeholder: "Busca tu canci\xF3n favorita",
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+              className: 'input is-danger is-medium',
+              type: 'text',
+              placeholder: 'Busca tu canci\xF3n favorita',
               onChange: search,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 10
+                lineNumber: 11
               }
             })
           )
@@ -260,21 +262,21 @@ var SearchBar = function SearchBar(_ref) {
       )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
+      'div',
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         }
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "a",
-        { onClick: query, className: "button is-danger is-medium", __source: {
+        'a',
+        { onClick: query, className: 'button is-danger is-medium', __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 22
           }
         },
-        "Buscar"
+        'Buscar'
       )
     )
   );
@@ -697,6 +699,22 @@ var Loading = function (_Component) {
 
 /***/ }),
 
+/***/ "./helpers/styles.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Search; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+
+
+var Search = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: 'styles__Search',
+  componentId: 's1yqit97-0'
+})(['']);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1062,6 +1080,13 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 
