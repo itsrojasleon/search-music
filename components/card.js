@@ -7,9 +7,7 @@ const Card = ({ tracks, selectedTrack }) => {
   return (
     <GridCard>
       {tracks.map((track) =>
-        <div className="column scale is-3" key={track.id}>
-          <Track onClick={selectedTrack} {...track} />
-        </div>
+        <Track key={track.id} onClick={selectedTrack} {...track} />
       )}
     </GridCard>
   )
