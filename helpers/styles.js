@@ -28,5 +28,6 @@ export const ButtonSubmit = styled.button`
   }
 `
 export const GridCard = styled.div`
+  display: grid;
   
 `
