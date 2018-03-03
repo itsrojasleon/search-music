@@ -34,6 +34,5 @@ export const GridCard = styled.div`
 `
 export const CardRow = styled.div`
   border: 1px solid #ccc;
-  background-color: #424242;
-  grid-row-end: span 1;
+  background-color: pink;
 `

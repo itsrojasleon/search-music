@@ -33,12 +33,12 @@ export default class Track extends Component {
         </Head>
         <CardRow className={`${this.state.previewUrl}`}>
           <figure>
-            <img src={this.props.album.images[0].url} alt="Image" />
+            <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
           </figure>
           <div>
             <div>
               <figure>
-                <img src={this.props.album.images[2].url} alt="Image" />
+                <img style={{ maxWidth: '100%' }} src={this.props.album.images[2].url} alt="Image" />
               </figure>
               <div>
                 <p>{this.props.name}</p>
