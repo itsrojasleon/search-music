@@ -30,6 +30,10 @@ export const ButtonSubmit = styled.button`
 export const GridCard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-
+  grid-gap: 12px;
+`
+export const CardRow = styled.div`
+  border: 1px solid #ccc;
+  background-color: #424242;
+  grid-row-end: span 1;
 `

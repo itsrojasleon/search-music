@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
+import { CardRow } from '../helpers/styles'
 
 export default class Track extends Component {
   state = {
     previewUrl: '',
-    disabled: '',
+    disabled: false,
     time: this.props.duration_ms,
   }
   selectTrack = () => {
@@ -15,7 +16,7 @@ export default class Track extends Component {
     if(!this.props.preview_url) {
       this.setState({
         previewUrl: 'preview-url',
-        disabled: 'is-static',
+        disabled: 'true',
       })
     }
 
@@ -30,34 +31,29 @@ export default class Track extends Component {
         <Head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" />
         </Head>
-        <div className={`${this.state.previewUrl}`}>
-          <div>
-            <figure>
-              <img src={this.props.album.images[0].url} alt="Image" />
-            </figure>
-          </div>
+        <CardRow className={`${this.state.previewUrl}`}>
+          <figure>
+            <img src={this.props.album.images[0].url} alt="Image" />
+          </figure>
           <div>
             <div>
-              <div>
-                <figure>
-                  <img src={this.props.album.images[2].url} alt="Image" />
-                </figure>
-              </div>
+              <figure>
+                <img src={this.props.album.images[2].url} alt="Image" />
+              </figure>
               <div>
                 <p>{this.props.name}</p>
                 <p>{this.props.artists[0].name}</p>
               </div>
             </div>
-
             <div>
               <small>{this.state.time}</small>
               <br />
               <small>
-                <a className={`button is-danger ${this.state.disabled}`} onClick={this.selectTrack}>▶︎</a>
+                <button disabled={this.state.disabled} onClick={this.selectTrack}>▶︎</button>
               </small>
             </div>
           </div>
-        </div>
+        </CardRow>
         <style jsx>{`
           .preview-url {
             cursor: no-drop;
