@@ -79,67 +79,10 @@ export default class Home extends Component {
           <Player selectedTrack={this.state.selectedTrack} />
         </div>
         {this.state.loading ? <Loading /> : (
-          <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
+          <div style={{ width: '80%' }}>
+            <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
+          </div>
         )}
-        <style jsx>{`
-          .container-music {
-            display: flex;
-            align-items: center;
-            padding: 40px;
-            box-shadow: 0 0 10px 5px #ccc;
-            margin-bottom: 30px;
-            height: 30vh;
-            width: 100vw;
-            background-attachment: fixed;
-            background: linear-gradient(to right, #F44336, #EF9A9A);
-          }
-          .image-logo {
-            background-image: url('https://image.ibb.co/mcfhvG/logo.png');
-            height: 20vh;
-            background-repeat: no-repeat;
-          }
-          .container-search-bar {
-            display: flex;
-            justify-content: flex-end;
-          }
-          .container-button {
-            justify-content: flex-start;
-            display: flex;
-          }
-          .reproductor {
-            position: fixed;
-            bottom: 0;
-            z-index: 999;
-            width: 100%;
-          }
-          .input {
-            width: 70%;
-          }
-          .columns.is-multiline {
-            margin-bottom: 100px;
-          }
-          .is-selected {
-            background-color: red;
-          }
-          .scale {
-            transition: .3s;
-          }
-          .scale:hover {
-            transform: scale(1.1);
-          }
-          .results {
-            text-align: center;
-          }
-          @media(max-width: 800px) {
-            .container-music {
-              flex-direction: column;
-              height: 30vh;
-            }
-            .input {
-              width: 100%;
-            }
-          }
-        `}</style>
       </div>
     )
   }

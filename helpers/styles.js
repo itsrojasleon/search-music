@@ -31,6 +31,7 @@ export const GridCard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 12px;
+  justify-content: center;
 `
 export const CardRow = styled.div`
   border: 1px solid #ccc;
