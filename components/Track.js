@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
-import { CardRow } from '../helpers/styles'
+import {
+  CardRow,
+  Description,
+  Figure
+} from '../helpers/styles'
 import { helperTime } from '../helpers/time'
 
 export default class Track extends Component {
@@ -25,18 +28,15 @@ export default class Track extends Component {
   render() {
     return (
       <CardRow>
-        <Head>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" />
-        </Head>
         <div className={`${this.state.previewUrl}`}>
-          <figure>
+          <Figure>
             <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
-          </figure>
-          <div>
+          </Figure>
+          <Description>
             <div>
-              <figure>
+              <Figure>
                 <img style={{ maxWidth: '100%' }} src={this.props.album.images[2].url} alt="Image" />
-              </figure>
+              </Figure>
               <div>
                 <p>{this.props.name}</p>
                 <p>{this.props.artists[0].name}</p>
@@ -49,7 +49,7 @@ export default class Track extends Component {
                 <button disabled={this.state.disabled} onClick={this.selectTrack}>▶︎</button>
               </small>
             </div>
-          </div>
+          </Description>
         </div>
         <style jsx>{`
           .preview-url {

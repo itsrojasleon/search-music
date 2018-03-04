@@ -29,11 +29,23 @@ export const ButtonSubmit = styled.button`
 `
 export const GridCard = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
   grid-gap: 12px;
   justify-content: center;
 `
 export const CardRow = styled.div`
   border: 1px solid #ccc;
-  background-color: pink;
+  background-color: #f2f2f2;
+  &:nth-of-type(2n+1) {
+    background: red;
+  }
+`
+export const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+`
+export const Figure = styled.figure`
+  margin: 0;
+  padding: 0;
 `

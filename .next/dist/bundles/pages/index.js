@@ -209,13 +209,13 @@ var SearchBar = function SearchBar(_ref) {
       search = _ref.search;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["c" /* Form */],
+    __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["e" /* Form */],
     { onSubmit: query, className: 'container-search-bar', __source: {
         fileName: _jsxFileName,
         lineNumber: 10
       }
     },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["e" /* Input */], {
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["g" /* Input */], {
       className: 'input is-danger is-medium',
       type: 'text',
       placeholder: 'Busca tu canci\xF3n favorita',
@@ -248,10 +248,8 @@ var SearchBar = function SearchBar(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_styles__ = __webpack_require__("./helpers/styles.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helpers_time__ = __webpack_require__("./helpers/time.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_styles__ = __webpack_require__("./helpers/styles.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_time__ = __webpack_require__("./helpers/time.js");
 var _jsxFileName = '/Users/rojas/Desktop/find-music-by-spotify-demo/components/Track.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -263,7 +261,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -301,34 +298,19 @@ var Track = function (_Component) {
           disabled: 'true'
         });
       }
-      this.setState({ time: Object(__WEBPACK_IMPORTED_MODULE_4__helpers_time__["a" /* helperTime */])(this.state.time) });
+      this.setState({ time: Object(__WEBPACK_IMPORTED_MODULE_3__helpers_time__["a" /* helperTime */])(this.state.time) });
     }
   }, {
     key: 'render',
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_3__helpers_styles__["b" /* CardRow */],
+        __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["b" /* CardRow */],
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 30
           }
         },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_2_next_head___default.a,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 28
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css', className: 'jsx-653727978',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 29
-            }
-          })
-        ),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'div',
           {
@@ -339,9 +321,8 @@ var Track = function (_Component) {
             }
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'figure',
+            __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["d" /* Figure */],
             {
-              className: 'jsx-653727978',
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 32
@@ -355,9 +336,8 @@ var Track = function (_Component) {
             })
           ),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
+            __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["c" /* Description */],
             {
-              className: 'jsx-653727978',
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 35
@@ -373,9 +353,8 @@ var Track = function (_Component) {
                 }
               },
               __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'figure',
+                __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["d" /* Figure */],
                 {
-                  className: 'jsx-653727978',
                   __source: {
                     fileName: _jsxFileName,
                     lineNumber: 37
@@ -473,7 +452,7 @@ var Track = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
           styleId: '653727978',
-          css: '.preview-url.jsx-653727978{cursor:no-drop;-webkit-filter:blur(3px);filter:blur(3px);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvVHJhY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcURvQixBQUc0QixlQUNFLDBDQUNuQiIsImZpbGUiOiJjb21wb25lbnRzL1RyYWNrLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2phcy9EZXNrdG9wL2ZpbmQtbXVzaWMtYnktc3BvdGlmeS1kZW1vIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IEhlYWQgZnJvbSAnbmV4dC9oZWFkJ1xuaW1wb3J0IHsgQ2FyZFJvdyB9IGZyb20gJy4uL2hlbHBlcnMvc3R5bGVzJ1xuaW1wb3J0IHsgaGVscGVyVGltZSB9IGZyb20gJy4uL2hlbHBlcnMvdGltZSdcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgVHJhY2sgZXh0ZW5kcyBDb21wb25lbnQge1xuICBzdGF0ZSA9IHtcbiAgICBwcmV2aWV3VXJsOiAnJyxcbiAgICBkaXNhYmxlZDogZmFsc2UsXG4gICAgdGltZTogdGhpcy5wcm9wcy5kdXJhdGlvbl9tcyxcbiAgfVxuICBzZWxlY3RUcmFjayA9ICgpID0+IHtcbiAgICB0aGlzLnByb3BzLm9uQ2xpY2sodGhpcy5wcm9wcylcbiAgfTtcblxuICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICBpZighdGhpcy5wcm9wcy5wcmV2aWV3X3VybCkge1xuICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgIHByZXZpZXdVcmw6ICdwcmV2aWV3LXVybCcsXG4gICAgICAgIGRpc2FibGVkOiAndHJ1ZScsXG4gICAgICB9KVxuICAgIH1cbiAgICB0aGlzLnNldFN0YXRlKHsgdGltZTogaGVscGVyVGltZSh0aGlzLnN0YXRlLnRpbWUpIH0pXG4gIH1cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8Q2FyZFJvdz5cbiAgICAgICAgPEhlYWQ+XG4gICAgICAgICAgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIGhyZWY9XCJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9idWxtYS8wLjUuMC9jc3MvYnVsbWEubWluLmNzc1wiIC8+XG4gICAgICAgIDwvSGVhZD5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e2Ake3RoaXMuc3RhdGUucHJldmlld1VybH1gfT5cbiAgICAgICAgICA8ZmlndXJlPlxuICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMF0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgPC9maWd1cmU+XG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgIDxmaWd1cmU+XG4gICAgICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMl0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgICAgIDwvZmlndXJlPlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLm5hbWV9PC9wPlxuICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLmFydGlzdHNbMF0ubmFtZX08L3A+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICA8c21hbGw+e3RoaXMuc3RhdGUudGltZX08L3NtYWxsPlxuICAgICAgICAgICAgICA8YnIgLz5cbiAgICAgICAgICAgICAgPHNtYWxsPlxuICAgICAgICAgICAgICAgIDxidXR0b24gZGlzYWJsZWQ9e3RoaXMuc3RhdGUuZGlzYWJsZWR9IG9uQ2xpY2s9e3RoaXMuc2VsZWN0VHJhY2t9PuKWtu+4jjwvYnV0dG9uPlxuICAgICAgICAgICAgICA8L3NtYWxsPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8c3R5bGUganN4PntgXG4gICAgICAgICAgLnByZXZpZXctdXJsIHtcbiAgICAgICAgICAgIGN1cnNvcjogbm8tZHJvcDtcbiAgICAgICAgICAgIGZpbHRlcjogYmx1cigzcHgpO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgPC9DYXJkUm93PlxuICAgIClcbiAgfVxufVxuIl19 */\n/*@ sourceURL=components/Track.js */'
+          css: '.preview-url.jsx-653727978{cursor:no-drop;-webkit-filter:blur(3px);filter:blur(3px);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvVHJhY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcURvQixBQUc0QixlQUNFLDBDQUNuQiIsImZpbGUiOiJjb21wb25lbnRzL1RyYWNrLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2phcy9EZXNrdG9wL2ZpbmQtbXVzaWMtYnktc3BvdGlmeS1kZW1vIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgQ2FyZFJvdyxcbiAgRGVzY3JpcHRpb24sXG4gIEZpZ3VyZVxufSBmcm9tICcuLi9oZWxwZXJzL3N0eWxlcydcbmltcG9ydCB7IGhlbHBlclRpbWUgfSBmcm9tICcuLi9oZWxwZXJzL3RpbWUnXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFRyYWNrIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgc3RhdGUgPSB7XG4gICAgcHJldmlld1VybDogJycsXG4gICAgZGlzYWJsZWQ6IGZhbHNlLFxuICAgIHRpbWU6IHRoaXMucHJvcHMuZHVyYXRpb25fbXMsXG4gIH1cbiAgc2VsZWN0VHJhY2sgPSAoKSA9PiB7XG4gICAgdGhpcy5wcm9wcy5vbkNsaWNrKHRoaXMucHJvcHMpXG4gIH07XG5cbiAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgaWYoIXRoaXMucHJvcHMucHJldmlld191cmwpIHtcbiAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICBwcmV2aWV3VXJsOiAncHJldmlldy11cmwnLFxuICAgICAgICBkaXNhYmxlZDogJ3RydWUnLFxuICAgICAgfSlcbiAgICB9XG4gICAgdGhpcy5zZXRTdGF0ZSh7IHRpbWU6IGhlbHBlclRpbWUodGhpcy5zdGF0ZS50aW1lKSB9KVxuICB9XG4gIHJlbmRlcigpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPENhcmRSb3c+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgJHt0aGlzLnN0YXRlLnByZXZpZXdVcmx9YH0+XG4gICAgICAgICAgPEZpZ3VyZT5cbiAgICAgICAgICAgIDxpbWcgc3R5bGU9e3sgbWF4V2lkdGg6ICcxMDAlJyB9fSBzcmM9e3RoaXMucHJvcHMuYWxidW0uaW1hZ2VzWzBdLnVybH0gYWx0PVwiSW1hZ2VcIiAvPlxuICAgICAgICAgIDwvRmlndXJlPlxuICAgICAgICAgIDxEZXNjcmlwdGlvbj5cbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgIDxGaWd1cmU+XG4gICAgICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMl0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgICAgIDwvRmlndXJlPlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLm5hbWV9PC9wPlxuICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLmFydGlzdHNbMF0ubmFtZX08L3A+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICA8c21hbGw+e3RoaXMuc3RhdGUudGltZX08L3NtYWxsPlxuICAgICAgICAgICAgICA8YnIgLz5cbiAgICAgICAgICAgICAgPHNtYWxsPlxuICAgICAgICAgICAgICAgIDxidXR0b24gZGlzYWJsZWQ9e3RoaXMuc3RhdGUuZGlzYWJsZWR9IG9uQ2xpY2s9e3RoaXMuc2VsZWN0VHJhY2t9PuKWtu+4jjwvYnV0dG9uPlxuICAgICAgICAgICAgICA8L3NtYWxsPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9EZXNjcmlwdGlvbj5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgICAucHJldmlldy11cmwge1xuICAgICAgICAgICAgY3Vyc29yOiBuby1kcm9wO1xuICAgICAgICAgICAgZmlsdGVyOiBibHVyKDNweCk7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICA8L0NhcmRSb3c+XG4gICAgKVxuICB9XG59XG4iXX0= */\n/*@ sourceURL=components/Track.js */'
         })
       );
     }
@@ -507,7 +486,7 @@ var Card = function Card(_ref) {
       selectedTrack = _ref.selectedTrack;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["d" /* GridCard */],
+    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["f" /* GridCard */],
     {
       __source: {
         fileName: _jsxFileName,
@@ -557,11 +536,13 @@ var Loading = function Loading() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Form; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Form; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Input; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonSubmit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return GridCard; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return GridCard; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CardRow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Description; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Figure; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
 
@@ -581,11 +562,19 @@ var ButtonSubmit = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___
 var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__GridCard',
   componentId: 's1yqit97-3'
-})(['display:grid;grid-template-columns:repeat(4,1fr);grid-gap:12px;justify-content:center;']);
+})(['display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-gap:12px;justify-content:center;']);
 var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__CardRow',
   componentId: 's1yqit97-4'
-})(['border:1px solid #ccc;background-color:pink;']);
+})(['border:1px solid #ccc;background-color:#f2f2f2;&:nth-of-type(2n+1){background:red;}']);
+var Description = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: 'styles__Description',
+  componentId: 's1yqit97-5'
+})(['display:flex;flex-direction:column;padding:10px;']);
+var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.figure.withConfig({
+  displayName: 'styles__Figure',
+  componentId: 's1yqit97-6'
+})(['margin:0;padding:0;']);
 
 /***/ }),
 
@@ -818,7 +807,7 @@ var Home = function (_Component) {
           }
         }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { style: { width: '80%', margin: 'auto' }, __source: {
+          { style: { width: '90%', margin: 'auto' }, __source: {
               fileName: _jsxFileName,
               lineNumber: 82
             }
