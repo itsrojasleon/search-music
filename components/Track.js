@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
 import { CardRow } from '../helpers/styles'
+import { helperTime } from '../helpers/time'
 
 export default class Track extends Component {
   state = {
@@ -19,11 +20,7 @@ export default class Track extends Component {
         disabled: 'true',
       })
     }
-
-    const minutes = Math.floor(this.state.time / 60000)
-    const seconds = (this.state.time % 60000 / 1000).toFixed(0)
-    const time = `${minutes}:${seconds}`
-    this.setState({ time })
+    this.setState({ time: helperTime(this.state.time) })
   }
   render() {
     return (
