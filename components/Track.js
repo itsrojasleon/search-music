@@ -24,11 +24,11 @@ export default class Track extends Component {
   }
   render() {
     return (
-      <div>
+      <CardRow>
         <Head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" />
         </Head>
-        <CardRow className={`${this.state.previewUrl}`}>
+        <div className={`${this.state.previewUrl}`}>
           <figure>
             <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
           </figure>
@@ -50,14 +50,14 @@ export default class Track extends Component {
               </small>
             </div>
           </div>
-        </CardRow>
+        </div>
         <style jsx>{`
           .preview-url {
             cursor: no-drop;
             filter: blur(3px);
           }
         `}</style>
-      </div>
+      </CardRow>
     )
   }
 }
