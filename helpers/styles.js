@@ -36,14 +36,8 @@ export const GridCard = styled.div`
 export const CardRow = styled.div`
   border: 1px solid #ccc;
   background-color: #f2f2f2;
-  &:nth-of-type(2n+1) {
-    background: red;
-  }
-`
-export const Description = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+  filter: ${props => props.blur === 'previewUrl' ?
+'blur(3px)': null};
 `
 export const Figure = styled.figure`
   margin: 0;
