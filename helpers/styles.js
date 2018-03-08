@@ -34,7 +34,6 @@ export const GridCard = styled.div`
   justify-content: center;
 `
 export const CardRow = styled.div`
-  border: 1px solid #ccc;
   background-color: #f2f2f2;
   filter: ${props => props.blur === 'previewUrl' ?
 'blur(3px)': null};

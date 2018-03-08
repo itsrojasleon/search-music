@@ -38,7 +38,7 @@ var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" 
 var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__CardRow',
   componentId: 's1yqit97-4'
-})(['border:1px solid #ccc;background-color:#f2f2f2;filter:', ';'], function (props) {
+})(['background-color:#f2f2f2;filter:', ';'], function (props) {
   return props.blur === 'previewUrl' ? 'blur(3px)' : null;
 });
 var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].figure.withConfig({
@@ -71,4 +71,4 @@ var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /*
 /***/ })
 
 })
-//# sourceMappingURL=4.11b1397194e3d8f89a05.hot-update.js.map
+//# sourceMappingURL=4.4bee2a739e68abece086.hot-update.js.map

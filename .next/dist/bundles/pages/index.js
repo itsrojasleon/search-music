@@ -503,7 +503,7 @@ var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___defa
 var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__CardRow',
   componentId: 's1yqit97-4'
-})(['border:1px solid #ccc;background-color:#f2f2f2;filter:', ';'], function (props) {
+})(['background-color:#f2f2f2;filter:', ';'], function (props) {
   return props.blur === 'previewUrl' ? 'blur(3px)' : null;
 });
 var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.figure.withConfig({
