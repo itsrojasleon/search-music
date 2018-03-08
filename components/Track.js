@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import {
   CardRow,
-  Figure
+  Figure,
+  ImageContainer,
+  Icon
 } from '../helpers/styles'
 import { helperTime } from '../helpers/time'
 
@@ -40,11 +42,13 @@ export default class Track extends Component {
         >
           <div>
             <Figure>
-              <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
+              <ImageContainer>
+                <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
+              </ImageContainer>
+              {this.state.icons && (
+                <Icon>Hi there!</Icon>
+              )}
             </Figure>
-            {this.state.icons && (
-              <div>Hi there!</div>
-            )}
           </div>
           <div>
             <div>
