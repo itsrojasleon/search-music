@@ -4,6 +4,7 @@ import {
   Input,
   ButtonSubmit
 } from '../helpers/styles'
+import Searcher from '../svgs/search.svg'
 
 const SearchBar = ({ query, search }) => {
   return (
@@ -14,7 +15,9 @@ const SearchBar = ({ query, search }) => {
         placeholder="Busca tu canción favorita"
         onChange={search}
       />
-      <ButtonSubmit onClick={query}>Buscar</ButtonSubmit>
+      <ButtonSubmit onClick={query}>
+        <Searcher />
+      </ButtonSubmit>
     </Form>
   )
 }

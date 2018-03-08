@@ -53,7 +53,9 @@ export default class Track extends Component {
                   <Icon>
                     <Play />
                   </Icon>
-                  <Icon>Hi there!</Icon>
+                  <Icon>
+                    
+                  </Icon>
                 </IconContainer>
               )}
             </Figure>

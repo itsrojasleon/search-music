@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Form = styled.form`
   display: grid;
   grid-template-columns: 5fr 1fr;
-  background: green;
   padding: 3px;
   box-sizing: border-box;
 `
@@ -16,13 +15,12 @@ export const Input = styled.input`
   border: 1px solid #ccc;
 `
 export const ButtonSubmit = styled.button`
-  background: green;
+  background: #fff;
+  border: 1px solid #ccc;
   width: 100%;
   padding: 10px;
-  font-size: 19px;
-  color: #fff;
-  border: none;
   border-radius: 5px;
+  box-sizing: border-box;
   &:hover {
     cursor: pointer;
   }
@@ -61,5 +59,4 @@ export const IconContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  z-index: 999;
 `
