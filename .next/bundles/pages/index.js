@@ -273,9 +273,12 @@ var Track = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Track.__proto__ || Object.getPrototypeOf(Track)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       previewUrl: '',
       disabled: false,
-      time: _this.props.duration_ms
+      time: _this.props.duration_ms,
+      icons: false
     }, _this.selectTrack = function () {
       _this.props.onClick(_this.props);
+    }, _this.handleMouseEnter = function () {
+      _this.setState({ icons: !_this.state.icons });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -296,25 +299,50 @@ var Track = function (_Component) {
       var blur = this.state.previewUrl;
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["b" /* CardRow */],
-        { blur: '' + this.state.previewUrl, __source: {
+        {
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseEnter,
+          blur: '' + this.state.previewUrl,
+          __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 36
           }
         },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["c" /* Figure */],
+          'div',
           {
+            className: 'jsx-653727978',
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 41
             }
           },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { style: { maxWidth: '100%' }, src: this.props.album.images[0].url, alt: 'Image', className: 'jsx-653727978',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 32
-            }
-          })
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["c" /* Figure */],
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 42
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { style: { maxWidth: '100%' }, src: this.props.album.images[0].url, alt: 'Image', className: 'jsx-653727978',
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 43
+              }
+            })
+          ),
+          this.state.icons && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            {
+              className: 'jsx-653727978',
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 46
+              }
+            },
+            'Hi there!'
+          )
         ),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'div',
@@ -322,7 +350,7 @@ var Track = function (_Component) {
             className: 'jsx-653727978',
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 34
+              lineNumber: 49
             }
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -331,7 +359,7 @@ var Track = function (_Component) {
               className: 'jsx-653727978',
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 35
+                lineNumber: 50
               }
             },
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -340,7 +368,7 @@ var Track = function (_Component) {
                 className: 'jsx-653727978',
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 36
+                  lineNumber: 51
                 }
               },
               __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -349,7 +377,7 @@ var Track = function (_Component) {
                   className: 'jsx-653727978',
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 40
+                    lineNumber: 55
                   }
                 },
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -358,7 +386,7 @@ var Track = function (_Component) {
                     className: 'jsx-653727978',
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 41
+                      lineNumber: 56
                     }
                   },
                   this.props.name
@@ -369,7 +397,7 @@ var Track = function (_Component) {
                     className: 'jsx-653727978',
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 42
+                      lineNumber: 57
                     }
                   },
                   this.props.artists[0].name
@@ -380,7 +408,7 @@ var Track = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
           styleId: '653727978',
-          css: '.preview-url.jsx-653727978{cursor:no-drop;-webkit-filter:blur(3px);filter:blur(3px);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvVHJhY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBb0RvQixBQUc0QixlQUNFLDBDQUNuQiIsImZpbGUiOiJjb21wb25lbnRzL1RyYWNrLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2phcy9EZXNrdG9wL2ZpbmQtbXVzaWMtYnktc3BvdGlmeS1kZW1vIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgQ2FyZFJvdyxcbiAgRmlndXJlXG59IGZyb20gJy4uL2hlbHBlcnMvc3R5bGVzJ1xuaW1wb3J0IHsgaGVscGVyVGltZSB9IGZyb20gJy4uL2hlbHBlcnMvdGltZSdcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgVHJhY2sgZXh0ZW5kcyBDb21wb25lbnQge1xuICBzdGF0ZSA9IHtcbiAgICBwcmV2aWV3VXJsOiAnJyxcbiAgICBkaXNhYmxlZDogZmFsc2UsXG4gICAgdGltZTogdGhpcy5wcm9wcy5kdXJhdGlvbl9tcyxcbiAgfVxuICBzZWxlY3RUcmFjayA9ICgpID0+IHtcbiAgICB0aGlzLnByb3BzLm9uQ2xpY2sodGhpcy5wcm9wcylcbiAgfTtcblxuICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICBpZighdGhpcy5wcm9wcy5wcmV2aWV3X3VybCkge1xuICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgIHByZXZpZXdVcmw6ICdwcmV2aWV3VXJsJyxcbiAgICAgICAgZGlzYWJsZWQ6ICd0cnVlJ1xuICAgICAgfSlcbiAgICB9XG4gICAgdGhpcy5zZXRTdGF0ZSh7IHRpbWU6IGhlbHBlclRpbWUodGhpcy5zdGF0ZS50aW1lKSB9KVxuICB9XG4gIHJlbmRlcigpIHtcbiAgICBjb25zdCBibHVyID0gdGhpcy5zdGF0ZS5wcmV2aWV3VXJsXG4gICAgcmV0dXJuIChcbiAgICAgIDxDYXJkUm93IGJsdXI9e2Ake3RoaXMuc3RhdGUucHJldmlld1VybH1gfT5cbiAgICAgICAgICA8RmlndXJlPlxuICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMF0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgPC9GaWd1cmU+XG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgey8qIDxGaWd1cmU+XG4gICAgICAgICAgICAgICAgICA8aW1nIHN0eWxlPXt7IG1heFdpZHRoOiAnMTAwJScgfX0gc3JjPXt0aGlzLnByb3BzLmFsYnVtLmltYWdlc1syXS51cmx9IGFsdD1cIkltYWdlXCIgLz5cbiAgICAgICAgICAgICAgICA8L0ZpZ3VyZT4gKi99XG4gICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLm5hbWV9PC9wPlxuICAgICAgICAgICAgICAgICAgPHA+e3RoaXMucHJvcHMuYXJ0aXN0c1swXS5uYW1lfTwvcD5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIHsvKiA8ZGl2PlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIDxzbWFsbD57dGhpcy5zdGF0ZS50aW1lfTwvc21hbGw+XG4gICAgICAgICAgICAgICAgPGJ1dHRvbiBkaXNhYmxlZD17dGhpcy5zdGF0ZS5kaXNhYmxlZH0gb25DbGljaz17dGhpcy5zZWxlY3RUcmFja30+4pa277iOPC9idXR0b24+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+ICovfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8c3R5bGUganN4PntgXG4gICAgICAgICAgLnByZXZpZXctdXJsIHtcbiAgICAgICAgICAgIGN1cnNvcjogbm8tZHJvcDtcbiAgICAgICAgICAgIGZpbHRlcjogYmx1cigzcHgpO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgPC9DYXJkUm93PlxuICAgIClcbiAgfVxufVxuIl19 */\n/*@ sourceURL=components/Track.js */'
+          css: '.preview-url.jsx-653727978{cursor:no-drop;-webkit-filter:blur(3px);filter:blur(3px);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvVHJhY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUVvQixBQUc0QixlQUNFLDBDQUNuQiIsImZpbGUiOiJjb21wb25lbnRzL1RyYWNrLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2phcy9EZXNrdG9wL2ZpbmQtbXVzaWMtYnktc3BvdGlmeS1kZW1vIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgQ2FyZFJvdyxcbiAgRmlndXJlXG59IGZyb20gJy4uL2hlbHBlcnMvc3R5bGVzJ1xuaW1wb3J0IHsgaGVscGVyVGltZSB9IGZyb20gJy4uL2hlbHBlcnMvdGltZSdcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgVHJhY2sgZXh0ZW5kcyBDb21wb25lbnQge1xuICBzdGF0ZSA9IHtcbiAgICBwcmV2aWV3VXJsOiAnJyxcbiAgICBkaXNhYmxlZDogZmFsc2UsXG4gICAgdGltZTogdGhpcy5wcm9wcy5kdXJhdGlvbl9tcyxcbiAgICBpY29uczogZmFsc2VcbiAgfVxuICBzZWxlY3RUcmFjayA9ICgpID0+IHtcbiAgICB0aGlzLnByb3BzLm9uQ2xpY2sodGhpcy5wcm9wcylcbiAgfTtcblxuICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICBpZighdGhpcy5wcm9wcy5wcmV2aWV3X3VybCkge1xuICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgIHByZXZpZXdVcmw6ICdwcmV2aWV3VXJsJyxcbiAgICAgICAgZGlzYWJsZWQ6ICd0cnVlJ1xuICAgICAgfSlcbiAgICB9XG4gICAgdGhpcy5zZXRTdGF0ZSh7IHRpbWU6IGhlbHBlclRpbWUodGhpcy5zdGF0ZS50aW1lKSB9KVxuICB9XG5cbiAgaGFuZGxlTW91c2VFbnRlciA9ICgpID0+IHtcbiAgICB0aGlzLnNldFN0YXRlKHsgaWNvbnM6ICF0aGlzLnN0YXRlLmljb25zIH0pXG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgYmx1ciA9IHRoaXMuc3RhdGUucHJldmlld1VybFxuICAgIHJldHVybiAoXG4gICAgICA8Q2FyZFJvd1xuICAgICAgICBvbk1vdXNlRW50ZXI9e3RoaXMuaGFuZGxlTW91c2VFbnRlcn1cbiAgICAgICAgb25Nb3VzZUxlYXZlPXt0aGlzLmhhbmRsZU1vdXNlRW50ZXJ9XG4gICAgICAgIGJsdXI9e2Ake3RoaXMuc3RhdGUucHJldmlld1VybH1gfVxuICAgICAgICA+XG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxGaWd1cmU+XG4gICAgICAgICAgICAgIDxpbWcgc3R5bGU9e3sgbWF4V2lkdGg6ICcxMDAlJyB9fSBzcmM9e3RoaXMucHJvcHMuYWxidW0uaW1hZ2VzWzBdLnVybH0gYWx0PVwiSW1hZ2VcIiAvPlxuICAgICAgICAgICAgPC9GaWd1cmU+XG4gICAgICAgICAgICB7dGhpcy5zdGF0ZS5pY29ucyAmJiAoXG4gICAgICAgICAgICAgIDxkaXY+SGkgdGhlcmUhPC9kaXY+XG4gICAgICAgICAgICApfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIHsvKiA8RmlndXJlPlxuICAgICAgICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMl0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgICAgICAgPC9GaWd1cmU+ICovfVxuICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICA8cD57dGhpcy5wcm9wcy5uYW1lfTwvcD5cbiAgICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLmFydGlzdHNbMF0ubmFtZX08L3A+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICB7LyogPGRpdj5cbiAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICA8c21hbGw+e3RoaXMuc3RhdGUudGltZX08L3NtYWxsPlxuICAgICAgICAgICAgICAgIDxidXR0b24gZGlzYWJsZWQ9e3RoaXMuc3RhdGUuZGlzYWJsZWR9IG9uQ2xpY2s9e3RoaXMuc2VsZWN0VHJhY2t9PuKWtu+4jjwvYnV0dG9uPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PiAqL31cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgIC5wcmV2aWV3LXVybCB7XG4gICAgICAgICAgICBjdXJzb3I6IG5vLWRyb3A7XG4gICAgICAgICAgICBmaWx0ZXI6IGJsdXIoM3B4KTtcbiAgICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgIDwvQ2FyZFJvdz5cbiAgICApXG4gIH1cbn1cbiJdfQ== */\n/*@ sourceURL=components/Track.js */'
         })
       );
     }

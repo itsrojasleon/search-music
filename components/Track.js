@@ -10,6 +10,7 @@ export default class Track extends Component {
     previewUrl: '',
     disabled: false,
     time: this.props.duration_ms,
+    icons: false
   }
   selectTrack = () => {
     this.props.onClick(this.props)
@@ -24,13 +25,27 @@ export default class Track extends Component {
     }
     this.setState({ time: helperTime(this.state.time) })
   }
+
+  handleMouseEnter = () => {
+    this.setState({ icons: !this.state.icons })
+  }
+
   render() {
     const blur = this.state.previewUrl
     return (
-      <CardRow blur={`${this.state.previewUrl}`}>
-          <Figure>
-            <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
-          </Figure>
+      <CardRow
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseEnter}
+        blur={`${this.state.previewUrl}`}
+        >
+          <div>
+            <Figure>
+              <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
+            </Figure>
+            {this.state.icons && (
+              <div>Hi there!</div>
+            )}
+          </div>
           <div>
             <div>
               <div>
