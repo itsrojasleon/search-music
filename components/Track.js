@@ -50,7 +50,9 @@ export default class Track extends Component {
               </ImageContainer>
               {this.state.icons && (
                 <IconContainer>
-                  <Icon><Play /></Icon>
+                  <Icon>
+                    <Play />
+                  </Icon>
                   <Icon>Hi there!</Icon>
                 </IconContainer>
               )}

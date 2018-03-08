@@ -34,7 +34,6 @@ export const GridCard = styled.div`
   justify-content: center;
 `
 export const CardRow = styled.div`
-  background-color: #f2f2f2;
   filter: ${props => props.blur === 'previewUrl' ?
 'blur(3px)': null};
 `
@@ -50,14 +49,17 @@ export const ImageContainer = styled.div`
 `
 export const Icon = styled.div`
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background: RED;
+  width: 40px;
+  height: 40px;
+  background: black;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
 `
 export const IconContainer = styled.div`
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-
+  z-index: 999;
 `
