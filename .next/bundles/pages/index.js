@@ -174,13 +174,13 @@ var SearchBar = function SearchBar(_ref) {
       search = _ref.search;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["d" /* Form */],
+    __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["b" /* Form */],
     { onSubmit: query, className: 'container-search-bar', __source: {
         fileName: _jsxFileName,
         lineNumber: 10
       }
     },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["h" /* Input */], {
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["d" /* Input */], {
       className: 'input is-danger is-medium',
       type: 'text',
       placeholder: 'Busca tu canci\xF3n favorita',
@@ -225,231 +225,9 @@ var _default = SearchBar;
 /***/ }),
 
 /***/ "./components/Track.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__("./node_modules/styled-jsx/style.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_styles__ = __webpack_require__("./helpers/styles.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_time__ = __webpack_require__("./helpers/time.js");
-var _jsxFileName = '/Users/rojas/Desktop/find-music-by-spotify-demo/components/Track.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var Track = function (_Component) {
-  _inherits(Track, _Component);
-
-  function Track() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Track);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Track.__proto__ || Object.getPrototypeOf(Track)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      previewUrl: '',
-      disabled: false,
-      time: _this.props.duration_ms,
-      icons: false
-    }, _this.selectTrack = function () {
-      _this.props.onClick(_this.props);
-    }, _this.handleMouseEnter = function () {
-      _this.setState({ icons: !_this.state.icons });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Track, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      if (!this.props.preview_url) {
-        this.setState({
-          previewUrl: 'previewUrl',
-          disabled: 'true'
-        });
-      }
-      this.setState({ time: Object(__WEBPACK_IMPORTED_MODULE_3__helpers_time__["a" /* helperTime */])(this.state.time) });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var blur = this.state.previewUrl;
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["b" /* CardRow */],
-        {
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseEnter,
-          blur: '' + this.state.previewUrl,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          {
-            className: 'jsx-653727978',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 43
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["c" /* Figure */],
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 44
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["g" /* ImageContainer */],
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 45
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { style: { maxWidth: '100%' }, src: this.props.album.images[0].url, alt: 'Image', className: 'jsx-653727978',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 46
-                }
-              })
-            ),
-            this.state.icons && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["f" /* Icon */],
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 49
-                }
-              },
-              'Hi there!'
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          {
-            className: 'jsx-653727978',
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 53
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            {
-              className: 'jsx-653727978',
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 54
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              {
-                className: 'jsx-653727978',
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 55
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                {
-                  className: 'jsx-653727978',
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 59
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'p',
-                  {
-                    className: 'jsx-653727978',
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 60
-                    }
-                  },
-                  this.props.name
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'p',
-                  {
-                    className: 'jsx-653727978',
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 61
-                    }
-                  },
-                  this.props.artists[0].name
-                )
-              )
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
-          styleId: '653727978',
-          css: '.preview-url.jsx-653727978{cursor:no-drop;-webkit-filter:blur(3px);filter:blur(3px);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvVHJhY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBdUVvQixBQUc0QixlQUNFLDBDQUNuQiIsImZpbGUiOiJjb21wb25lbnRzL1RyYWNrLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2phcy9EZXNrdG9wL2ZpbmQtbXVzaWMtYnktc3BvdGlmeS1kZW1vIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgQ2FyZFJvdyxcbiAgRmlndXJlLFxuICBJbWFnZUNvbnRhaW5lcixcbiAgSWNvblxufSBmcm9tICcuLi9oZWxwZXJzL3N0eWxlcydcbmltcG9ydCB7IGhlbHBlclRpbWUgfSBmcm9tICcuLi9oZWxwZXJzL3RpbWUnXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFRyYWNrIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgc3RhdGUgPSB7XG4gICAgcHJldmlld1VybDogJycsXG4gICAgZGlzYWJsZWQ6IGZhbHNlLFxuICAgIHRpbWU6IHRoaXMucHJvcHMuZHVyYXRpb25fbXMsXG4gICAgaWNvbnM6IGZhbHNlXG4gIH1cbiAgc2VsZWN0VHJhY2sgPSAoKSA9PiB7XG4gICAgdGhpcy5wcm9wcy5vbkNsaWNrKHRoaXMucHJvcHMpXG4gIH07XG5cbiAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgaWYoIXRoaXMucHJvcHMucHJldmlld191cmwpIHtcbiAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICBwcmV2aWV3VXJsOiAncHJldmlld1VybCcsXG4gICAgICAgIGRpc2FibGVkOiAndHJ1ZSdcbiAgICAgIH0pXG4gICAgfVxuICAgIHRoaXMuc2V0U3RhdGUoeyB0aW1lOiBoZWxwZXJUaW1lKHRoaXMuc3RhdGUudGltZSkgfSlcbiAgfVxuXG4gIGhhbmRsZU1vdXNlRW50ZXIgPSAoKSA9PiB7XG4gICAgdGhpcy5zZXRTdGF0ZSh7IGljb25zOiAhdGhpcy5zdGF0ZS5pY29ucyB9KVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIGNvbnN0IGJsdXIgPSB0aGlzLnN0YXRlLnByZXZpZXdVcmxcbiAgICByZXR1cm4gKFxuICAgICAgPENhcmRSb3dcbiAgICAgICAgb25Nb3VzZUVudGVyPXt0aGlzLmhhbmRsZU1vdXNlRW50ZXJ9XG4gICAgICAgIG9uTW91c2VMZWF2ZT17dGhpcy5oYW5kbGVNb3VzZUVudGVyfVxuICAgICAgICBibHVyPXtgJHt0aGlzLnN0YXRlLnByZXZpZXdVcmx9YH1cbiAgICAgICAgPlxuICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICA8RmlndXJlPlxuICAgICAgICAgICAgICA8SW1hZ2VDb250YWluZXI+XG4gICAgICAgICAgICAgICAgPGltZyBzdHlsZT17eyBtYXhXaWR0aDogJzEwMCUnIH19IHNyYz17dGhpcy5wcm9wcy5hbGJ1bS5pbWFnZXNbMF0udXJsfSBhbHQ9XCJJbWFnZVwiIC8+XG4gICAgICAgICAgICAgIDwvSW1hZ2VDb250YWluZXI+XG4gICAgICAgICAgICAgIHt0aGlzLnN0YXRlLmljb25zICYmIChcbiAgICAgICAgICAgICAgICA8SWNvbj5IaSB0aGVyZSE8L0ljb24+XG4gICAgICAgICAgICAgICl9XG4gICAgICAgICAgICA8L0ZpZ3VyZT5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICB7LyogPEZpZ3VyZT5cbiAgICAgICAgICAgICAgICAgIDxpbWcgc3R5bGU9e3sgbWF4V2lkdGg6ICcxMDAlJyB9fSBzcmM9e3RoaXMucHJvcHMuYWxidW0uaW1hZ2VzWzJdLnVybH0gYWx0PVwiSW1hZ2VcIiAvPlxuICAgICAgICAgICAgICAgIDwvRmlndXJlPiAqL31cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgPHA+e3RoaXMucHJvcHMubmFtZX08L3A+XG4gICAgICAgICAgICAgICAgICA8cD57dGhpcy5wcm9wcy5hcnRpc3RzWzBdLm5hbWV9PC9wPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgey8qIDxkaXY+XG4gICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPHNtYWxsPnt0aGlzLnN0YXRlLnRpbWV9PC9zbWFsbD5cbiAgICAgICAgICAgICAgICA8YnV0dG9uIGRpc2FibGVkPXt0aGlzLnN0YXRlLmRpc2FibGVkfSBvbkNsaWNrPXt0aGlzLnNlbGVjdFRyYWNrfT7ilrbvuI48L2J1dHRvbj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj4gKi99XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgICAucHJldmlldy11cmwge1xuICAgICAgICAgICAgY3Vyc29yOiBuby1kcm9wO1xuICAgICAgICAgICAgZmlsdGVyOiBibHVyKDNweCk7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICA8L0NhcmRSb3c+XG4gICAgKVxuICB9XG59XG4iXX0= */\n/*@ sourceURL=components/Track.js */'
-        })
-      );
-    }
-  }, {
-    key: '__reactstandin__regenerateByEval',
-    value: function __reactstandin__regenerateByEval(key, code) {
-      this[key] = eval(code);
-    }
-  }]);
-
-  return Track;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
-
-var _default = Track;
-/* harmony default export */ __webpack_exports__["a"] = (_default);
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(Track, 'Track', '/Users/rojas/Desktop/find-music-by-spotify-demo/components/Track.js');
-  reactHotLoader.register(_default, 'default', '/Users/rojas/Desktop/find-music-by-spotify-demo/components/Track.js');
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+throw new Error("Module parse failed: Unexpected token (53:6)\nYou may need an appropriate loader to handle this file type.\n| Play.defaultProps = {\n|   id: 'Capa_1',\n|   data-name: 'Capa 1',\n|   xmlns: 'http://www.w3.org/2000/svg',\n|   viewBox: '0 0 150 150'");
 
 /***/ }),
 
@@ -460,6 +238,7 @@ var _default = Track;
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Track__ = __webpack_require__("./components/Track.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Track___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Track__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_styles__ = __webpack_require__("./helpers/styles.js");
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -481,7 +260,7 @@ var Card = function Card(_ref) {
       selectedTrack = _ref.selectedTrack;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["e" /* GridCard */],
+    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["c" /* GridCard */],
     {
       __source: {
         fileName: _jsxFileName,
@@ -489,7 +268,7 @@ var Card = function Card(_ref) {
       }
     },
     tracks.map(function (track) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Track__["a" /* default */], _extends({ key: track.id, onClick: selectedTrack }, track, {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Track__["default"], _extends({ key: track.id, onClick: selectedTrack }, track, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 10
@@ -576,57 +355,47 @@ var _default = Loading;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Form; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Input; });
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Form; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Input; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonSubmit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return GridCard; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CardRow; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Figure; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return ImageContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Icon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GridCard; });
+/* unused harmony export CardRow */
+/* unused harmony export Figure */
+/* unused harmony export ImageContainer */
+/* unused harmony export Icon */
+/* unused harmony export IconContainer */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("./node_modules/styled-components/dist/styled-components.browser.es.js");
+var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 5fr 1fr;\n  background: green;\n  padding: 3px;\n  box-sizing: border-box;\n'], ['\n  display: grid;\n  grid-template-columns: 5fr 1fr;\n  background: green;\n  padding: 3px;\n  box-sizing: border-box;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100%;\n  padding: 3px 6px 3px 6px;\n  font-size: 18px;\n  max-height: 100%;\n  border-radius: 4px;\n  border: 1px solid #ccc;\n'], ['\n  width: 100%;\n  padding: 3px 6px 3px 6px;\n  font-size: 18px;\n  max-height: 100%;\n  border-radius: 4px;\n  border: 1px solid #ccc;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  background: green;\n  width: 100%;\n  padding: 10px;\n  font-size: 19px;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  &:hover {\n    cursor: pointer;\n  }\n'], ['\n  background: green;\n  width: 100%;\n  padding: 10px;\n  font-size: 19px;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  &:hover {\n    cursor: pointer;\n  }\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 250px));\n  grid-gap: 12px;\n  justify-content: center;\n'], ['\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 250px));\n  grid-gap: 12px;\n  justify-content: center;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  background-color: #f2f2f2;\n  filter: ', ';\n'], ['\n  background-color: #f2f2f2;\n  filter: ', ';\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n'], ['\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n  position: relative;\n'], ['\n  position: relative;\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n  border-radius: 50%;\n  width: 50px;\n  height: 50px;\n  background: RED;\n'], ['\n  border-radius: 50%;\n  width: 50px;\n  height: 50px;\n  background: RED;\n']),
+    _templateObject9 = _taggedTemplateLiteral(['\n  position: absolute;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-gap: 10px;\n\n'], ['\n  position: absolute;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-gap: 10px;\n\n']);
+
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
 
   enterModule && enterModule(module);
 })();
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].form.withConfig({
-  displayName: 'styles__Form',
-  componentId: 's1yqit97-0'
-})(['display:grid;grid-template-columns:5fr 1fr;background:green;padding:3px;box-sizing:border-box;']);
-var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].input.withConfig({
-  displayName: 'styles__Input',
-  componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 3px 6px;font-size:18px;max-height:100%;border-radius:4px;border:1px solid #ccc;']);
-var ButtonSubmit = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].button.withConfig({
-  displayName: 'styles__ButtonSubmit',
-  componentId: 's1yqit97-2'
-})(['background:green;width:100%;padding:10px;font-size:19px;color:#fff;border:none;border-radius:5px;&:hover{cursor:pointer;}']);
-var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
-  displayName: 'styles__GridCard',
-  componentId: 's1yqit97-3'
-})(['display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-gap:12px;justify-content:center;']);
-var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
-  displayName: 'styles__CardRow',
-  componentId: 's1yqit97-4'
-})(['background-color:#f2f2f2;filter:', ';'], function (props) {
+
+var Form = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].form(_templateObject);
+var Input = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].input(_templateObject2);
+var ButtonSubmit = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].button(_templateObject3);
+var GridCard = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div(_templateObject4);
+var CardRow = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div(_templateObject5, function (props) {
   return props.blur === 'previewUrl' ? 'blur(3px)' : null;
 });
-var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].figure.withConfig({
-  displayName: 'styles__Figure',
-  componentId: 's1yqit97-5'
-})(['margin:0;padding:0;display:flex;background:red;justify-content:center;align-items:center;']);
-var ImageContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
-  displayName: 'styles__ImageContainer',
-  componentId: 's1yqit97-6'
-})(['position:relative;']);
-var Icon = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
-  displayName: 'styles__Icon',
-  componentId: 's1yqit97-7'
-})(['position:absolute;background:red;']);
+var Figure = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].figure(_templateObject6);
+var ImageContainer = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div(_templateObject7);
+var Icon = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div(_templateObject8);
+var IconContainer = __WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div(_templateObject9);
 ;
 
 (function () {
@@ -646,43 +415,7 @@ var Icon = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* d
   reactHotLoader.register(Figure, 'Figure', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(ImageContainer, 'ImageContainer', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(Icon, 'Icon', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./helpers/time.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return helperTime; });
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
-var helperTime = function helperTime(exactlyTime) {
-  var minutes = Math.floor(exactlyTime / 60000);
-  var seconds = (exactlyTime % 60000 / 1000).toFixed(0);
-  var time = minutes + ":" + seconds;
-  return time;
-};
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(helperTime, "helperTime", "/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/time.js");
+  reactHotLoader.register(IconContainer, 'IconContainer', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   leaveModule(module);
 })();
 

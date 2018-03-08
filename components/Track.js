@@ -3,9 +3,12 @@ import {
   CardRow,
   Figure,
   ImageContainer,
+  IconContainer,
   Icon
 } from '../helpers/styles'
 import { helperTime } from '../helpers/time'
+
+import Play from '../svgs/play.svg'
 
 export default class Track extends Component {
   state = {
@@ -46,7 +49,10 @@ export default class Track extends Component {
                 <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
               </ImageContainer>
               {this.state.icons && (
-                <Icon>Hi there!</Icon>
+                <IconContainer>
+                  <Icon><Play /></Icon>
+                  <Icon>Hi there!</Icon>
+                </IconContainer>
               )}
             </Figure>
           </div>

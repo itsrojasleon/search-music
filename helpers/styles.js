@@ -42,7 +42,6 @@ export const Figure = styled.figure`
   margin: 0;
   padding: 0;
   display: flex;
-  background: red;
   justify-content: center;
   align-items: center;
 `
@@ -50,6 +49,15 @@ export const ImageContainer = styled.div`
   position: relative;
 `
 export const Icon = styled.div`
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: RED;
+`
+export const IconContainer = styled.div`
   position: absolute;
-  background: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
 `
