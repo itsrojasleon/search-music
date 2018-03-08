@@ -176,28 +176,19 @@ var Searcher = function Searcher(props) {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'style',
       null,
-      '.st0,.st1',
-      '{',
-      'stroke:#fff;stroke-miterlimit:10',
-      '}',
       '.st0',
       '{',
-      'stroke-width:1.2',
-      '}',
-      '.st1',
-      '{',
-      'fill:none',
+      'fill:none;stroke:#000;stroke-width:1.2;stroke-miterlimit:10',
       '}'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', {
       className: 'st0',
-      cx: '27.8',
-      cy: '27.4',
-      r: '20.4'
+      cx: '28.1',
+      cy: '27.7',
+      r: '17.7'
     }),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-      className: 'st1',
-      d: 'M55.2 54.8c-.3.3-.9.3-1.2 0l-11.9-12c-.3-.3-.3-.9 0-1.2.3-.3.9-.3 1.2 0l11.9 11.9c.3.4.3.9 0 1.3z'
+      d: 'M52 51.6c-.3.3-.7.3-1 0L40.6 41.2c-.3-.3-.3-.7 0-1 .3-.3.7-.3 1 0L52 50.6c.3.2.3.7 0 1z'
     })
   );
 };
@@ -217,7 +208,7 @@ var SearchBar = function SearchBar(_ref) {
     __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["d" /* Form */],
     { onSubmit: query, className: 'container-search-bar', __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 12
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["i" /* Input */], {
@@ -227,22 +218,31 @@ var SearchBar = function SearchBar(_ref) {
       onChange: search,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["a" /* ButtonSubmit */],
       { onClick: query, __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
-        }
-      },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Searcher, {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 19
         }
-      })
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["j" /* SearcherContainer */],
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Searcher, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          }
+        })
+      )
     )
   );
 };
@@ -668,6 +668,7 @@ var _default = Loading;
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Form; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Input; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonSubmit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SearcherContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return GridCard; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CardRow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Figure; });
@@ -686,40 +687,44 @@ var _default = Loading;
 var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].form.withConfig({
   displayName: 'styles__Form',
   componentId: 's1yqit97-0'
-})(['display:grid;grid-template-columns:5fr 1fr;padding:3px;box-sizing:border-box;']);
+})(['display:grid;grid-template-columns:10fr 1fr;padding:3px;box-sizing:border-box;']);
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 3px 6px;font-size:18px;max-height:100%;border-radius:4px;border:1px solid #ccc;']);
+})(['width:100%;padding:3px 6px 3px 6px;font-size:18px;max-height:100%;border-radius:4px;border:1px solid #ccc;&:focus{outline:none;}']);
 var ButtonSubmit = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].button.withConfig({
   displayName: 'styles__ButtonSubmit',
   componentId: 's1yqit97-2'
-})(['background:#fff;border:1px solid #ccc;width:100%;padding:10px;border-radius:5px;box-sizing:border-box;&:hover{cursor:pointer;}']);
+})(['background:#fff;width:100%;padding:10px;box-sizing:border-box;border-top:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc;border-left:none;&:hover{cursor:pointer;}&:focus{outline:none;}']);
+var SearcherContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
+  displayName: 'styles__SearcherContainer',
+  componentId: 's1yqit97-3'
+})(['width:20%;text-align:center;margin:auto;']);
 var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__GridCard',
-  componentId: 's1yqit97-3'
+  componentId: 's1yqit97-4'
 })(['display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-gap:12px;justify-content:center;']);
 var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__CardRow',
-  componentId: 's1yqit97-4'
+  componentId: 's1yqit97-5'
 })(['filter:', ';'], function (props) {
   return props.blur === 'previewUrl' ? 'blur(3px)' : null;
 });
 var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].figure.withConfig({
   displayName: 'styles__Figure',
-  componentId: 's1yqit97-5'
+  componentId: 's1yqit97-6'
 })(['margin:0;padding:0;display:flex;justify-content:center;align-items:center;']);
 var ImageContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__ImageContainer',
-  componentId: 's1yqit97-6'
+  componentId: 's1yqit97-7'
 })(['position:relative;']);
 var Icon = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__Icon',
-  componentId: 's1yqit97-7'
+  componentId: 's1yqit97-8'
 })(['border-radius:50%;width:40px;height:40px;background:black;padding:10px;box-sizing:border-box;cursor:pointer;']);
 var IconContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__IconContainer',
-  componentId: 's1yqit97-8'
+  componentId: 's1yqit97-9'
 })(['position:absolute;display:grid;grid-template-columns:1fr 1fr;grid-gap:10px;']);
 ;
 
@@ -735,6 +740,7 @@ var IconContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__
   reactHotLoader.register(Form, 'Form', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(Input, 'Input', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(ButtonSubmit, 'ButtonSubmit', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
+  reactHotLoader.register(SearcherContainer, 'SearcherContainer', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(GridCard, 'GridCard', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(CardRow, 'CardRow', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');
   reactHotLoader.register(Figure, 'Figure', '/Users/rojas/Desktop/find-music-by-spotify-demo/helpers/styles.js');

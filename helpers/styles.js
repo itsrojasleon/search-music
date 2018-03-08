@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 10fr 1fr;
   padding: 3px;
   box-sizing: border-box;
 `
@@ -13,17 +13,30 @@ export const Input = styled.input`
   max-height: 100%;
   border-radius: 4px;
   border: 1px solid #ccc;
+  &:focus {
+    outline: none;
+  }
 `
 export const ButtonSubmit = styled.button`
   background: #fff;
-  border: 1px solid #ccc;
   width: 100%;
   padding: 10px;
-  border-radius: 5px;
   box-sizing: border-box;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
   &:hover {
     cursor: pointer;
   }
+  &:focus {
+    outline: none;
+  }
+`
+export const SearcherContainer = styled.div`
+  width: 20%;
+  text-align: center;
+  margin: auto;
 `
 export const GridCard = styled.div`
   display: grid;

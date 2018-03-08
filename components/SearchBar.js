@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
   Form,
   Input,
-  ButtonSubmit
+  ButtonSubmit,
+  SearcherContainer
 } from '../helpers/styles'
 import Searcher from '../svgs/search.svg'
 
@@ -16,7 +17,9 @@ const SearchBar = ({ query, search }) => {
         onChange={search}
       />
       <ButtonSubmit onClick={query}>
-        <Searcher />
+        <SearcherContainer>
+          <Searcher />
+        </SearcherContainer>
       </ButtonSubmit>
     </Form>
   )
