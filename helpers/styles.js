@@ -13,7 +13,7 @@ export const Input = styled.input`
   font-size: 18px;
   max-height: 100%;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   &:focus {
     outline: none;
   }
@@ -35,9 +35,9 @@ export const ButtonSubmit = styled.button`
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
   border-left: none;
   &:hover {
     cursor: pointer;
