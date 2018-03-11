@@ -616,7 +616,7 @@ var Loading = function Loading() {
 var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.form.withConfig({
   displayName: 'styles__Form',
   componentId: 's1yqit97-0'
-})(['display:grid;grid-template-columns:10fr 1fr;padding:3px;box-sizing:border-box;']);
+})(['display:grid;grid-template-columns:10fr 1fr;padding:3px;justify-content:center;box-sizing:border-box;']);
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'

@@ -4,6 +4,7 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 10fr 1fr;
   padding: 3px;
+  justify-content: center;
   box-sizing: border-box;
 `
 export const Input = styled.input`
