@@ -83,6 +83,11 @@ export default class Home extends Component {
             <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
           </div>
         )}
+        <style jsx global>{`
+          body {
+            font-family: 'Hind', sans-serif;
+          }
+        `}</style>
       </div>
     )
   }

@@ -18,6 +18,18 @@ export const Input = styled.input`
     outline: none;
   }
 `
+export const ContainerForm = styled.div`
+  width: 50%;
+  text-align: center;
+  margin: 6px auto 0 auto;
+  transition: .3s;
+  @media (max-width: 769px) {
+    width: 80%;
+  }
+  @media(max-width: 620px) {
+    width: 100%;
+  }
+`
 export const ButtonSubmit = styled.button`
   background: #fff;
   width: 100%;
@@ -35,7 +47,7 @@ export const ButtonSubmit = styled.button`
   }
 `
 export const SearcherContainer = styled.div`
-  width: 20%;
+  max-width: 50%;
   text-align: center;
   margin: auto;
 `

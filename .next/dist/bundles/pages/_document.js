@@ -133,12 +133,17 @@ var MyDocument = function (_Document) {
               lineNumber: 16
             }
           }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Hind', rel: 'stylesheet', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 17
+            }
+          }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'title',
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 17
+                lineNumber: 18
               }
             },
             'My page'
@@ -150,19 +155,19 @@ var MyDocument = function (_Document) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 21
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Main"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 22
             }
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["NextScript"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 23
             }
           })
         )
