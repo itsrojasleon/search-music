@@ -13,7 +13,7 @@ export const Input = styled.input`
   font-size: 18px;
   max-height: 100%;
   border-radius: 4px;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   &:focus {
     outline: none;
   }
@@ -35,9 +35,9 @@ export const ButtonSubmit = styled.button`
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-left: none;
   &:hover {
     cursor: pointer;
@@ -50,6 +50,12 @@ export const SearcherContainer = styled.div`
   max-width: 50%;
   text-align: center;
   margin: auto;
+  @media (max-width: 769px) {
+    max-width: 80%;
+  }
+  @media(max-width: 620px) {
+    max-width: 100%;
+  }
 `
 export const GridCard = styled.div`
   display: grid;
@@ -85,4 +91,13 @@ export const IconContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+`
+export const LoadingContainer = styled.div`
+  background: red;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+`
+export const LoadingCardContainer = styled.div`
+
 `

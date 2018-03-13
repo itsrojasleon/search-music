@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
+import { LoadingContainer } from '../../helpers/styles'
+
 const Loading = () => (
-  <div>
+  <LoadingContainer>
     Loading...
-  </div>
+  </LoadingContainer>
 )
 export default Loading
