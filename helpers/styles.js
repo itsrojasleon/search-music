@@ -66,6 +66,7 @@ export const GridCard = styled.div`
 export const CardRow = styled.div`
   filter: ${props => props.blur === 'previewUrl' ?
 'blur(3px)': null};
+background-color: #ffffff;
 `
 export const Figure = styled.figure`
   margin: 0;
@@ -93,10 +94,10 @@ export const IconContainer = styled.div`
   grid-gap: 10px;
 `
 export const LoadingContainer = styled.div`
-  height: 100vh;
+  height: 120vh;
   display: grid;
   width: 80%;
-  margin: auto;
+  margin: 18px auto 0px auto;
   grid-gap: 12px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -104,5 +105,5 @@ export const LoadingContainer = styled.div`
 export const LoadingCardContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: #ccc;
+  background: #ffffff;
 `
