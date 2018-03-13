@@ -93,11 +93,16 @@ export const IconContainer = styled.div`
   grid-gap: 10px;
 `
 export const LoadingContainer = styled.div`
-  background: red;
   height: 100vh;
   display: grid;
+  width: 80%;
+  margin: auto;
+  grid-gap: 12px;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 `
 export const LoadingCardContainer = styled.div`
-
+  width: 100%;
+  height: 100%;
+  background: #ccc;
 `

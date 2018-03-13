@@ -46,6 +46,9 @@ export default class Track extends Component {
           <div>
             <Figure>
               <ImageContainer>
+                {!this.props.album.images[0].url && (
+                  <div>no hay</div>
+                )}
                 <img style={{ maxWidth: '100%' }} src={this.props.album.images[0].url} alt="Image" />
               </ImageContainer>
               {this.state.icons && (

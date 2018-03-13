@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 
+import LoadingCard from './loading-card'
+
 import { LoadingContainer } from '../../helpers/styles'
 
-const Loading = () => (
-  <LoadingContainer>
-    Loading...
-  </LoadingContainer>
-)
+const Loading = () => {
+  const components = []
+  for (let i = 0; i < 12; i++) {
+    components.push(
+      <LoadingCard />
+    )
+  }
+  return (
+    <LoadingContainer>
+      {components}
+    </LoadingContainer>
+  )
+}
 export default Loading
