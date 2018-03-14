@@ -17,7 +17,7 @@ const SearchBar = ({ query, search }) => {
           <Input
             className="input is-danger is-medium"
             type="text"
-            placeholder="Busca tu canción favorita"
+            placeholder="Search your favorite song"
             onChange={search}
           />
           <ButtonSubmit onClick={query}>

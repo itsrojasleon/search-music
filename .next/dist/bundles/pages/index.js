@@ -274,7 +274,7 @@ var SearchBar = function SearchBar(_ref) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["k" /* Input */], {
           className: 'input is-danger is-medium',
           type: 'text',
-          placeholder: 'Busca tu canci\xF3n favorita',
+          placeholder: 'Search your favorite song',
           onChange: search,
           __source: {
             fileName: _jsxFileName,
@@ -701,7 +701,7 @@ var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 3px 6px;font-size:18px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}']);
+})(['width:100%;padding:3px 6px 3px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}@media(max-width:767px){font-size:20px;}']);
 var ContainerForm = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__ContainerForm',
   componentId: 's1yqit97-2'
@@ -713,7 +713,7 @@ var Container = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___def
 var ButtonSubmit = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.button.withConfig({
   displayName: 'styles__ButtonSubmit',
   componentId: 's1yqit97-4'
-})(['background:#fff;width:100%;padding:10px;box-sizing:border-box;border-top:none;border-right:none;border-bottom:2px solid #cccccc;border-left:none;&:hover{cursor:pointer;}&:focus{outline:none;}']);
+})(['background:#fff;width:100%;padding:5px;box-sizing:border-box;border-top:none;border-right:none;border-bottom:2px solid #cccccc;border-left:none;&:hover{cursor:pointer;}&:focus{outline:none;}']);
 var SearcherContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__SearcherContainer',
   componentId: 's1yqit97-5'

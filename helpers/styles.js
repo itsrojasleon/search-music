@@ -10,7 +10,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   width: 100%;
   padding: 3px 6px 3px 6px;
-  font-size: 18px;
+  font-size: 28px;
   max-height: 100%;
   background-color: transparent;
   border-top: none;
@@ -20,6 +20,9 @@ export const Input = styled.input`
   border-bottom: 2px solid #cccccc;
   &:focus {
     outline: none;
+  }
+  @media(max-width: 767px) {
+    font-size: 20px;
   }
 `
 export const ContainerForm = styled.div`
@@ -42,7 +45,7 @@ export const Container = styled.div`
 export const ButtonSubmit = styled.button`
   background: #fff;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
   border-top: none;
   border-right: none;
