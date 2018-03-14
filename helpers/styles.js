@@ -12,8 +12,12 @@ export const Input = styled.input`
   padding: 3px 6px 3px 6px;
   font-size: 18px;
   max-height: 100%;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  border-bottom: 2px solid #cccccc;
   &:focus {
     outline: none;
   }
@@ -30,14 +34,19 @@ export const ContainerForm = styled.div`
     width: 100%;
   }
 `
+export const Container = styled.div`
+  background: #ffffff;
+  padding: 20px;
+
+`
 export const ButtonSubmit = styled.button`
   background: #fff;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #cccccc;
   border-left: none;
   &:hover {
     cursor: pointer;
