@@ -85,7 +85,7 @@ export default class Home extends Component {
         )}
         <style jsx global>{`
           body {
-            font-family: 'Hind', sans-serif;
+            font-family: 'Candal', sans-serif;
             background: rgb(233,235,238);
           }
         `}</style>

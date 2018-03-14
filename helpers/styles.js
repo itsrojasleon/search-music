@@ -74,6 +74,7 @@ export const GridCard = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
   grid-gap: 12px;
   justify-content: center;
+  font-family: 'Anton', sans-serif;
 `
 export const CardRow = styled.div`
   filter: ${props => props.blur === 'previewUrl' ?
