@@ -21,6 +21,10 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+  &::selection {
+    color: #ffffff;
+    background: #000000;
+  }
   @media(max-width: 767px) {
     font-size: 20px;
   }
@@ -80,6 +84,9 @@ export const CardRow = styled.div`
   filter: ${props => props.blur === 'previewUrl' ?
 'blur(3px)': null};
 background-color: #ffffff;
+&:hover {
+  cursor: pointer;
+}
 `
 export const Figure = styled.figure`
   margin: 0;

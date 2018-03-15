@@ -730,7 +730,7 @@ var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 18px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}@media(max-width:767px){font-size:20px;}']);
+})(['width:100%;padding:3px 6px 18px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}&::selection{color:#ffffff;background:#000000;}@media(max-width:767px){font-size:20px;}']);
 var ContainerForm = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__ContainerForm',
   componentId: 's1yqit97-2'
@@ -754,7 +754,7 @@ var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___defa
 var CardRow = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__CardRow',
   componentId: 's1yqit97-7'
-})(['filter:', ';background-color:#ffffff;'], function (props) {
+})(['filter:', ';background-color:#ffffff;&:hover{cursor:pointer;}'], function (props) {
   return props.blur === 'previewUrl' ? 'blur(3px)' : null;
 });
 var Figure = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.figure.withConfig({
