@@ -109,8 +109,8 @@ export const IconContainer = styled.div`
 export const LoadingContainer = styled.div`
   height: 120vh;
   display: grid;
-  width: 80%;
-  margin: 18px auto 0px auto;
+  width: 85%;
+  margin: auto;
   grid-gap: 12px;
   grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
   grid-template-rows: repeat(auto-fill, minmax(220px, 250px));

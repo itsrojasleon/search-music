@@ -873,7 +873,7 @@ var IconContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__
 var LoadingContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__LoadingContainer',
   componentId: 's1yqit97-12'
-})(['height:120vh;display:grid;width:80%;margin:18px auto 0px auto;grid-gap:12px;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-template-rows:repeat(auto-fill,minmax(220px,250px));justify-content:center;']);
+})(['height:120vh;display:grid;width:85%;margin:auto;grid-gap:12px;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-template-rows:repeat(auto-fill,minmax(220px,250px));justify-content:center;']);
 var LoadingCardContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */].div.withConfig({
   displayName: 'styles__LoadingCardContainer',
   componentId: 's1yqit97-13'
