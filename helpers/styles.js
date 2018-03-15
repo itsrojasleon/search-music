@@ -147,6 +147,7 @@ export const LoadingCardContainer = styled.div`
   height: 100%;
   box-sizing: border-box;
   background-color: #ffffff;
+  margin-top: 15px;
 `
 export const LoadingImage = styled.div`
   background-color: rgb(233,235,238);

@@ -53,11 +53,8 @@ export default class Track extends Component {
               </ImageContainer>
               {this.state.icons && (
                 <IconContainer>
-                  <Icon>
+                  <Icon disabled={this.state.disabled} onClick={this.selectTrack}>
                     <Play />
-                  </Icon>
-                  <Icon>
-
                   </Icon>
                 </IconContainer>
               )}

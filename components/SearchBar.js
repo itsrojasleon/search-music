@@ -21,14 +21,14 @@ const SearchBar = ({ query, search, showCross, clearSearcher, value }) => {
             onChange={search}
             value={value}
           />
-          <SearcherContainer>
-            <Searcher onClick={search} />
+          <SearcherContainer onClick={query}>
+            <Searcher />
           </SearcherContainer>
-          <SearcherContainer>
-            {showCross && (
+          {showCross && (
+            <SearcherContainer>
               <Cross onClick={clearSearcher} />
-            )}
-          </SearcherContainer>
+            </SearcherContainer>
+          )}
         </Form>
       </ContainerForm>
     </Container>
