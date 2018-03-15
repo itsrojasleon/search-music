@@ -252,16 +252,12 @@ var Cross = function Cross(props) {
       null,
       '.st0',
       '{',
-      'stroke:#000;stroke-width:7;stroke-miterlimit:10',
+      'fill:none;stroke:#000;stroke-width:11;stroke-miterlimit:10',
       '}'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
       className: 'st0',
-      d: 'M170.7 170.7c-2.1 2.1-5.4 2.1-7.4 0L24.3 31.8c-2.1-2.1-2.1-5.4 0-7.4 2.1-2.1 5.4-2.1 7.4 0l138.9 138.9c2.1 2 2.1 5.3.1 7.4z'
-    }),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', {
-      className: 'st0',
-      d: 'M24.3 170.7c-2.1-2.1-2.1-5.4 0-7.4l138.9-139c2.1-2.1 5.4-2.1 7.4 0 2.1 2.1 2.1 5.4 0 7.4l-138.8 139c-2.1 2-5.4 2-7.5 0z'
+      d: 'M29.6 29.6l135.8 135.8M165.4 29.6L29.6 165.4'
     })
   );
 };
@@ -325,10 +321,19 @@ var SearchBar = function SearchBar(_ref) {
               fileName: _jsxFileName,
               lineNumber: 25
             }
-          }),
-          showCross && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Cross, { onClick: clearSearcher, __source: {
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["o" /* SearcherContainer */],
+          {
+            __source: {
               fileName: _jsxFileName,
               lineNumber: 27
+            }
+          },
+          showCross && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Cross, { onClick: clearSearcher, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 29
             }
           })
         )
@@ -753,11 +758,11 @@ var LoadingCard = function LoadingCard() {
 var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.form.withConfig({
   displayName: 'styles__Form',
   componentId: 's1yqit97-0'
-})(['display:grid;grid-template-columns:10fr 1fr;padding:3px;justify-content:center;box-sizing:border-box;']);
+})(['display:grid;grid-template-columns:10fr 1fr 1fr;padding:3px;justify-content:center;box-sizing:border-box;']);
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 18px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #424242;&:focus{outline:none;}&::selection{color:#ffffff;background:#000000;}@media(max-width:767px){font-size:20px;}']);
+})(['width:100%;padding:3px 6px 0 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #424242;&:focus{outline:none;}&::selection{color:#ffffff;background:#000000;}@media(max-width:767px){font-size:20px;}']);
 var ContainerForm = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__ContainerForm',
   componentId: 's1yqit97-2'
@@ -773,7 +778,7 @@ var ButtonSubmit = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___
 var SearcherContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__SearcherContainer',
   componentId: 's1yqit97-5'
-})(['background:#fff;width:100%;padding:5px;box-sizing:border-box;border-top:none;border-right:none;border-bottom:2px solid #424242;border-left:none;&:hover{cursor:pointer;}&:focus{outline:none;}@media (max-width:769px){max-width:80%;}@media(max-width:620px){max-width:100%;}']);
+})(['background:#fff;width:100%;padding:5px;box-sizing:border-box;border-top:none;border-right:none;border-bottom:2px solid #424242;border-left:none;box-sizing:border-box;&:nth-of-type(2){background-color:#000000;}&:hover{cursor:pointer;}&:focus{outline:none;}@media (max-width:769px){max-width:80%;}@media(max-width:620px){max-width:100%;}']);
 var GridCard = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__GridCard',
   componentId: 's1yqit97-6'

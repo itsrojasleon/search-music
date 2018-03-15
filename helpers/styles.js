@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: 10fr 1fr;
+  grid-template-columns: 10fr 1fr 1fr;
   padding: 3px;
   justify-content: center;
   box-sizing: border-box;
 `
 export const Input = styled.input`
   width: 100%;
-  padding: 3px 6px 18px 6px;
+  padding: 3px 6px 0 6px;
   font-size: 28px;
   max-height: 100%;
   background-color: transparent;
@@ -71,6 +71,10 @@ export const SearcherContainer = styled.div`
   border-right: none;
   border-bottom: 2px solid #424242;
   border-left: none;
+  box-sizing: border-box;
+  &:nth-of-type(2) {
+    background-color: #000000;
+  }
   &:hover {
     cursor: pointer;
   }

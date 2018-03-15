@@ -23,11 +23,12 @@ const SearchBar = ({ query, search, showCross, clearSearcher, value }) => {
           />
           <SearcherContainer>
             <Searcher onClick={search} />
+          </SearcherContainer>
+          <SearcherContainer>
             {showCross && (
               <Cross onClick={clearSearcher} />
             )}
           </SearcherContainer>
-
         </Form>
       </ContainerForm>
     </Container>
