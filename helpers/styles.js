@@ -9,7 +9,7 @@ export const Form = styled.form`
 `
 export const Input = styled.input`
   width: 100%;
-  padding: 3px 6px 3px 6px;
+  padding: 3px 6px 18px 6px;
   font-size: 28px;
   max-height: 100%;
   background-color: transparent;
@@ -112,11 +112,56 @@ export const LoadingContainer = styled.div`
   width: 80%;
   margin: 18px auto 0px auto;
   grid-gap: 12px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
+  grid-template-rows: repeat(auto-fill, minmax(220px, 250px));
+  justify-content: center;
 `
 export const LoadingCardContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  box-sizing: border-box;
+  background-color: #ffffff;
+`
+export const LoadingImage = styled.div`
+  background-color: rgb(233,235,238);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  animation-name: loadingtwo;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  @keyframes loadingtwo {
+    0% {
+      background: rgb(210,222,225);
+    }
+    100% {
+      background:  rgb(233,235,238);
+    }
+  }
+`
+export const LoadingBar = styled.div`
+  background-color: rgb(233,235,238);
+  width: 80%;
+  height: 8%;
+  border-radius: 20px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  animation-name: loading;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  @keyframes loading {
+    0% {
+      background: rgb(210,222,225);
+    }
+    100% {
+      background:  rgb(233,235,238);
+    }
+  }
 `

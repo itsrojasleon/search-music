@@ -1,9 +1,17 @@
 import React from 'react'
-import { LoadingCardContainer } from '../../helpers/styles'
+import {
+  LoadingCardContainer,
+  LoadingImage,
+  LoadingBar,
+  LoadingContainerImage
+} from '../../helpers/styles'
 
 const LoadingCard = () => (
   <LoadingCardContainer>
-    
+    <LoadingImage />
+    <LoadingBar />
+    <LoadingBar />
+    <LoadingBar />
   </LoadingCardContainer>
 )
 

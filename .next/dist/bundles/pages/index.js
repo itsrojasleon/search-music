@@ -289,7 +289,7 @@ var SearchBar = function SearchBar(_ref) {
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["n" /* SearcherContainer */],
+            __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["p" /* SearcherContainer */],
             {
               __source: {
                 fileName: _jsxFileName,
@@ -634,7 +634,7 @@ var Loading = function Loading() {
     }));
   }
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["m" /* LoadingContainer */],
+    __WEBPACK_IMPORTED_MODULE_2__helpers_styles__["n" /* LoadingContainer */],
     {
       __source: {
         fileName: _jsxFileName,
@@ -660,12 +660,39 @@ var _jsxFileName = '/Users/rojas/Desktop/find-music-by-spotify-demo/components/s
 
 
 var LoadingCard = function LoadingCard() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["l" /* LoadingCardContainer */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    }
-  });
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    __WEBPACK_IMPORTED_MODULE_1__helpers_styles__["m" /* LoadingCardContainer */],
+    {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      }
+    },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["o" /* LoadingImage */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      }
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["l" /* LoadingBar */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      }
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["l" /* LoadingBar */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__helpers_styles__["l" /* LoadingBar */], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      }
+    })
+  );
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (LoadingCard);
@@ -681,15 +708,17 @@ var LoadingCard = function LoadingCard() {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ContainerForm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Container; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonSubmit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return SearcherContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return SearcherContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return GridCard; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CardRow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Figure; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ImageContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Icon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return IconContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return LoadingContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return LoadingCardContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return LoadingContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return LoadingCardContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return LoadingImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return LoadingBar; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
 
@@ -701,7 +730,7 @@ var Form = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.
 var Input = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.input.withConfig({
   displayName: 'styles__Input',
   componentId: 's1yqit97-1'
-})(['width:100%;padding:3px 6px 3px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}@media(max-width:767px){font-size:20px;}']);
+})(['width:100%;padding:3px 6px 18px 6px;font-size:28px;max-height:100%;background-color:transparent;border-top:none;border-left:none;border-right:none;text-align:center;border-bottom:2px solid #cccccc;&:focus{outline:none;}@media(max-width:767px){font-size:20px;}']);
 var ContainerForm = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__ContainerForm',
   componentId: 's1yqit97-2'
@@ -747,11 +776,19 @@ var IconContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components__
 var LoadingContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__LoadingContainer',
   componentId: 's1yqit97-12'
-})(['height:120vh;display:grid;width:80%;margin:18px auto 0px auto;grid-gap:12px;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);']);
+})(['height:120vh;display:grid;width:80%;margin:18px auto 0px auto;grid-gap:12px;grid-template-columns:repeat(auto-fill,minmax(100px,250px));grid-template-rows:repeat(auto-fill,minmax(220px,250px));justify-content:center;']);
 var LoadingCardContainer = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
   displayName: 'styles__LoadingCardContainer',
   componentId: 's1yqit97-13'
-})(['width:100%;height:100%;background:#ffffff;']);
+})(['width:100%;height:100%;box-sizing:border-box;background-color:#ffffff;']);
+var LoadingImage = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: 'styles__LoadingImage',
+  componentId: 's1yqit97-14'
+})(['background-color:rgb(233,235,238);width:50%;height:50%;border-radius:50%;text-align:center;margin:auto;margin-bottom:16px;margin-top:10px;box-sizing:border-box;animation-name:loadingtwo;animation-duration:.7s;animation-iteration-count:infinite;@keyframes loadingtwo{0%{background:rgb(210,222,225);}100%{background:rgb(233,235,238);}}']);
+var LoadingBar = /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.div.withConfig({
+  displayName: 'styles__LoadingBar',
+  componentId: 's1yqit97-15'
+})(['background-color:rgb(233,235,238);width:80%;height:8%;border-radius:20px;text-align:center;margin:auto;margin-bottom:10px;box-sizing:border-box;animation-name:loading;animation-duration:.7s;animation-iteration-count:infinite;@keyframes loading{0%{background:rgb(210,222,225);}100%{background:rgb(233,235,238);}}']);
 
 /***/ }),
 
