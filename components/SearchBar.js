@@ -8,8 +8,9 @@ import {
   Container
 } from '../helpers/styles'
 import Searcher from '../svgs/search.svg'
+import Cross from '../svgs/cross.svg'
 
-const SearchBar = ({ query, search }) => {
+const SearchBar = ({ query, search, showCross, clearSearcher, value }) => {
   return (
     <Container>
       <ContainerForm>
@@ -19,12 +20,20 @@ const SearchBar = ({ query, search }) => {
             type="text"
             placeholder="Search your favorite song"
             onChange={search}
+            value={value}
           />
-          <ButtonSubmit onClick={query}>
+          <ButtonSubmit onClick={query} >
             <SearcherContainer>
               <Searcher />
             </SearcherContainer>
           </ButtonSubmit>
+          {showCross && (
+            <ButtonSubmit onClick={clearSearcher} >
+              <SearcherContainer>
+                <Cross />
+              </SearcherContainer>
+            </ButtonSubmit>
+          )}
         </Form>
       </ContainerForm>
     </Container>

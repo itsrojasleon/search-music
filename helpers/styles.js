@@ -17,7 +17,7 @@ export const Input = styled.input`
   border-left: none;
   border-right: none;
   text-align: center;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid #424242;
   &:focus {
     outline: none;
   }
@@ -44,7 +44,7 @@ export const ContainerForm = styled.div`
 export const Container = styled.div`
   background: #ffffff;
   padding: 20px;
-
+  box-shadow: 0 0 25px 15px #D9D9D9;
 `
 export const ButtonSubmit = styled.button`
   background: #fff;
@@ -53,7 +53,7 @@ export const ButtonSubmit = styled.button`
   box-sizing: border-box;
   border-top: none;
   border-right: none;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid #424242;
   border-left: none;
   &:hover {
     cursor: pointer;
@@ -106,6 +106,10 @@ export const Icon = styled.div`
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: .2s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 export const IconContainer = styled.div`
   position: absolute;

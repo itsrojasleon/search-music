@@ -13,24 +13,22 @@ export default class Home extends Component {
     loading: false,
     selectedTrack: '',
     songCounter: null,
+    showCross: false,
+    currentValue: ''
   };
 
-  handleSearch = (event) =>{
+  handleSearch = (event) => {
     this.setState({
       searchQuery: event.target.value,
-    });
+      currentValue: event.target.value
+    })
   }
 
-
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
-    if(!this.state.searchQuery) {
-      return null;
-    }
+    if(!this.state.searchQuery) return null
 
-    this.setState({
-      loading: true,
-    })
+    this.setState({ loading: true })
 
     trackService.search(this.state.searchQuery)
       .then(response => {
@@ -38,15 +36,22 @@ export default class Home extends Component {
           tracks: response.tracks.items,
           loading: false,
           songCounter: response.tracks.items.length,
+          showCross: true
         })
       });
   }
 
   setSelectedTrack = (data) => {
     if(!data) return null
+    this.setState({ selectedTrack: data });
+  }
+
+  clearSearcher = () => {
     this.setState({
-      selectedTrack: data
-    });
+      currentValue: '',
+      showCross: false
+    })
+    console.log('OK');
   }
 
   render() {
@@ -57,7 +62,7 @@ export default class Home extends Component {
           <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
         </Head>
-        <SearchBar query={this.handleClick} search={this.handleSearch} />
+        <SearchBar query={this.handleClick} value={this.state.currentValue} clearSearcher={this.clearSearcher} showCross={this.state.showCross} search={this.handleSearch} />
         {this.state.songCounter > 0 && (
           <div className="notification is-danger">
             <p className="is-size-4 results">Resultados: {this.state.songCounter}</p>

@@ -8,7 +8,7 @@ const Loading = () => {
   const components = []
   for (let i = 0; i < 12; i++) {
     components.push(
-      <LoadingCard />
+      <LoadingCard key={i} />
     )
   }
   return (
