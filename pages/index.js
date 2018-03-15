@@ -51,7 +51,6 @@ export default class Home extends Component {
       currentValue: '',
       showCross: false
     })
-    console.log('OK');
   }
 
   render() {

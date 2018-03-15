@@ -63,9 +63,20 @@ export const ButtonSubmit = styled.button`
   }
 `
 export const SearcherContainer = styled.div`
-  max-width: 50%;
-  text-align: center;
-  margin: auto;
+  background: #fff;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #424242;
+  border-left: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
   @media (max-width: 769px) {
     max-width: 80%;
   }

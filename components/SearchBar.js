@@ -16,24 +16,18 @@ const SearchBar = ({ query, search, showCross, clearSearcher, value }) => {
       <ContainerForm>
         <Form onSubmit={query} className="container-search-bar">
           <Input
-            className="input is-danger is-medium"
             type="text"
             placeholder="Search your favorite song"
             onChange={search}
             value={value}
           />
-          <ButtonSubmit onClick={query} >
-            <SearcherContainer>
-              <Searcher />
-            </SearcherContainer>
-          </ButtonSubmit>
-          {showCross && (
-            <ButtonSubmit onClick={clearSearcher} >
-              <SearcherContainer>
-                <Cross />
-              </SearcherContainer>
-            </ButtonSubmit>
-          )}
+          <SearcherContainer>
+            <Searcher onClick={search} />
+            {showCross && (
+              <Cross onClick={clearSearcher} />
+            )}
+          </SearcherContainer>
+
         </Form>
       </ContainerForm>
     </Container>
