@@ -2,7 +2,7 @@ import React from 'react';
 
 const Player = ({ selectedTrack }) => {
   return (
-    <div>
+    <div className="fixed">
       {selectedTrack && (
         <div className="box reproductor">
           <div className="description">
@@ -25,6 +25,13 @@ const Player = ({ selectedTrack }) => {
         </div>
       )}
       <style jsx>{`
+        .fixed  {
+          position: fixed;
+          z-index: 999;
+          bottom: 0;
+          width: 100%;
+          border-top: 1px solid #E0E0E0;
+        }
         .reproductor {
           padding-bottom: 0px !important;
           padding-top: 10px !important;
@@ -46,6 +53,9 @@ const Player = ({ selectedTrack }) => {
         .player {
           width: 40%;
           margin: 0px auto 0px auto;
+        }
+        img {
+          width: 22%;
         }
       `}</style>
     </div>

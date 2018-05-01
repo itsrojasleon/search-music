@@ -99,8 +99,9 @@ export const Icon = styled.div`
 export const IconContainer = styled.div`
   position: absolute;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 10px;
+  text-align: center;
 `
 export const LoadingContainer = styled.div`
   height: 120vh;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import {
   CardRow,
   Figure,
@@ -14,7 +15,13 @@ export default class Track extends Component {
     disabled: false,
     time: this.props.duration_ms,
     icons: false
-  }
+  };
+  static propTypes = {
+    onClick: PropTypes.func,
+    preview_url: PropTypes.string,
+    name: PropTypes.string,
+    artists: PropTypes.array,
+  };
   selectTrack = () => {
     this.props.onClick(this.props)
   };
