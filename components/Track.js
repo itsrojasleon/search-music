@@ -8,8 +8,6 @@ import {
 } from '../helpers/styles'
 import { helperTime } from '../helpers/time'
 
-import Play from '../svgs/play.svg'
-
 export default class Track extends Component {
   state = {
     previewUrl: '',
@@ -54,7 +52,7 @@ export default class Track extends Component {
               {this.state.icons && (
                 <IconContainer>
                   <Icon disabled={this.state.disabled} onClick={this.selectTrack}>
-                    <Play />
+                    <i style={{color: 'white'}} className="fas fa-play"></i>
                   </Icon>
                 </IconContainer>
               )}

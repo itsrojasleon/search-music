@@ -60,11 +60,12 @@ export default class Home extends Component {
           <title>React Spotify</title>
           <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" />
         </Head>
         <SearchBar query={this.handleClick} value={this.state.currentValue} clearSearcher={this.clearSearcher} showCross={this.state.showCross} search={this.handleSearch} />
         {this.state.songCounter > 0 && (
           <div className="notification is-danger">
-            <p className="is-size-4 results">Resultados: {this.state.songCounter}</p>
+            <p className="is-size-4 results">Results: {this.state.songCounter}</p>
           </div>
         )}
         {this.state.songCounter === 0 && (
@@ -73,7 +74,7 @@ export default class Home extends Component {
               <div className="container">
                 <h1 className="title">¡Ups!</h1>
                 <h2 className="subtitle">
-                  No se encontraron resultados con <strong>{this.state.searchQuery}</strong>
+                  Not found <strong>{this.state.searchQuery}</strong>
                 </h2>
               </div>
             </div>
@@ -89,8 +90,8 @@ export default class Home extends Component {
         )}
         <style jsx global>{`
           body {
-            font-family: 'Candal', sans-serif;
-            background: rgb(233,235,238);
+            font-family: 'Montserrat', sans-serif;
+            background: white;
           }
         `}</style>
       </div>

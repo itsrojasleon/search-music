@@ -9,21 +9,17 @@ export const Form = styled.form`
 `
 export const Input = styled.input`
   width: 100%;
-  padding: 3px 6px 0 6px;
-  font-size: 28px;
-  max-height: 100%;
-  background-color: transparent;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  text-align: center;
-  border-bottom: 2px solid #424242;
+  padding: 12px 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  text-indent: 10px;
   &:focus {
     outline: none;
   }
   &::selection {
     color: #ffffff;
-    background: #000000;
+    background: rgb(222,0,62);
   }
   @media(max-width: 767px) {
     font-size: 20px;
@@ -44,7 +40,7 @@ export const ContainerForm = styled.div`
 export const Container = styled.div`
   background: #ffffff;
   padding: 20px;
-  box-shadow: 0 0 25px 15px #D9D9D9;
+  border-bottom: 1px solid #EEEEEE;
 `
 export const ButtonSubmit = styled.button`
   background: #fff;
@@ -60,32 +56,6 @@ export const ButtonSubmit = styled.button`
   }
   &:focus {
     outline: none;
-  }
-`
-export const SearcherContainer = styled.div`
-  background: #fff;
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-  border-top: none;
-  border-right: none;
-  border-bottom: 2px solid #424242;
-  border-left: none;
-  box-sizing: border-box;
-  &:nth-of-type(2) {
-    background-color: #000000;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
-    outline: none;
-  }
-  @media (max-width: 769px) {
-    max-width: 80%;
-  }
-  @media(max-width: 620px) {
-    max-width: 100%;
   }
 `
 export const GridCard = styled.div`

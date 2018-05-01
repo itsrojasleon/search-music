@@ -133,7 +133,7 @@ var MyDocument = function (_Document) {
               lineNumber: 16
             }
           }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Candal', rel: 'stylesheet', __source: {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Montserrat', rel: 'stylesheet', __source: {
               fileName: _jsxFileName,
               lineNumber: 17
             }

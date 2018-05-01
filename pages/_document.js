@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-          <link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
           <title>My page</title>
           {this.props.styleTags}
         </Head>
