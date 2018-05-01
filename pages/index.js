@@ -62,7 +62,13 @@ export default class Home extends Component {
           <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" />
         </Head>
-        <SearchBar query={this.handleClick} value={this.state.currentValue} clearSearcher={this.clearSearcher} showCross={this.state.showCross} search={this.handleSearch} />
+        <SearchBar
+          query={this.handleClick}
+          value={this.state.currentValue}
+          clearSearcher={this.clearSearcher}
+          showCross={this.state.showCross}
+          search={this.handleSearch}
+        />
         {this.state.songCounter > 0 && (
           <div className="notification is-danger">
             <p className="is-size-4 results">Results: {this.state.songCounter}</p>
