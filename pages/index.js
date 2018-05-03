@@ -11,6 +11,12 @@ import styled from 'styled-components';
 const ContainerCards = styled.div`
   width: 90%;
   margin: ${props => props.styleMargin === '' ? 'auto' : '0 auto 150px auto'};
+  @media(max-width: 769px) {
+    width: 95%;
+  }
+  @media(max-width: 620px) {
+    width: 100%;
+  }
 `;
 
 export default class Home extends Component {

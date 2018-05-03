@@ -13,6 +13,12 @@ export const GridCard = styled.div`
   grid-gap: 12px;
   justify-content: center;
   font-family: 'Anton', sans-serif;
+  @media(max-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media(max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 `
 export const CardRow = styled.div`
   filter: ${props => props.blur === 'previewUrl' ?

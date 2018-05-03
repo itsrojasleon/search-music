@@ -41,8 +41,7 @@ class Player extends React.Component {
             <div className="container-player">
               <audio
                 className="player"
-                autoPlay
-                controls
+                // controls
                 ref={this.setRef}
                 src={selectedTrack.preview_url}>
               </audio>
