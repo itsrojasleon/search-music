@@ -1,9 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const CurrentTime = styled.div`
+  background: #5179ff;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    transition: 1s;
+    width: ${props => props.width}%;
+`;
 
 class Player extends React.Component {
   state = {
     duration: null,
-    paused: false
+    paused: false,
+    currentTime: 0,
+    currentProgress: 0
   };
   togglePlay = () => {
     if (this.state.paused) {
@@ -28,18 +40,30 @@ class Player extends React.Component {
     return null;
   }
 
+  onTimeUpdate = (event) => {
+    this.setState({
+      currentTime: this.audio.currentTime,
+      currentProgress: (this.audio.currentTime * 100) / event.target.duration,
+    })
+  }
+
+  onLoadedMetadata = (event) => {
+    this.setState(() => ({
+      duration: this.audio.duration,
+    }));
+  }
+
+  componentWillUnmount() {
+
+  }
+
   render() {
     const { selectedTrack } = this.props;
-    const { paused } = this.state;
-    console.log(this.props)
+    const { paused, currentProgress, currentTime } = this.state;
     return (
       <div className="fixed">
         {selectedTrack && (
           <div className="box reproductor">
-            {paused
-              ? <i onClick={this.togglePlay} className="fas fa-play"></i>
-              : <i onClick={this.togglePlay} className="fas fa-pause"></i>
-            }
             <div className="description">
               <figure className="image is-64x64">
                 <img src={selectedTrack.album.images[1].url} />
@@ -48,12 +72,20 @@ class Player extends React.Component {
                 <p>{selectedTrack.name}</p>
                 <small>{selectedTrack.artists[0].name}</small>
               </div>
+              {paused
+                ? <i onClick={this.togglePlay} className="fas fa-play"></i>
+                : <i onClick={this.togglePlay} className="fas fa-pause"></i>
+              }
+              {currentTime.toFixed(0)}
+              <CurrentTime width={this.state.currentProgress.toString()} />
             </div>
             <div className="container-player">
               <audio
                 className="player"
                 ref={this.setRef}
                 autoPlay
+                onTimeUpdate={this.onTimeUpdate}
+                onLoadedMetadata={this.onLoadedMetadata}
                 src={selectedTrack.preview_url}>
               </audio>
             </div>
