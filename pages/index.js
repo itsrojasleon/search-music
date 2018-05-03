@@ -6,6 +6,13 @@ import Player from '../components/Player'
 import SearchBar from '../components/SearchBar'
 import Card from '../components/card'
 
+import styled from 'styled-components';
+
+const ContainerCards = styled.div`
+  width: 90%;
+  margin: ${props => props.styleMargin === '' ? 'auto' : '0 auto 150px auto'};
+`;
+
 export default class Home extends Component {
   state = {
     searchQuery: '',
@@ -54,6 +61,7 @@ export default class Home extends Component {
   }
 
   render() {
+    const { currentValue, showCross, songCounter, selectedTrack, searchQuery, loading, tracks } = this.state;
     return (
       <div className="container-react-spotify">
         <Head>
@@ -64,42 +72,37 @@ export default class Home extends Component {
         </Head>
         <SearchBar
           query={this.handleClick}
-          value={this.state.currentValue}
+          value={currentValue}
           clearSearcher={this.clearSearcher}
-          showCross={this.state.showCross}
+          showCross={showCross}
           search={this.handleSearch}
         />
-        {this.state.songCounter > 0 && (
-          <div className="notification is-danger">
-            <p className="is-size-4 results">Results: {this.state.songCounter}</p>
-          </div>
+        {songCounter > 0 && (
+          <p>Results: {songCounter}</p>
         )}
-        {this.state.songCounter === 0 && (
-          <section className="hero is-danger is-fullheight">
-            <div className="hero-body">
-              <div className="container">
-                <h1 className="title">¡Ups!</h1>
-                <h2 className="subtitle">
-                  Not found <strong>{this.state.searchQuery}</strong>
-                </h2>
-              </div>
-            </div>
-          </section>
+        {songCounter === 0 && (
+         <div className="container">
+          <h1 className="title">¡Ups!</h1>
+          <h2 className="subtitle">
+            Not found <strong>{searchQuery}</strong>
+          </h2>
+        </div>
         )}
         <div className="reproductor">
-          <Player selectedTrack={this.state.selectedTrack} />
+          <Player selectedTrack={selectedTrack} />
         </div>
-        {this.state.loading ? <Loading /> : (
-          <div style={{ width: '90%', margin: this.state.selectedTrack === '' ? 'auto' : '0 auto 150px auto' }}>
-            <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
-          </div>
-        )}
+        {loading
+          ? <Loading />
+          : <ContainerCards styleMargin={selectedTrack}>
+              <Card tracks={tracks} selectedTrack={this.setSelectedTrack} />
+            </ContainerCards>
+        }
         <style jsx global>{`
           body {
             font-family: 'Montserrat', sans-serif;
             background: white;
           }
-          span::selection, p::selection, h1::selection, h2::selection {
+          span::selection, p::selection, h1::selection, h2::selection, small::selection {
             color: #ffffff;
             background: rgb(222,0,62);
           }
