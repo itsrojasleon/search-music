@@ -88,9 +88,12 @@ export default class Home extends Component {
           </h2>
         </div>
         )}
-        <div className="reproductor">
-          <Player selectedTrack={selectedTrack} />
-        </div>
+        {selectedTrack
+          ? <div className="reproductor">
+              <Player selectedTrack={selectedTrack} />
+            </div>
+          : null
+        }
         {loading
           ? <Loading />
           : <ContainerCards styleMargin={selectedTrack}>
