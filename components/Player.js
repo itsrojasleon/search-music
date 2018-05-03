@@ -3,7 +3,7 @@ import React from 'react';
 class Player extends React.Component {
   state = {
     duration: null,
-    paused: true
+    paused: false
   };
   togglePlay = () => {
     if (this.state.paused) {
@@ -18,9 +18,20 @@ class Player extends React.Component {
   setRef = (audio) => {
     this.audio = audio;
   }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props) {
+      return {
+        paused: false,
+      }
+    }
+    return null;
+  }
+
   render() {
     const { selectedTrack } = this.props;
     const { paused } = this.state;
+    console.log(this.props)
     return (
       <div className="fixed">
         {selectedTrack && (
@@ -41,8 +52,8 @@ class Player extends React.Component {
             <div className="container-player">
               <audio
                 className="player"
-                // controls
                 ref={this.setRef}
+                autoPlay
                 src={selectedTrack.preview_url}>
               </audio>
             </div>
@@ -55,7 +66,6 @@ class Player extends React.Component {
             bottom: 0;
             width: 100%;
             border-top: 1px solid #E0E0E0;
-
           }
           .reproductor {
             padding-bottom: 0px !important;
