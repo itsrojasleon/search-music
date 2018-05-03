@@ -72,18 +72,26 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "/Users/rojas/Desktop/find-music-by-spotify-demo/node_modules/next/dist/pages/_error.js":
-/***/ (function(module, exports) {
+/***/ "./node_modules/next/dist/pages/_error.js":
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("/Users/rojas/Desktop/find-music-by-spotify-demo/node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__("next/error")
+
 
 /***/ }),
 
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("/Users/rojas/Desktop/find-music-by-spotify-demo/node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__("./node_modules/next/dist/pages/_error.js");
 
+
+/***/ }),
+
+/***/ "next/error":
+/***/ (function(module, exports) {
+
+module.exports = require("next/error");
 
 /***/ })
 
