@@ -54,6 +54,9 @@ const Icons = styled.span`
   width: 100%;
   text-align:right;
   display: block;
+  @media(max-width: 769px) {
+    text-align: center;
+  }
 `;
 
 class SearchBar extends React.Component {
@@ -65,6 +68,11 @@ class SearchBar extends React.Component {
     value: PropTypes.string || PropTypes.number,
     showCross: PropTypes.bool
   };
+  onToggle = () => {
+    this.setState(() => ({
+      toggle: !this.state.toggle,
+    }))
+  }
   render() {
     const { query, search, showCross, clearSearcher, value } = this.props;
     return (
@@ -85,10 +93,10 @@ class SearchBar extends React.Component {
             </SearchContent>
           </form>
           <Icons>
-            <span>View: </span>
+            <span style={{marginRight: 5}}>View: </span>
             {this.state.toggle
-              ? <i className="fas fa-th"></i>
-              : <i className="fas fa-list-ul"></i>
+              ? <i onClick={this.onToggle} className="fas fa-th"></i>
+              : <i onClick={this.onToggle} className="fas fa-list-ul"></i>
             }
           </Icons>
         </ContainerForm>
@@ -101,6 +109,9 @@ class SearchBar extends React.Component {
           .fas.fa-th:hover, .fas.fa-list-ul:hover {
             color: rgb(222,0,62);
             cursor: pointer;
+          }
+          .fas.fa-list-ul:active, .fas.fa-th:active{
+            transform: scale(1.3);
           }
           .fas.fa-search, .fas.fa-times {
             color: #E0E0E0;

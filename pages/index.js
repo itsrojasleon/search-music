@@ -99,6 +99,10 @@ export default class Home extends Component {
             font-family: 'Montserrat', sans-serif;
             background: white;
           }
+          span::selection, p::selection, h1::selection, h2::selection {
+            color: #ffffff;
+            background: rgb(222,0,62);
+          }
         `}</style>
       </div>
     )
