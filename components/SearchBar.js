@@ -1,15 +1,65 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Form,
-  Input,
-  ButtonSubmit,
-  ContainerForm,
-  Container
-} from '../helpers/styles';
+import styled from 'styled-components';
+
+const SearchContent = styled.div`
+  position: relative;
+  width: 50%;
+  margin: auto;
+  @media(max-width: 769px) {
+    width: 80%;
+  }
+  @media(max-width: 620px) {
+    width: 100%;
+  }
+`;
+const ContainerForm = styled.div`
+  width: 100%;
+  text-align: center;
+  transition: .3s;
+  @media (max-width: 769px) {
+    width: 80%;
+  }
+  @media(max-width: 620px) {
+    width: 100%;
+  }
+`;
+const Container = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #EEEEEE;
+`;
+const Input = styled.input`
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  text-indent: 10px;
+  transition: .3s;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+    border: 1px solid rgb(222,0,62);
+  }
+  &::selection {
+    color: #ffffff;
+    background: rgb(222,0,62);
+  }
+  @media(max-width: 767px) {
+    font-size: 18px;
+  }
+`;
+const Icons = styled.span`
+  width: 100%;
+  text-align:right;
+  display: block;
+`;
+
 class SearchBar extends React.Component {
   state = {
-    show: false
+    show: false,
+    toggle: false,
   };
   static propTypes = {
     value: PropTypes.string || PropTypes.number,
@@ -20,8 +70,8 @@ class SearchBar extends React.Component {
     return (
       <Container>
         <ContainerForm>
-          <Form onSubmit={query} className="container-search-bar">
-            <div className="search-content">
+          <form onSubmit={query} className="container-search-bar">
+            <SearchContent className="search-content">
               <Input
                 type="text"
                 placeholder="Search your favorite song"
@@ -32,19 +82,32 @@ class SearchBar extends React.Component {
                 ? <i className="fas fa-times" onClick={clearSearcher}></i>
                 : <i onClick={query} className="fas fa-search"></i>
               }
-            </div>
-          </Form>
+            </SearchContent>
+          </form>
+          <Icons>
+            <span>View: </span>
+            {this.state.toggle
+              ? <i className="fas fa-th"></i>
+              : <i className="fas fa-list-ul"></i>
+            }
+          </Icons>
         </ContainerForm>
         <style jsx>{`
-          .search-content {
-            position: relative;
+          .fas.fa-th, .fas.fa-list-ul {
+            font-size: 25px;
+            color: #E0E0E0;
+            transition: .3s;
+          }
+          .fas.fa-th:hover, .fas.fa-list-ul:hover {
+            color: rgb(222,0,62);
+            cursor: pointer;
           }
           .fas.fa-search, .fas.fa-times {
             color: #E0E0E0;
             font-size: 22px;
             position: absolute;
             top: 10px;
-            right: 0px;
+            right: 10px;
           }
           .fas.fa-search:hover, .fas.fa-times:hover {
             transition: .3s;

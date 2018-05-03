@@ -31,11 +31,11 @@ const Player = ({ selectedTrack }) => {
           bottom: 0;
           width: 100%;
           border-top: 1px solid #E0E0E0;
-          margin-top: 20px;
+
         }
         .reproductor {
           padding-bottom: 0px !important;
-          padding-top: 10px !important;
+          padding-top: 0px !important;
           background-color: rgb(248,248,248);
         }
         .container-player {

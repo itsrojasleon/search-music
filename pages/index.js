@@ -90,7 +90,7 @@ export default class Home extends Component {
           <Player selectedTrack={this.state.selectedTrack} />
         </div>
         {this.state.loading ? <Loading /> : (
-          <div style={{ width: '90%', margin: 'auto' }}>
+          <div style={{ width: '90%', margin: this.state.selectedTrack === '' ? 'auto' : '0 auto 150px auto' }}>
             <Card tracks={this.state.tracks} selectedTrack={this.setSelectedTrack} />
           </div>
         )}
