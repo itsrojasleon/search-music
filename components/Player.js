@@ -2,12 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CurrentTime = styled.div`
-  background: #5179ff;
-    height: 10px;
-    left: 0;
-    position: absolute;
-    transition: 1s;
-    width: ${props => props.width}%;
+  background: rgb(222,0,62);
+  height: 10px;
+  left: 0;
+  position: absolute;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 1s;
+  width: ${props => props.width}%;
 `;
 
 class Player extends React.Component {
@@ -63,31 +67,40 @@ class Player extends React.Component {
     return (
       <div className="fixed">
         {selectedTrack && (
-          <div className="box reproductor">
+          <div className="reproductor">
+            {/*description*/}
             <div className="description">
-              <figure className="image is-64x64">
-                <img src={selectedTrack.album.images[1].url} />
-              </figure>
-              <div className="description-children">
+              <img className="image" src={selectedTrack.album.images[1].url} />
+              <div>
                 <p>{selectedTrack.name}</p>
                 <small>{selectedTrack.artists[0].name}</small>
               </div>
-              {paused
-                ? <i onClick={this.togglePlay} className="fas fa-play"></i>
-                : <i onClick={this.togglePlay} className="fas fa-pause"></i>
-              }
-              {currentTime.toFixed(0)}
-              <CurrentTime width={this.state.currentProgress.toString()} />
             </div>
-            <div className="container-player">
-              <audio
-                className="player"
-                ref={this.setRef}
-                autoPlay
-                onTimeUpdate={this.onTimeUpdate}
-                onLoadedMetadata={this.onLoadedMetadata}
-                src={selectedTrack.preview_url}>
-              </audio>
+            {/* end description*/}
+            <div>
+              <div className="audio">
+                <audio
+                  className="player"
+                  ref={this.setRef}
+                  autoPlay
+                  onTimeUpdate={this.onTimeUpdate}
+                  onLoadedMetadata={this.onLoadedMetadata}
+                  src={selectedTrack.preview_url}>
+                </audio>
+                <span>
+                  {paused
+                    ? <i onClick={this.togglePlay} className="fas fa-play"></i>
+                    : <i onClick={this.togglePlay} className="fas fa-pause"></i>
+                  }
+                </span>
+              </div>
+              <div>
+                {currentTime.toFixed(0)}
+                <CurrentTime width={this.state.currentProgress.toString()} />
+              </div>
+            </div>
+            <div>
+              <span>Volume</span>
             </div>
           </div>
         )}
@@ -103,26 +116,25 @@ class Player extends React.Component {
             padding-bottom: 0px !important;
             padding-top: 0px !important;
             background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
           }
-          .container-player {
-            display: flex;
+          img.image {
+            width: 17%;
+            border-radius: 7px;
+            margin-right: 10px;
+          }
+          .fas.fa-play, .fas.fa-pause {
+            border-radius: 50%;
+            background-color: rgb(222,0,62);
+            padding: 10px;
+            color: #fff;
           }
           .description {
             display: flex;
-            flex-direction: row;
             align-items: center;
-          }
-          .description-children {
-            display: flex;
-            flex-direction: column;
-            margin-left: 12px;
-          }
-          .player {
-            width: 40%;
-            margin: 0px auto 0px auto;
-          }
-          img {
-            width: 22%;
+            justify-content: center;
           }
         `}</style>
       </div>
