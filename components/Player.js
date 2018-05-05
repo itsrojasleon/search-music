@@ -69,6 +69,12 @@ class Player extends React.Component {
 
   }
 
+  handleVolume = (e) => {
+    this.audio.volume = e.target.value;
+    console.log("audio: ", this.audio.volume);
+    console.log("e: ", e.target.value);
+  }
+
   render() {
     const { selectedTrack } = this.props;
     const { paused, currentProgress, currentTime } = this.state;
@@ -102,7 +108,15 @@ class Player extends React.Component {
                      }
                    </span>
                </div>
-               <span>Volume</span>
+               <span>
+                <input
+                  type="range"
+                  max={1}
+                  min={0}
+                  step={.05}
+                  onChange={this.handleVolume}
+                />
+               </span>
              </div>
              <div style={{width: '100%', backgroundColor: '#fff'}}>
                <div className="progress-container">
