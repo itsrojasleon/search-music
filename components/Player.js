@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CurrentTime = styled.div`
-  background: rgb(222,0,62);
+const ContainerProgress = styled.div`
+  background: rgb(229,229,229);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 50%;
+  margin: auto;
+`;
+const Progress = styled.div`
+  transition: .4s;
+  width: ${props => props.value}%;
+  background-color: rgb(222,0,62);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
   height: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: .3s;
-  width: ${props => props.width}%;
 `;
 
 class Player extends React.Component {
@@ -65,43 +74,42 @@ class Player extends React.Component {
     return (
       <div className="fixed">
         {selectedTrack && (
-          <div className="reproductor">
-            {/*description*/}
-            <div className="description">
-              <img className="image" src={selectedTrack.album.images[1].url} />
-              <div>
-                <p>{selectedTrack.name}</p>
-                <small>{selectedTrack.artists[0].name}</small>
-              </div>
-            </div>
-            {/* end description*/}
-            <div>
-              <div className="audio">
-                <audio
-                  className="player"
-                  ref={this.setRef}
-                  autoPlay
-                  onTimeUpdate={this.onTimeUpdate}
-                  onLoadedMetadata={this.onLoadedMetadata}
-                  src={selectedTrack.preview_url}>
-                </audio>
-                <span>
-                  {paused
-                    ? <i onClick={this.togglePlay} className="fas fa-play"></i>
-                    : <i onClick={this.togglePlay} className="fas fa-pause"></i>
-                  }
-                </span>
-              </div>
-              <div style={{width: '100%'}}>
-                {currentTime.toFixed(0)}
-                {/*<CurrentTime width={this.state.currentProgress.toString()} />*/}
-                <progress max="100" value={this.state.currentProgress}></progress>
-              </div>
-            </div>
-            <div>
-              <span>Volume</span>
-            </div>
-          </div>
+           <div>
+             <div className="reproductor">
+               {/*description*/}
+               <div className="description">
+                 <img className="image" src={selectedTrack.album.images[1].url} />
+                 <div>
+                   <p>{selectedTrack.name}</p>
+                   <small>{selectedTrack.artists[0].name}</small>
+                 </div>
+               </div>
+               {/* end description*/}
+                 <div className="audio">
+                   <audio
+                     className="player"
+                     ref={this.setRef}
+                     autoPlay
+                     onTimeUpdate={this.onTimeUpdate}
+                     onLoadedMetadata={this.onLoadedMetadata}
+                     src={selectedTrack.preview_url}>
+                   </audio>
+                   <span>
+                     {paused
+                       ? <i onClick={this.togglePlay} className="fas fa-play"></i>
+                       : <i onClick={this.togglePlay} className="fas fa-pause"></i>
+                     }
+                   </span>
+               </div>
+               <span>Volume</span>
+             </div>
+             <div style={{background: 'white', paddingBottom: 5, boxSizing: 'border-box'}}>
+              {currentTime.toFixed(0)}
+              <ContainerProgress>
+                <Progress max="100" value={this.state.currentProgress.toString()}></Progress>
+              </ContainerProgress>
+             </div>
+           </div>
         )}
         <style jsx>{`
           .fixed  {
@@ -118,6 +126,8 @@ class Player extends React.Component {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             justify-items: center;
+            align-items: center;
+            max-height: 100%;
           }
           img.image {
             width: 17%;
@@ -134,6 +144,14 @@ class Player extends React.Component {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-height: 100%;
+            box-sizing: border-box;
+          }
+          .audio {
+            text-align: center;
+            display: flex;
+            align-items: center;
           }
         `}</style>
       </div>
