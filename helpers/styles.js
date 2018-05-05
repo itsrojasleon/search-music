@@ -1,12 +1,5 @@
 import styled from 'styled-components'
 
-// export const Form = styled.form`
-//   display: grid;
-//   grid-template-columns: 10fr 2fr 1fr;
-//   padding: 3px;
-//   justify-content: center;
-//   box-sizing: border-box;
-// `
 export const GridCard = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 250px));

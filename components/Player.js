@@ -4,13 +4,11 @@ import styled from 'styled-components';
 const CurrentTime = styled.div`
   background: rgb(222,0,62);
   height: 10px;
-  left: 0;
-  position: absolute;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  transition: 1s;
+  transition: .3s;
   width: ${props => props.width}%;
 `;
 
@@ -94,9 +92,10 @@ class Player extends React.Component {
                   }
                 </span>
               </div>
-              <div>
+              <div style={{width: '100%'}}>
                 {currentTime.toFixed(0)}
-                <CurrentTime width={this.state.currentProgress.toString()} />
+                {/*<CurrentTime width={this.state.currentProgress.toString()} />*/}
+                <progress max="100" value={this.state.currentProgress}></progress>
               </div>
             </div>
             <div>
