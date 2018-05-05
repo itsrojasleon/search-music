@@ -110,7 +110,7 @@ class Player extends React.Component {
                 <ContainerProgress>
                   <Progress max="100" value={this.state.currentProgress.toString()}></Progress>
                 </ContainerProgress>
-                <span className="second-number">30</span>
+                <span className="second-number">{helperTime(30)}</span>
                </div>
              </div>
            </div>
