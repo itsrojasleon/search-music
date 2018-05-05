@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { helperTime } from '../helpers/time';
+
 const ContainerProgress = styled.div`
   background: rgb(229,229,229);
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
-  width: 50%;
+  width: 100%;
   margin: auto;
 `;
 const Progress = styled.div`
-  transition: .4s;
   width: ${props => props.value}%;
   background-color: rgb(222,0,62);
   border-top-right-radius: 4px;
@@ -103,11 +104,14 @@ class Player extends React.Component {
                </div>
                <span>Volume</span>
              </div>
-             <div style={{background: 'white', paddingBottom: 5, boxSizing: 'border-box'}}>
-              {currentTime.toFixed(0)}
-              <ContainerProgress>
-                <Progress max="100" value={this.state.currentProgress.toString()}></Progress>
-              </ContainerProgress>
+             <div style={{width: '100%', backgroundColor: '#fff'}}>
+               <div className="progress-container">
+                <span className="first-number">{helperTime(currentTime)}</span>
+                <ContainerProgress>
+                  <Progress max="100" value={this.state.currentProgress.toString()}></Progress>
+                </ContainerProgress>
+                <span className="second-number">30</span>
+               </div>
              </div>
            </div>
         )}
@@ -152,6 +156,20 @@ class Player extends React.Component {
             text-align: center;
             display: flex;
             align-items: center;
+          }
+          .progress-container {
+            background: white;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            width: 100%;
+          }
+          .first-number {
+            justify-self: end;
+          }
+          .second-number {
+            justify-self: start;
           }
         `}</style>
       </div>
