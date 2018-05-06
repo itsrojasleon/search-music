@@ -3,6 +3,20 @@ import styled from 'styled-components';
 
 import { helperTime } from '../helpers/time';
 
+const Reproductor = styled.div`
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  max-height: 100%;
+  @media(max-width: 769px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 const ContainerProgress = styled.div`
   background: rgb(229,229,229);
   border-top-right-radius: 4px;
@@ -105,7 +119,7 @@ class Player extends React.Component {
       <div className="fixed">
         {selectedTrack && (
            <div>
-             <div className="reproductor">
+             <Reproductor>
                {/*description*/}
                <div className="description">
                  <img className="image" src={selectedTrack.album.images[1].url} />
@@ -149,7 +163,7 @@ class Player extends React.Component {
                   value={this.audio.volume}
                 />
                </span>
-             </div>
+             </Reproductor>
              <div style={{width: '100%', backgroundColor: '#fff'}}>
                <div className="progress-container">
                 <span className="first-number">{helperTime(currentTime)}</span>
@@ -168,16 +182,6 @@ class Player extends React.Component {
             bottom: 0;
             width: 100%;
             border-top: 1px solid #E0E0E0;
-          }
-          .reproductor {
-            padding-bottom: 0px !important;
-            padding-top: 0px !important;
-            background-color: white;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            justify-items: center;
-            align-items: center;
-            max-height: 100%;
           }
           img.image {
             width: 17%;
@@ -231,6 +235,7 @@ class Player extends React.Component {
             border-top-left-radius: 20px;
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
+            cursor: grab;
           }
           .input-range:hover {
             opacity: 1;
@@ -241,7 +246,7 @@ class Player extends React.Component {
             width: 15px;
             height: 15px;
             background: rgb(222,0,62);
-            cursor: pointer;
+            cursor: grab;
             border-radius: 50%;
           }
 
@@ -249,7 +254,7 @@ class Player extends React.Component {
             width: 15px;
             height: 15px;
             background: rgb(222,0,62);
-            cursor: pointer;
+            cursor: grab;
             border-radius: 50%;
           }
           .volume-container {
