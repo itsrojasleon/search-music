@@ -27,7 +27,8 @@ class Player extends React.Component {
     duration: null,
     paused: false,
     currentTime: 0,
-    currentProgress: 0
+    currentProgress: 0,
+    volume: 1,
   };
   togglePlay = () => {
     if (this.state.paused) {
@@ -71,13 +72,14 @@ class Player extends React.Component {
 
   handleVolume = (e) => {
     this.audio.volume = e.target.value;
-    console.log("audio: ", this.audio.volume);
-    console.log("e: ", e.target.value);
+    this.setState(() => ({
+      volume: this.audio.volume,
+    }));
   }
 
   render() {
     const { selectedTrack } = this.props;
-    const { paused, currentProgress, currentTime } = this.state;
+    const { paused, currentProgress, currentTime, volume } = this.state;
     return (
       <div className="fixed">
         {selectedTrack && (
@@ -108,13 +110,21 @@ class Player extends React.Component {
                      }
                    </span>
                </div>
-               <span>
+               <span className="volume-container">
+               {this.audio && (
+                  <span className="volume-icon">
+                    {volume === 0 && <i className="fas fa-volume-off"></i>}
+                    {volume > 0 && volume <= .5 && <i className="fas fa-volume-down"></i>}
+                    {volume > .5 && <i className="fas fa-volume-up"></i>}
+                  </span>
+                )}
                 <input
                   type="range"
                   max={1}
                   min={0}
                   step={.05}
                   onChange={this.handleVolume}
+                  className="input-range"
                 />
                </span>
              </div>
@@ -184,6 +194,55 @@ class Player extends React.Component {
           }
           .second-number {
             justify-self: start;
+          }
+          .input-range {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 10px;
+            background: #E0E0E0;
+            outline: none;
+            opacity: .9;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+          }
+          .input-range:hover {
+            opacity: 1;
+          }
+          .input-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: rgb(222,0,62);
+            cursor: pointer;
+            border-radius: 50%;
+          }
+
+          .input-range::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: rgb(222,0,62);
+            cursor: pointer;
+            border-radius: 50%;
+          }
+          .volume-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            grid-gap: 6px;
+          }
+          .volume-icon {
+            justify-self: end;
+          }
+          .fas.fa-volume-off,
+          .fas.fa-volume-down,
+          .fas.fa-volume-up {
+            font-size: 19px;
           }
         `}</style>
       </div>
