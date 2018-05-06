@@ -29,6 +29,7 @@ class Player extends React.Component {
     currentTime: 0,
     currentProgress: 0,
     volume: 1,
+    lastVolume: null,
   };
   togglePlay = () => {
     if (this.state.paused) {
@@ -77,6 +78,26 @@ class Player extends React.Component {
     }));
   }
 
+  handleToggleVolume = () => {
+    // make the current Value
+    const lastVolume = this.state.volume;
+    this.setState({
+      lastVolume: lastVolume,
+    });
+
+    if(this.audio.volume !== 0) {
+      this.audio.volume = 0;
+      this.setState({
+        volume: this.audio.volume,
+      })
+    }else {
+      this.audio.volume = this.state.lastVolume;
+      this.setState({
+        volume: this.audio.volume,
+      });
+    }
+  }
+
   render() {
     const { selectedTrack } = this.props;
     const { paused, currentProgress, currentTime, volume } = this.state;
@@ -112,7 +133,7 @@ class Player extends React.Component {
                </div>
                <span className="volume-container">
                {this.audio && (
-                  <span className="volume-icon">
+                  <span onClick={this.handleToggleVolume} className="volume-icon">
                     {volume === 0 && <i className="fas fa-volume-off"></i>}
                     {volume > 0 && volume <= .5 && <i className="fas fa-volume-down"></i>}
                     {volume > .5 && <i className="fas fa-volume-up"></i>}
@@ -125,6 +146,7 @@ class Player extends React.Component {
                   step={.05}
                   onChange={this.handleVolume}
                   className="input-range"
+                  value={this.audio.volume}
                 />
                </span>
              </div>
@@ -243,6 +265,13 @@ class Player extends React.Component {
           .fas.fa-volume-down,
           .fas.fa-volume-up {
             font-size: 19px;
+            transition: .2s;
+          }
+          .fas.fa-volume-off:hover,
+          .fas.fa-volume-down:hover,
+          .fas.fa-volume-up:hover {
+            cursor: pointer;
+            transform: scale(1.2);
           }
         `}</style>
       </div>
