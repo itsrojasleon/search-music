@@ -13,7 +13,7 @@ const Reproductor = styled.div`
   align-items: center;
   max-height: 100%;
   @media(max-width: 769px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -160,7 +160,7 @@ class Player extends React.Component {
                   step={.05}
                   onChange={this.handleVolume}
                   className="input-range"
-                  value={this.audio.volume}
+                  value={volume}
                 />
                </span>
              </Reproductor>
