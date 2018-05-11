@@ -60,26 +60,56 @@ const Icons = styled.span`
     text-align: center;
   }
 `;
+const ToggleIcon = styled.i`
+  color: #E0E0E0;
+  font-size: 22px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  &:hover {
+    transition: .3s;
+    cursor: pointer;
+    color: rgb(221,0,62);
+  }
+`;
+const ViewIcon = styled.i`
+  font-size: 25px;
+  color: #E0E0E0;
+  transition: .3s;
+  &:hover {
+    color: rgb(222,0,62);
+    cursor: pointer;
+  }
+`;
 
 class SearchBarComponent extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    onToggle: PropTypes.bool.isRequired,
   }
   render() {
-    const { onSubmit, onChange } = this.props;
+    const { onSubmit, onChange, onToggle } = this.props;
     return (
-      <form onSubmit={onSubmit}>
-        <Input
-          type="text"
-          onChange={onChange}
-        />
+      <div>
+        <form onSubmit={onSubmit}>
+          <SearchContent>
+            <Input
+              type="text"
+              onChange={onChange}
+            />
+            {onToggle
+              ? <ToggleIcon className="fas fa-times"></ToggleIcon>
+              : <ToggleIcon className="fas fa-search"></ToggleIcon>
+            }
+          </SearchContent>
+        </form>
         <Icons>
           <span style={{marginRight: 5}}>View: </span>
-          ? <i onClick={this.props.toggleIcon} className="fas fa-th"></i>
-          : <i onClick={this.props.toggleIcon} className="fas fa-list-ul"></i>
+          ? <ViewIcon onClick={this.props.toggleIcon} className="fas fa-th"></ViewIcon>
+          : <ViewIcon onClick={this.props.toggleIcon} className="fas fa-list-ul"></ViewIcon>
         </Icons>
-      </form>
+      </div>
     );
   }
 }

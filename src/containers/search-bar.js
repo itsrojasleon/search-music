@@ -17,7 +17,6 @@ class SearchBar extends Component {
     this.props.fetchSongs(this.state.term);
   }
   render() {
-    console.log(this.props.toggle);
     return (
       <SearchBarComponent
         onChange={this.handleChange}
