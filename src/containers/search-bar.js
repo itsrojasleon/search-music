@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSongs } from '../actions/songs';
+import { toggleIcon } from '../actions/toggle';
+import { withRouter } from 'react-router-dom';
 
 import SearchBarComponent from '../components/search-bar-component';
 
@@ -17,11 +19,13 @@ class SearchBar extends Component {
     this.props.fetchSongs(this.state.term);
   }
   render() {
+    console.log(this.props);
     return (
       <SearchBarComponent
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
         onToggle={this.props.toggle}
+        toggleIcon={this.props.toggleIcon}
       />
     );
   }
@@ -32,4 +36,4 @@ function mapStateToProps({ songs, toggle }) {
     toggle,
   }
 }
-export default connect(mapStateToProps, { fetchSongs })(SearchBar);
+export default withRouter(connect(mapStateToProps, { fetchSongs, toggleIcon })(SearchBar));
