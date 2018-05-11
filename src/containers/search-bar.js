@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../actions';
+import { fetchSongs } from '../actions';
+
+import SearchBarComponent from '../components/search-bar-component';
 
 class SearchBar extends Component {
   state = {
@@ -12,16 +14,14 @@ class SearchBar extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.fetchPosts(this.state.term);
+    this.props.fetchSongs(this.state.term);
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          onChange={this.handleChange}
-        />
-      </form>
+      <SearchBarComponent
+        onChange={this.handleChange}
+        onSubmit={this.handleSubmit}
+      />
     );
   }
 }
@@ -30,4 +30,4 @@ function mapStateToProps({ songs }) {
     songs,
   }
 }
-export default connect(mapStateToProps, { fetchPosts })(SearchBar);
+export default connect(mapStateToProps, { fetchSongs })(SearchBar);

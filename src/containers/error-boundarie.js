@@ -12,7 +12,15 @@ class ErrorBoundarie extends Component {
   }
   render() {
     if(this.state.hasError) {
-      return <div>Something went wrong.</div>
+      return <div
+              style={{
+                backgroundColor: '#000',
+                color: '#fff',
+                fontSize: 30,
+                textAlign: 'center'
+              }}>
+              Something went wrong.
+            </div>
     }
     return this.props.children
   }
