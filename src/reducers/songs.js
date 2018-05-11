@@ -1,4 +1,4 @@
-import { SEARCH_SONG } from '../actions';
+import { SEARCH_SONG } from '../actions/songs';
 
 export default function songs(state = [], action) {
   switch(action.type) {

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { toggleIcon } from '../actions/toggle';
+import { connect } from 'react-redux';
 
 const SearchContent = styled.div`
   position: relative;
@@ -59,18 +61,28 @@ const Icons = styled.span`
   }
 `;
 
-const SearchBarComponent = ({ onChange, onSubmit }) => {
-  return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        onChange={onChange}
-      />
-    </form>
-  );
+class SearchBarComponent extends Component {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  }
+  render() {
+    const { onSubmit, onChange } = this.props;
+    return (
+      <form onSubmit={onSubmit}>
+        <Input
+          type="text"
+          onChange={onChange}
+        />
+        <Icons>
+          <span style={{marginRight: 5}}>View: </span>
+          ? <i onClick={this.props.toggleIcon} className="fas fa-th"></i>
+          : <i onClick={this.props.toggleIcon} className="fas fa-list-ul"></i>
+        </Icons>
+      </form>
+    );
+  }
 }
-SearchBarComponent.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-}
-export default SearchBarComponent;
+
+
+export default connect(null, { toggleIcon })(SearchBarComponent);
