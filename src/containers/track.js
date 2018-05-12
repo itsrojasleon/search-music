@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import Card from '../components/card';
 
 class Track extends Component {
   render() {
+    const { songs } = this.props;
     return (
-      <div>Track Component <img src={`https://avatars0.githubusercontent.com/u/27437337?s=460&v=4`} /></div>
+      <div>
+        {songs.length === 0
+          ? <Redirect to="/search" />
+          : songs.map(song => (
+              <Card {...song} />
+            ))
+        }
+      </div>
     );
   }
 }
-export default connect()(Track);
+const mapStateToProps = ({ songs }) => ({
+  songs,
+})
+export default connect(mapStateToProps)(Track);
