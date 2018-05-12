@@ -5,6 +5,7 @@ export const SEARCH_SONG = 'SEARCH_SONG';
 
 export function fetchSongs(song) {
   return async (dispatch) => {
+    if(song === '') return null;
     dispatch(showLoading());
     const response = await fetch(`https://spotify-demo-api.now.sh/search?q=${song}&type=track`);
     const data = await response.json();

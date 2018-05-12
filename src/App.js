@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect
+} from 'react-router-dom';
 
 import ErrorBoundarie from './containers/error-boundarie';
 
 import LoadingBar from 'react-redux-loading';
 
-import Home from './containers/home';
+import Search from './containers/search';
 import Track from './containers/track';
 import SearchBar from './containers/search-bar';
 
@@ -16,8 +21,11 @@ const App = () => (
       <SearchBar />
       <ErrorBoundarie>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/track" component={Track} />
+          <Route exact path="/" render={() => (
+            <Redirect to="/search" />
+          )} />
+          <Route path="/search" component={Search} />
+          <Route path="/search/results/:track" component={Track} />
         </Switch>
       </ErrorBoundarie>
     </Fragment>

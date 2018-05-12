@@ -13,13 +13,15 @@ class SearchBar extends Component {
   handleChange = (e) => {
     const term = e.target.value;
     this.setState({ term });
+    this.props.history.push(`/search/results/${term}`);
+    this.props.fetchSongs(term);
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.fetchSongs(this.state.term);
+    const { term } = this.state;
   }
   render() {
-    console.log(this.props);
+    console.log("Songs: ", this.props.songs)
     return (
       <SearchBarComponent
         onChange={this.handleChange}
@@ -30,10 +32,6 @@ class SearchBar extends Component {
     );
   }
 }
-function mapStateToProps({ songs, toggle }) {
-  return {
-    songs,
-    toggle,
-  }
-}
+const mapStateToProps = ({ toggle, songs }) => ({ toggle, songs });
+
 export default withRouter(connect(mapStateToProps, { fetchSongs, toggleIcon })(SearchBar));

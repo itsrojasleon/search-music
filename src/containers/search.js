@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class Home extends Component {
+export default class Search extends Component {
   render() {
     return (
-      <div>Home component</div>
+      <div>Search Component</div>
     );
   }
 }
