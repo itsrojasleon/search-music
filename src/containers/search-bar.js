@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSongs } from '../actions/songs';
+import { fetchSongs, emptySearch } from '../actions/songs';
 import { toggleIcon } from '../actions/toggle';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 import SearchBarComponent from '../components/search-bar-component';
 
@@ -12,26 +12,29 @@ class SearchBar extends Component {
   };
   handleChange = (e) => {
     const term = e.target.value;
+    if(!term) {
+      this.props.emptySearch();
+    }
     this.setState({ term });
-    this.props.history.push(`/search/results/${term}`);
-    this.props.fetchSongs(term);
+    this.props.fetchSongs(term, () => this.props.history.push(`/search/results/${term}`) );
   }
   handleSubmit = (e) => {
     e.preventDefault();
     const { term } = this.state;
   }
   render() {
-    console.log("Songs: ", this.props.songs)
     return (
-      <SearchBarComponent
-        onChange={this.handleChange}
-        onSubmit={this.handleSubmit}
-        onToggle={this.props.toggle}
-        toggleIcon={this.props.toggleIcon}
-      />
+      <div>
+        <SearchBarComponent
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+          onToggle={this.props.toggle}
+          toggleIcon={this.props.toggleIcon}
+        />
+      </div>
     );
   }
 }
-const mapStateToProps = ({ toggle, songs }) => ({ toggle, songs });
+const mapStateToProps = ({ toggle }) => ({ toggle });
 
-export default withRouter(connect(mapStateToProps, { fetchSongs, toggleIcon })(SearchBar));
+export default withRouter(connect(mapStateToProps, { fetchSongs, toggleIcon, emptySearch })(SearchBar));

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const Container = styled.div`
+  background: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #EEEEEE;
+`;
 const SearchContent = styled.div`
   position: relative;
   width: 50%;
@@ -23,11 +28,6 @@ const ContainerForm = styled.div`
   @media(max-width: 620px) {
     width: 100%;
   }
-`;
-const Container = styled.div`
-  background: #ffffff;
-  padding: 20px;
-  border-bottom: 1px solid #EEEEEE;
 `;
 const Input = styled.input`
   width: 100%;
@@ -90,7 +90,7 @@ class SearchBarComponent extends Component {
   render() {
     const { onSubmit, onChange, onToggle, toggleIcon } = this.props;
     return (
-      <div>
+      <Container>
         <form onSubmit={onSubmit}>
           <SearchContent>
             <Input
@@ -108,7 +108,7 @@ class SearchBarComponent extends Component {
           ? <ViewIcon onClick={toggleIcon} className="fas fa-th"></ViewIcon>
           : <ViewIcon onClick={toggleIcon} className="fas fa-list-ul"></ViewIcon>
         </Icons>
-      </div>
+      </Container>
     );
   }
 }
