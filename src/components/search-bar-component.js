@@ -20,15 +20,6 @@ import PropTypes from 'prop-types';
 //     text-align: center;
 //   }
 // `;
-// const ViewIcon = styled.i`
-//   font-size: 25px;
-//   color: #E0E0E0;
-//   transition: .3s;
-//   &:hover {
-//     color: rgb(222,0,62);
-//     cursor: pointer;
-//   }
-// `;
 
 class SearchBarComponent extends Component {
   static propTypes = {
