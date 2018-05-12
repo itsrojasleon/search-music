@@ -8,7 +8,7 @@ class SearchBarComponent extends Component {
     toggleIcon: PropTypes.func.isRequired
   }
   render() {
-    const { onChange, onToggle, toggleIcon } = this.props;
+    const { onChange, onToggle, toggleIcon, getRef } = this.props;
     return (
       <div className="search-bar-container">
         <div className="search-container">
@@ -16,6 +16,7 @@ class SearchBarComponent extends Component {
             type="text"
             onChange={onChange}
             className="input"
+            ref={getRef}
           />
           <i className="fas fa-search"></i>
           {/*<i className="fas fa-times"></i>*/}
