@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// const Container = styled.div`
-//   background: #ffffff;
-//   padding: 20px;
-//   border-bottom: 1px solid #EEEEEE;
-// `;
-// const SearchContent = styled.div`
-//   position: relative;
-//   width: 50%;
-//   margin: auto;
-//   @media(max-width: 769px) {
-//     width: 80%;
-//   }
-//   @media(max-width: 620px) {
-//     width: 100%;
-//   }
-// `;
 // const ContainerForm = styled.div`
 //   width: 100%;
 //   text-align: center;
@@ -28,45 +12,12 @@ import PropTypes from 'prop-types';
 //     width: 100%;
 //   }
 // `;
-// const Input = styled.input`
-//   width: 100%;
-//   padding: 12px 10px;
-//   font-size: 18px;
-//   border-radius: 20px;
-//   border: 1px solid #E0E0E0;
-//   text-indent: 10px;
-//   transition: .3s;
-//   box-sizing: border-box;
-//   &:focus {
-//     outline: none;
-//     border: 1px solid rgb(222,0,62);
-//   }
-//   &::selection {
-//     color: #ffffff;
-//     background: rgb(222,0,62);
-//   }
-//   @media(max-width: 767px) {
-//     font-size: 18px;
-//   }
-// `;
 // const Icons = styled.span`
 //   width: 100%;
 //   text-align:right;
 //   display: block;
 //   @media(max-width: 769px) {
 //     text-align: center;
-//   }
-// `;
-// const ToggleIcon = styled.i`
-//   color: #E0E0E0;
-//   font-size: 22px;
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   &:hover {
-//     transition: .3s;
-//     cursor: pointer;
-//     color: rgb(221,0,62);
 //   }
 // `;
 // const ViewIcon = styled.i`
@@ -88,11 +39,12 @@ class SearchBarComponent extends Component {
   render() {
     const { onChange, onToggle, toggleIcon } = this.props;
     return (
-      <div>
-        <div>
+      <div className="search-bar-container">
+        <div className="search-container">
           <input
             type="text"
             onChange={onChange}
+            className="input"
           />
           {onToggle
             ? <i className="fas fa-times"></i>

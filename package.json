@@ -15,8 +15,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "build-css": "stylus -c src/ --out src/",
-    "watch-css": "npm run build-css && stylus -c -w src/ --out src/",
+    "build-css": "stylus -c src/styles/ --out src/styles/index.css",
+    "watch-css": "npm run build-css && stylus -c -w src/styles/ --out src/styles/index.css",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",

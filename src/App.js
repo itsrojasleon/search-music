@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   Switch,
   Route,
@@ -20,7 +20,7 @@ class App extends Component {
     const { songs } = this.props;
     return (
       <Router>
-        <Fragment>
+        <div className="parent">
           <LoadingBar />
           <SearchBar />
           <ErrorBoundarie>
@@ -38,7 +38,7 @@ class App extends Component {
               )} />
             </Switch>
           </ErrorBoundarie>
-        </Fragment>
+        </div>
       </Router>
     );
   }
