@@ -28,7 +28,7 @@ class SearchBarComponent extends Component {
     toggleIcon: PropTypes.func.isRequired
   }
   render() {
-    const { onChange, onToggle, toggleIcon } = this.props;
+    const { onChange, onToggle, toggleIcon, changeToggle } = this.props;
     return (
       <div className="search-bar-container">
         <div className="search-container">
@@ -44,8 +44,10 @@ class SearchBarComponent extends Component {
         </div>
         <span>
           <span style={{marginRight: 5}}>View: </span>
-          ? <i onClick={toggleIcon} className="fas fa-th"></i>
-          : <i onClick={toggleIcon} className="fas fa-list-ul"></i>
+          {changeToggle === false
+            ? <i onClick={toggleIcon} className="fas fa-th"></i>
+            : <i onClick={toggleIcon} className="fas fa-list-ul"></i>
+          }
         </span>
       </div>
     );

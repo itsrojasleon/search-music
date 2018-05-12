@@ -25,6 +25,7 @@ class SearchBar extends Component {
           onChange={this.handleChange}
           onToggle={this.props.toggle}
           toggleIcon={this.props.toggleIcon}
+          changeToggle={this.props.toggle}
         />
       </div>
     );
