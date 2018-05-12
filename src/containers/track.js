@@ -7,12 +7,14 @@ class Track extends Component {
   render() {
     const { songs } = this.props;
     return (
-      <div>
+      <div className="track-container">
         {songs.length === 0
           ? <Redirect to="/search" />
-          : songs.map(song => (
-              <Card {...song} />
-            ))
+          : <div className="track-grid">
+              {songs.map(song => (
+                <Card {...song} />
+              ))}
+            </div>
         }
       </div>
     );
