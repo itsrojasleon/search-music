@@ -12,7 +12,7 @@ import ErrorBoundarie from './containers/error-boundarie';
 import LoadingBar from 'react-redux-loading';
 
 import Search from './containers/search';
-import Track from './containers/track';
+import Card from './containers/card';
 import SearchBar from './containers/search-bar';
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
               <Route exact path="/search" component={Search} />
               <Route path="/search/results/:track" render={() => (
                 songs ? (
-                  <Track />
+                  <Card />
                 ) : (
                   <Redirect to="/search" />
                 )
