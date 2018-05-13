@@ -5,12 +5,6 @@ import { toggleView } from '../actions/toggle';
 import ButtonView from '../components/button-view';
 
 class Card extends Component {
-  onEnter = () => {
-    console.log('enter')
-  }
-  onLeave = () => {
-    console.log('leave')
-  }
   render() {
     const { songs, toggle, toggleView } = this.props;
     return (
@@ -24,9 +18,8 @@ class Card extends Component {
             <Track
               customStyle={toggle}
               toggleView={toggleView}
-              key={song.id} {...song}
-              onEnter={this.onEnter}
-              onLeave={this.onLeave}
+              key={song.id}
+              {...song}
             />
           ))}
         </div>
