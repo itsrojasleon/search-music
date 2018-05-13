@@ -15,7 +15,11 @@ class Card extends Component {
         />
         <div className={toggle === false ? `track-grid-box` : `track-grid-list` }>
           {songs.map(song => (
-            <Track toggleView={toggleView} key={song.id} {...song} />
+            <Track
+              customStyle={toggle}
+              toggleView={toggleView}
+              key={song.id} {...song}
+            />
           ))}
         </div>
       </div>
