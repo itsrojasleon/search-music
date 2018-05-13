@@ -38,6 +38,9 @@ class App extends Component {
               <Route exact path="/" render={() => (
                 <Redirect to="/search" />
               )} />
+              <Route path="/*" render={() => (
+                <h2>Error 404</h2>
+              )} />
             </Switch>
           </ErrorBoundarie>
         </div>

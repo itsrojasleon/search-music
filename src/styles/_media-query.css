@@ -1,0 +1,1 @@
+@media (max-width:769px){.search-container{width:80%}.track-grid-box{grid-template-columns:repeat(3,1fr)}.input{padding:8px 6px;font-size:18px}}@media (max-width:620px){.track-grid-box{grid-template-columns:repeat(2,1fr)}.track-grid-list{grid-template-columns:repeat(1,1fr)}.search-container{width:100%}}@media (max-width:520px){.track-grid-box{grid-template-columns:repeat(1,1fr)}}
