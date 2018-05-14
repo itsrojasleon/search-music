@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { selectedSong } from '../actions/selectSong';
 
 class Track extends React.Component {
@@ -30,5 +31,8 @@ class Track extends React.Component {
 }
 const mapStateToProps = ({ selectSong }) => ({
   selectSong,
-})
-export default connect(mapStateToProps, { selectedSong })(Track);
+});
+const mapDispatchToProps = (dispatch) => ({
+  selectedSong: bindActionCreators(selectedSong, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Track);

@@ -15,6 +15,7 @@ import Search from './containers/search';
 import Card from './containers/card';
 import SearchBar from './containers/search-bar';
 import Recent from './containers/recent';
+import Player from './containers/player';
 
 class App extends Component {
   render() {
@@ -43,6 +44,7 @@ class App extends Component {
               )} />
             </Switch>
           </ErrorBoundarie>
+          <Player />
         </div>
       </Router>
     );

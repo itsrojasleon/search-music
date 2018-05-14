@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import Track from '../components/track';
 import { toggleView } from '../actions/toggle';
 import ButtonView from '../components/button-view';
@@ -30,5 +31,8 @@ class Card extends Component {
 const mapStateToProps = ({ songs, toggle }) => ({
   songs,
   toggle,
+});
+const mapDispatchToProps = (dispatch) => ({
+  toggleView: bindActionCreators(toggleView, dispatch)
 })
-export default connect(mapStateToProps, { toggleView })(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

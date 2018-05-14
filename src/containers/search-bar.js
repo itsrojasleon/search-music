@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSongs, emptySearch } from '../actions/songs';
 import { withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchSongs, emptySearch } from '../actions/songs';
 
 import SearchBarComponent from '../components/search-bar-component';
 
@@ -30,5 +31,9 @@ class SearchBar extends Component {
   }
 }
 const mapStateToProps = ({ toggle }) => ({ toggle });
+const mapDispatchToProps = (dispatch) => ({
+  fetchSongs: bindActionCreators(fetchSongs, dispatch),
+  emptySearch: bindActionCreators(emptySearch, dispatch),
+});
 
-export default withRouter(connect(mapStateToProps, { fetchSongs, emptySearch })(SearchBar));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBar));
