@@ -13,14 +13,14 @@ class Track extends React.Component {
     const { customStyle, selectSong, id } = this.props;
     // onMouseEnter={onEnter} onMouseLeave={onLeave}
     return (
-      <div style={{ backgroundColor: selectSong === id ? 'red' : '' }} onClick={() => this.props.selectedSong(id)} className={customStyle === false ? 'track-box' : 'track-list'}>
-        <figure className={customStyle === false ? 'figure' : 'figure-list'}>
+      <div className={customStyle === false ? 'track-box' : 'track-list'}>
+        <figure className="figure">
           <span className="artist-image-container">
             <img className="artist-image" width="100%" src={`${this.props.album.images[0].url}`} alt={`${this.props.album.name}`} height="auto" />
           </span>
-          <i className="fas fa-play play"></i>
+          <i onClick={() => this.props.selectedSong(id)} className={selectSong === id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
         </figure>
-        <div className={customStyle === false ? '' : 'description'}>
+        <div style={{ color: selectSong === id ? 'rgb(222,0,62)' : '' }} className="description">
           <p>{this.props.name}</p>
           <p>{this.props.artists[0].name}</p>
         </div>
