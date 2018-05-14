@@ -18,7 +18,7 @@ class Track extends React.Component {
           <span className="artist-image-container">
             <img className="artist-image" width="100%" src={`${this.props.album.images[0].url}`} alt={`${this.props.album.name}`} height="auto" />
           </span>
-          <i className={customStyle === false ? 'fas fa-play play' : 'fas fa-play play-list' }></i>
+          <i className="fas fa-play play"></i>
         </figure>
         <div className={customStyle === false ? '' : 'description'}>
           <p>{this.props.name}</p>
