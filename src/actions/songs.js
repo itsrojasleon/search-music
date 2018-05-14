@@ -2,8 +2,6 @@ import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const SEARCH_SONG = 'SEARCH_SONG';
 export const EMPTY_SEARCH = 'EMPTY_SEARCH';
-export const MOUSE_ENTER = 'MOUSE_ENTER';
-export const MOUSE_LEAVE = 'MOUSE_LEAVE';
 
 export function fetchSongs(song, callback) {
   return async (dispatch) => {
@@ -19,17 +17,6 @@ export function fetchSongs(song, callback) {
     dispatch(hideLoading());
   }
 }
-export function emptySearch() {
-  return {
-    type: EMPTY_SEARCH,
-  }
-}
-
-export const onMouseEnter = (id) => ({
-  type: MOUSE_ENTER,
-  id,
-});
-export const onMouseLeave = (id) => ({
-  type: MOUSE_LEAVE,
-  id,
+export const emptySearch = () => ({
+  type: EMPTY_SEARCH,
 });
