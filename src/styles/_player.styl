@@ -6,12 +6,16 @@
   margin: auto
   border-top: 1px solid secondary
   box-sizing: border-box
+  position: fixed
+  z-index: 999
+  bottom: 0
+  background-color: light
 .player-description
   width: 50%
   display: flex
-  align-items: center;
+  align-items: center
 .small-description
-  display: flex;
+  display: flex
   flex-direction: column
   justify-content: space-around
   margin-left: 10px
@@ -83,3 +87,6 @@
   color: #424242
   cursor: pointer
   transform: scale(1.2)
+@media(max-width: 620px)
+  .volume
+    grid-template-columns: 1fr
