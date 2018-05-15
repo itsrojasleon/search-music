@@ -7,7 +7,7 @@ import ButtonView from '../components/button-view';
 
 class Card extends Component {
   render() {
-    const { songs, toggle, toggleView } = this.props;
+    const { track, toggle, toggleView } = this.props;
     return (
       <div className="track-container">
         <ButtonView
@@ -15,7 +15,7 @@ class Card extends Component {
           toggleValue={toggle}
         />
         <div className={toggle === false ? `track-grid-box` : `track-grid-list` }>
-          {songs.map(song => (
+          {track.map(song => (
             <Track
               customStyle={toggle}
               toggleView={toggleView}
@@ -28,10 +28,13 @@ class Card extends Component {
     );
   }
 }
-const mapStateToProps = ({ songs, toggle }) => ({
-  songs,
-  toggle,
-});
+const mapStateToProps = ({ songs, toggle }) => {
+  const track = songs.filter((song) => song.preview_url !== null)
+  return {
+    track,
+    toggle,
+  }
+};
 const mapDispatchToProps = (dispatch) => ({
   toggleView: bindActionCreators(toggleView, dispatch),
 });

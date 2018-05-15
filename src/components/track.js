@@ -15,11 +15,10 @@ class Track extends React.Component {
     this.props.selectSong(this.props.song);
     this.props.toggleStart();
   }
-
   render() {
     const { customStyle, selectedSong, song } = this.props;
     return (
-      <div className={customStyle === false ? 'track-box' : 'track-list'}>
+      <div className={customStyle === false || song.preview_url === null ? 'track-box' : 'track-list'}>
         <figure className="figure">
           <span className="artist-image-container">
             <img className="artist-image" width="100%" src={`${song.album.images[0].url}`} alt={`${song.album.name}`} height="auto" />

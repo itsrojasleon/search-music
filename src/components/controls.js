@@ -19,6 +19,9 @@ class Controls extends React.Component {
     }
     this.props.togglePlay();
   }
+  onInputChange = (e) => {
+    this.audio.volume = e.target.value;
+  }
   render() {
     const { preview_url, controls } = this.props;
     return (
@@ -33,6 +36,16 @@ class Controls extends React.Component {
             ? <i onClick={this.togglePlay} className="fas fa-play"></i>
             : <i onClick={this.togglePlay} className="fas fa-pause"></i>
           }
+        </div>
+        <div>
+          <input
+            type="range"
+            onChange={this.onInputChange}
+            max={1}
+            min={0}
+            step={.05}
+            className="input-range"
+          />
         </div>
       </div>
     )
