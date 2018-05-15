@@ -8,37 +8,35 @@ import { currentSong } from '../actions/songInPlay';
 class Track extends React.Component {
   static propTypes = {
   customStyle: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
-  artists: PropTypes.array.isRequired,
+  song: PropTypes.object.isRequired,
 }
 
   handleSong = () => {
-    this.props.selectedSong(this.props.id);
-    this.props.currentSong(this.props.id);
+    this.props.selectedSong(this.props.song.id);
+    this.props.currentSong(this.props.song);
   }
 
   render() {
-    const { customStyle, selectSong, id } = this.props;
+    const { customStyle, selectSong, song } = this.props;
     // onMouseEnter={onEnter} onMouseLeave={onLeave}
     return (
       <div className={customStyle === false ? 'track-box' : 'track-list'}>
         <figure className="figure">
           <span className="artist-image-container">
-            <img className="artist-image" width="100%" src={`${this.props.album.images[0].url}`} alt={`${this.props.album.name}`} height="auto" />
+            <img className="artist-image" width="100%" src={`${song.album.images[0].url}`} alt={`${song.album.name}`} height="auto" />
           </span>
-          <i onClick={this.handleSong} className={selectSong === id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
+          <i onClick={this.handleSong} className={selectSong === song.id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
         </figure>
-        <div style={{ color: selectSong === id ? 'rgb(222,0,62)' : '' }} className="description">
-          <p>{this.props.name}</p>
-          <p>{this.props.artists[0].name}</p>
+        <div style={{ color: selectSong === song.id ? 'rgb(222,0,62)' : '' }} className="description">
+          <p>{song.name}</p>
+          <p>{song.artists[0].name}</p>
         </div>
       </div>
     );
   }
 }
-const mapStateToProps = ({ selectSong, songInPlay }) => ({
+const mapStateToProps = ({ selectSong }) => ({
   selectSong,
-  songInPlay,
 });
 const mapDispatchToProps = (dispatch) => ({
   selectedSong: bindActionCreators(selectedSong, dispatch),
