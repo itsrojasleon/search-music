@@ -2,7 +2,6 @@ import React from 'react';
 import Proptypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { togglePlay } from '../actions/controls';
 
 class Controls extends React.Component {

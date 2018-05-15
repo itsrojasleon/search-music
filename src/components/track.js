@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectSong } from '../actions/selectSong';
+import { toggleStart } from '../actions/controls';
 
 class Track extends React.Component {
   static propTypes = {
@@ -12,6 +13,7 @@ class Track extends React.Component {
 
   handleSong = () => {
     this.props.selectSong(this.props.song);
+    this.props.toggleStart();
   }
 
   render() {
@@ -37,5 +39,6 @@ const mapStateToProps = ({ selectedSong }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   selectSong: bindActionCreators(selectSong, dispatch),
+  toggleStart: bindActionCreators(toggleStart, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Track);
