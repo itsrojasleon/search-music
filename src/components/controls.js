@@ -2,6 +2,7 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import Audio from './audio';
 import Volume from './volume';
+import IconVolume from './icon-volume';
 
 import { connect } from 'react-redux';
 import { togglePlay, setVolume, setLastVolume } from '../actions/controls';
@@ -28,7 +29,7 @@ class Controls extends React.Component {
     this.props.setVolume(this.audio.volume);
   }
 
-  handleToggleVolume = () => {
+  resetVolume = () => {
     const { volume, lastVolume } = this.props.controls;
     // make the current Value
     this.props.setLastVolume(volume);
@@ -56,13 +57,7 @@ class Controls extends React.Component {
           }
         </div>
         <div>
-          {this.audio && (
-            <span onClick={this.handleToggleVolume} className="volume-icon">
-              {volume === 0 && <i className="fas fa-volume-off"></i>}
-              {volume > 0 && volume <= .5 && <i className="fas fa-volume-down"></i>}
-              {volume > .5 && <i className="fas fa-volume-up"></i>}
-            </span>
-          )}
+          <IconVolume resetVolume={this.resetVolume} volume={volume} />
           <Volume value={volume} onInputChange={this.onInputChange} />
         </div>
       </div>
