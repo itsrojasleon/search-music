@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectedSong } from '../actions/selectSong';
-import { currentSong } from '../actions/songInPlay';
 
 class Track extends React.Component {
   static propTypes = {
@@ -12,8 +11,7 @@ class Track extends React.Component {
 }
 
   handleSong = () => {
-    this.props.selectedSong(this.props.song.id);
-    this.props.currentSong(this.props.song);
+    this.props.selectedSong(this.props.song);
   }
 
   render() {
@@ -25,9 +23,9 @@ class Track extends React.Component {
           <span className="artist-image-container">
             <img className="artist-image" width="100%" src={`${song.album.images[0].url}`} alt={`${song.album.name}`} height="auto" />
           </span>
-          <i onClick={this.handleSong} className={selectSong === song.id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
+          <i onClick={this.handleSong} className={selectSong.id === song.id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
         </figure>
-        <div style={{ color: selectSong === song.id ? 'rgb(222,0,62)' : '' }} className="description">
+        <div style={{ color: selectSong.id === song.id ? 'rgb(222,0,62)' : '' }} className="description">
           <p>{song.name}</p>
           <p>{song.artists[0].name}</p>
         </div>
@@ -40,6 +38,5 @@ const mapStateToProps = ({ selectSong }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   selectedSong: bindActionCreators(selectedSong, dispatch),
-  currentSong: bindActionCreators(currentSong, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Track);
