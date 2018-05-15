@@ -10,11 +10,11 @@ class Track extends React.Component {
     customStyle: PropTypes.bool.isRequired,
     song: PropTypes.object.isRequired,
   }
-
   handleSong = () => {
     this.props.selectSong(this.props.song);
     this.props.toggleStart();
   }
+
   render() {
     const { customStyle, selectedSong, song, controls: { paused } } = this.props;
     return (

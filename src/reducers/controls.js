@@ -1,7 +1,9 @@
-import { TOGGLE_PLAY, TOGGLE_START } from '../actions/controls';
+import { TOGGLE_PLAY, TOGGLE_START, SET_VOLUME, SET_LAST_VOLUME } from '../actions/controls';
 
 const initialState = {
   paused: false,
+  volume: 1,
+  lastVolume: null,
   duration: 0,
 };
 export default function controls(state = initialState, action) {
@@ -15,6 +17,16 @@ export default function controls(state = initialState, action) {
       return {
         ...state,
         paused: action.play,
+      }
+    case SET_VOLUME:
+      return {
+        ...state,
+        volume: action.volume,
+      }
+    case SET_LAST_VOLUME:
+      return {
+        ...state,
+        lastVolume: action.volume,
       }
     default:
       return state;
