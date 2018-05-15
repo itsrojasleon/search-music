@@ -3,11 +3,11 @@ import { combineReducers } from 'redux';
 
 import songs from './songs';
 import toggle from './toggle';
-import selectSong from './selectSong';
+import selectedSong from './selectSong';
 
 export default combineReducers({
   songs,
   toggle,
-  selectSong,
+  selectedSong,
   loadingBar: loadingBarReducer,
 });
