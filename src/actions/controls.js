@@ -7,4 +7,4 @@ export const togglePlay = () => ({
 export const toggleStart = () => ({
   type: TOGGLE_START,
   play: false,
-})
+});

@@ -12,7 +12,7 @@ class Controls extends React.Component {
     this.audio = audio;
   }
   togglePlay = () => {
-    if (this.props.controls) {
+    if (this.props.controls.paused) {
       this.audio.play();
     }else {
       this.audio.pause();
@@ -22,6 +22,9 @@ class Controls extends React.Component {
   onInputChange = (e) => {
     this.audio.volume = e.target.value;
   }
+  handleLoadedMetaData = (e) => {
+    // this.audio.duration = e.target.value;
+  }
   render() {
     const { preview_url, controls } = this.props;
     return (
@@ -30,9 +33,10 @@ class Controls extends React.Component {
           ref={this.handleRef}
           src={preview_url}
           autoPlay
+          onLoadedMetadata={this.handleLoadedMetaData}
         />
         <div>
-          {controls
+          {controls.paused
             ? <i onClick={this.togglePlay} className="fas fa-play"></i>
             : <i onClick={this.togglePlay} className="fas fa-pause"></i>
           }
