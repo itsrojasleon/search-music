@@ -50,8 +50,9 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = ({ songs }) => ({
+const mapStateToProps = ({ songs, selectedSong }) => ({
   songs,
+  selectedSong,
 });
 
 export default connect(mapStateToProps)(App);

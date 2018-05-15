@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Description from '../components/description';
 
 class Player extends Component {
-  filteringSong = () => {
-    const { songs, selectedSong } = this.props;
-  }
   render() {
     return (
       <div>
-        {this.props.songs
-          .filter((song) => song.id !== this.props.selectedSong)
-          .map((s) => ( <div>{s.id}</div> ))
-        }
+        {this.props.songInPlay.map((song) => (
+          <div key={song.id}>
+            <Description
+              {...song}
+            />
+          </div>
+        ))}
       </div>
     );
   }
 }
-const mapStateToProps = ({ songs, selectedSong }) => ({
-  songs,
-  selectedSong,
+const mapStateToProps = ({ songInPlay }) => ({
+  songInPlay
 });
 export default connect(mapStateToProps)(Player);

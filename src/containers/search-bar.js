@@ -14,6 +14,7 @@ class SearchBar extends Component {
     const term = e.target.value;
     if(!term) this.props.emptySearch();
     this.props.fetchSongs(term, () => this.props.history.push(`/search/results/${term}`) );
+
   }
   handleRef = (input) => {
     this.input = input;
