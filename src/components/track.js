@@ -16,14 +16,14 @@ class Track extends React.Component {
     this.props.toggleStart();
   }
   render() {
-    const { customStyle, selectedSong, song } = this.props;
+    const { customStyle, selectedSong, song, controls: { paused } } = this.props;
     return (
-      <div className={customStyle === false || song.preview_url === null ? 'track-box' : 'track-list'}>
+      <div className={customStyle === false ? 'track-box' : 'track-list'}>
         <figure className="figure">
           <span className="artist-image-container">
             <img className="artist-image" width="100%" src={`${song.album.images[0].url}`} alt={`${song.album.name}`} height="auto" />
           </span>
-          <i onClick={this.handleSong} className={selectedSong.id === song.id ? 'fas fa-pause play' : 'fas fa-play play'}></i>
+          <i onClick={this.handleSong} className={selectedSong.id === song.id && paused === false ? 'fas fa-pause play' : 'fas fa-play play'}></i>
         </figure>
         <div style={{ color: selectedSong.id === song.id ? 'rgb(222,0,62)' : '' }} className="description">
           <p>{song.name}</p>
@@ -33,8 +33,9 @@ class Track extends React.Component {
     );
   }
 }
-const mapStateToProps = ({ selectedSong }) => ({
+const mapStateToProps = ({ selectedSong, controls }) => ({
   selectedSong,
+  controls
 });
 const mapDispatchToProps = (dispatch) => ({
   selectSong: bindActionCreators(selectSong, dispatch),
