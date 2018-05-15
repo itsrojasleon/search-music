@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import Description from '../components/description';
 import Controls from '../components/controls';
 
+
 class Player extends Component {
-  handleRef = (audio) => {
-    this.audio = audio;
-  }
   render() {
     const { selectedSong } = this.props;
     return (
@@ -16,7 +14,6 @@ class Player extends Component {
         />
         <Controls
           {...selectedSong}
-          setRef={this.handleRef}
         />
       </div>
     );
