@@ -8,7 +8,7 @@ class Player extends Component {
   render() {
     const { selectedSong } = this.props;
     return (
-      <div>
+      <div className="player-container">
         <Description
           {...selectedSong}
         />

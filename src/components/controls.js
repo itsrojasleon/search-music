@@ -45,18 +45,18 @@ class Controls extends React.Component {
   render() {
     const { preview_url, controls: { paused, volume } } = this.props;
     return (
-      <div>
+      <div className="player-controls">
         <Audio
           setRef={this.handleRef}
           src={preview_url}
         />
-        <div>
+        <div className="play-pause">
           {paused
             ? <i onClick={this.togglePlay} className="fas fa-play"></i>
             : <i onClick={this.togglePlay} className="fas fa-pause"></i>
           }
         </div>
-        <div>
+        <div className="volume">
           <IconVolume resetVolume={this.resetVolume} volume={volume} />
           <Volume value={volume} onInputChange={this.onInputChange} />
         </div>
