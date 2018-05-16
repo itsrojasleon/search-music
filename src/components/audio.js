@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Audio = ({ setRef, src }) => {
   return (
@@ -10,5 +10,8 @@ const Audio = ({ setRef, src }) => {
     />
   )
 }
-
+Audio.propTypes = {
+  setRef: PropTypes.func,
+  src: PropTypes.string,
+}
 export default Audio;
