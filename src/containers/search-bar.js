@@ -11,12 +11,12 @@ class SearchBar extends Component {
   handleChange = (e) => {
     const term = e.target.value;
     const request = _.debounce(() => { this.props.fetchSongs(term) }, 1000);
-    const redirect = _.debounce(() => { this.props.history.push(`/results/${term}`) }, 1000);
+    const redirect = _.debounce(() => { this.props.history.push(`/search-music/results/${term}`) }, 1000);
     request();
     redirect();
     if(!term) {
       this.props.emptySearch()
-      this.props.history.push('/');
+      this.props.history.push('/search-music');
     }
   }
   handleRef = (input) => {

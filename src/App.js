@@ -14,7 +14,6 @@ import LoadingBar from 'react-redux-loading';
 import Home from './containers/home';
 import Card from './containers/card';
 import SearchBar from './containers/search-bar';
-import Recent from './containers/recent';
 import Player from './containers/player';
 
 class App extends Component {
@@ -27,16 +26,16 @@ class App extends Component {
           <SearchBar />
           <ErrorBoundarie>
             <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/recent" component={Recent} />
-            <Route path="/results/:cardName" render={() => (
+            <Route exact path="/search-music" component={Home} />
+            <Route path="/search-music/results/:cardName" render={() => (
               songs  ? (
                 <Card />
               ) : (
                 <Redirect to="/" />
               )
               )} />
-              <Redirect from="/results" to="/" />
+              <Redirect from="/results" to="/search-music" />
+              <Redirect from="/" to="/search-music" />
               <Route path="*" render={() => (
                 <h2>Error 404</h2>
               )} />
