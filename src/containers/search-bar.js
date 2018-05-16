@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { fetchSongs, emptySearch } from '../actions/songs';
+import _ from 'lodash';
 
 import SearchBarComponent from '../components/search-bar-component';
 
 class SearchBar extends Component {
-  componentDidMount() {
-    this.props.fetchSongs(this.input.defaultValue, () => this.props.history.push(`/search/results/${this.input.defaultValue}`) );
-  }
   handleChange = (e) => {
     const term = e.target.value;
+    const request = _.debounce(() => { this.props.fetchSongs(term) }, 1000);
+    const redirect = _.debounce(() => { this.props.history.push(`/search/results/${term}`) }, 1000);
+    request();
+    redirect();
     if(!term) this.props.emptySearch();
-    this.props.fetchSongs(term, () => this.props.history.push(`/search/results/${term}`) );
-
   }
   handleRef = (input) => {
     this.input = input;
