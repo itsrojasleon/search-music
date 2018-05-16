@@ -7,15 +7,16 @@ class SearchBarComponent extends Component {
     onToggle: PropTypes.bool.isRequired,
   }
   render() {
-    const { onChange, getRef } = this.props;
+    const { onChange, getRef, theme } = this.props;
     return (
-      <div className="search-bar-container">
+      <div className={theme === false ? 'search-bar-container' : 'search-bar-container-dark'}>
         <div className="search-container">
           <input
             type="text"
             onChange={onChange}
             className="input"
             ref={getRef}
+            placeholder="Search a song"
           />
           <i className="fas fa-search"></i>
           {/*<i className="fas fa-times"></i>*/}

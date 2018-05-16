@@ -23,18 +23,20 @@ class SearchBar extends Component {
     this.input = input;
   }
   render() {
+    const { toggle, theme } = this.props;
     return (
       <div>
         <SearchBarComponent
           onChange={this.handleChange}
-          onToggle={this.props.toggle}
+          onToggle={toggle}
+          theme={theme}
           getRef={this.handleRef}
         />
       </div>
     );
   }
 }
-const mapStateToProps = ({ toggle }) => ({ toggle });
+const mapStateToProps = ({ toggle, theme }) => ({ toggle, theme });
 const mapDispatchToProps = (dispatch) => ({
   fetchSongs: bindActionCreators(fetchSongs, dispatch),
   emptySearch: bindActionCreators(emptySearch, dispatch),
