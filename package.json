@@ -2,7 +2,7 @@
   "name": "search-music",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rojasleon.github.io/find-music-by-spotify-demo",
+  "homepage": "https://rojasleon.github.io/search-music",
   "dependencies": {
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
