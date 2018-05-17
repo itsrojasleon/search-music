@@ -18,12 +18,12 @@ import Player from './containers/player';
 
 class App extends Component {
   render() {
-    const { songs } = this.props;
+    const { songs, theme } = this.props;
     return (
       <Router>
-        <div className="parent">
-          <LoadingBar />
+        <div className={theme === false ? 'parent' : 'parent-dark'}>
           <SearchBar />
+          <LoadingBar />
           <ErrorBoundarie>
             <Switch>
             <Route exact path="/search-music" component={Home} />
@@ -49,9 +49,10 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = ({ songs, selectedSong }) => ({
+const mapStateToProps = ({ songs, selectedSong, theme }) => ({
   songs,
   selectedSong,
+  theme,
 });
 
 export default connect(mapStateToProps)(App);

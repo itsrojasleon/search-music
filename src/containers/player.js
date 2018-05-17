@@ -6,9 +6,9 @@ import Controls from '../components/controls';
 
 class Player extends Component {
   render() {
-    const { selectedSong } = this.props;
+    const { selectedSong, theme } = this.props;
     return (
-      <div className="player-container">
+      <div className={theme === false ? 'player-container' : 'player-container-dark'}>
         <Description
           {...selectedSong}
         />
@@ -19,7 +19,8 @@ class Player extends Component {
     );
   }
 }
-const mapStateToProps = ({ selectedSong }) => ({
-  selectedSong
+const mapStateToProps = ({ selectedSong, theme }) => ({
+  selectedSong,
+  theme,
 });
 export default connect(mapStateToProps)(Player);

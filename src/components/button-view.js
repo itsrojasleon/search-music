@@ -8,7 +8,7 @@ class ButtonView extends React.Component {
     return (
       <span className="settings">
         <div>
-          <span className="title-view">View: </span>
+          <span>View: </span>
           {toggleValue === false
             ? <i onClick={onToggle} className="fas fa-th"></i>
             : <i onClick={onToggle} className="fas fa-list-ul"></i>
