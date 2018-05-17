@@ -3,9 +3,10 @@ import Proptypes from 'prop-types';
 import Audio from './audio';
 import Volume from './volume';
 import IconVolume from './icon-volume';
+import Progress from './progress';
 
 import { connect } from 'react-redux';
-import { togglePlay, setVolume, setLastVolume } from '../actions/controls';
+import { togglePlay, setVolume, setLastVolume, setDuration, setTimeUpdate } from '../actions/controls';
 
 class Controls extends React.Component {
   static propTypes = {
@@ -43,14 +44,24 @@ class Controls extends React.Component {
       this.props.setVolume(this.audio.volume);
     }
   }
+
+  onLoadedMetadata = (e) => {
+    this.props.setDuration(this.audio.duration);
+  }
+  onTimeUpdate = (e) => {
+    this.props.setTimeUpdate(this.audio.currentTime);
+  }
+
   render() {
-    const { preview_url, controls: { paused, volume } } = this.props;
+    const { preview_url, controls: { paused, volume, duration, progress } } = this.props;
     return (
       <div className="player-controls">
         <Audio
           setRef={this.handleRef}
           src={preview_url}
           play={paused}
+          onLoadedMetadata={this.onLoadedMetadata}
+          onTimeUpdate={this.onTimeUpdate}
         />
         <div className="play-pause">
           {paused
@@ -62,14 +73,12 @@ class Controls extends React.Component {
           <IconVolume resetVolume={this.resetVolume} volume={volume} />
           <Volume value={volume} onInputChange={this.onInputChange} />
         </div>
+        <Progress progress={progress} duration={duration} />
       </div>
     )
   }
 }
-// const mapDispatchToProps = (dispatch) => ({
-//   togglePlay: bindActionCreators(togglePlay, dispatch),
-// });
 const mapStateToProps = ({ controls }) => ({
   controls,
-})
-export default connect(mapStateToProps, { togglePlay, setVolume, setLastVolume })(Controls);
+});
+export default connect(mapStateToProps, { togglePlay, setVolume, setLastVolume, setDuration, setTimeUpdate })(Controls);
