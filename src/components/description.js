@@ -9,8 +9,8 @@ const Description = ({ name, album, artists }) => {
         ? <div className="player-description">
             <img className="image-description" height="auto" src={album.images[1].url} alt={name} />
             <div className="small-description">
-              <span>{name}</span>
-              <span style={{ color: '#727272' }}>{artists[0].name}</span>
+              <span className="text-description">{name}</span>
+              <span className="text-description" style={{ color: '#727272' }}>{artists[0].name}</span>
             </div>
           </div>
         : null

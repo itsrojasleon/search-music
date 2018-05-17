@@ -1,7 +1,7 @@
 .player-container, .player-container-dark
   display: grid
   width: 100%
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr 2fr
   align-items: center
   margin: auto
   border-top: 1px solid secondary
@@ -9,7 +9,7 @@
   position: fixed
   z-index: 999
   bottom: 0
-  height: 80px
+  height: 100px
 .player-container-dark
   background-color: dark
   color: light
@@ -31,6 +31,8 @@
   display: grid
   grid-template-columns: 1fr 1fr
   align-items: center
+  // here
+  // here again
 .volume
   width: 100%
   display: grid
@@ -40,6 +42,7 @@
   padding-right:  8px
 .play-pause
   width: 100%
+  text-align: center
 .fa-play, .fa-pause
   border-radius: 50%
   background-color: primary
@@ -96,7 +99,7 @@
   transform: scale(1.2)
 .image-description
   border-radius: 8px
-  width: 18%
+  width: 28%
 .container
   display: flex
   width: 100%
@@ -127,3 +130,5 @@
   .image-description
     border-radius: 8px
     width: 40%
+  .text-description
+    font-size: 12px
