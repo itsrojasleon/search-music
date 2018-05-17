@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Audio = ({ setRef, src }) => {
+const Audio = ({ setRef, src, play }) => {
   return (
     <audio
       ref={setRef}
       src={src}
-      autoPlay
+      autoPlay={play === false ? true : false}
     />
   )
 }

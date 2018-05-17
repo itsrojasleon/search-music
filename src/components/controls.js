@@ -16,6 +16,7 @@ class Controls extends React.Component {
     this.audio = audio;
   }
   togglePlay = () => {
+    if (!this.props.preview_url) return null;
     if (this.props.controls.paused) {
       this.audio.play();
     }else {
@@ -49,6 +50,7 @@ class Controls extends React.Component {
         <Audio
           setRef={this.handleRef}
           src={preview_url}
+          play={paused}
         />
         <div className="play-pause">
           {paused

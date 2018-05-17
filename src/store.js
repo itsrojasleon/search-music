@@ -16,6 +16,8 @@ const store = createStore(
 store.subscribe(throttle(() => {
   saveState({
     songs: store.getState().songs,
+    theme: store.getState().theme,
+    selectedSong: store.getState().selectedSong,
   });
 }, 1000));
 

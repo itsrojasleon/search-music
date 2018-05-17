@@ -41,9 +41,7 @@ class App extends Component {
               )} />
             </Switch>
           </ErrorBoundarie>
-          {this.props.selectedSong.id && (
-            <Player />
-          )}
+          <Player />
         </div>
       </Router>
     );

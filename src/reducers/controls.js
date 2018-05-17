@@ -1,7 +1,7 @@
 import { TOGGLE_PLAY, TOGGLE_START, SET_VOLUME, SET_LAST_VOLUME } from '../actions/controls';
 
 const initialState = {
-  paused: false,
+  paused: true,
   volume: 1,
   lastVolume: null,
   duration: 0,
