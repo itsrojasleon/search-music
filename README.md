@@ -1,5 +1,5 @@
 # find-music-by-spotify-demo
-Busca tus canciones favoritas consumiendo el api de Spotify
+Search your favotite song
 ## Install
 ```
 > git clone https://github.com/RojasLeonJuanLuis/find-music-by-spotify-demo.git
