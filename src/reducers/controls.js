@@ -1,4 +1,4 @@
-import { TOGGLE_PLAY, TOGGLE_START, SET_VOLUME, SET_LAST_VOLUME, SET_DURATION, SET_TIME_UPDATE } from '../actions/controls';
+import { SET_PLAY, SET_PAUSE, SET_VOLUME, SET_LAST_VOLUME, SET_DURATION, SET_TIME_UPDATE } from '../actions/controls';
 
 const initialState = {
   paused: true,
@@ -9,12 +9,12 @@ const initialState = {
 };
 export default function controls(state = initialState, action) {
   switch(action.type) {
-    case TOGGLE_PLAY:
+    case SET_PLAY:
       return {
         ...state,
-        paused: !state.paused,
+        paused: action.play,
       }
-    case TOGGLE_START:
+    case SET_PAUSE:
       return {
         ...state,
         paused: action.play,

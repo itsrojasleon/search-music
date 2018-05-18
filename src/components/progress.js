@@ -11,9 +11,7 @@ const Progress = ({ duration, progress }) => {
           : <span>0.0</span>
         }
       </span>
-      <div className="progress-container">
-        <div className="progress" style={{ width: `${progress}%` }}></div>
-      </div>
+      <progress value={progress} max={30} className="progress" ></progress>
       <span className="second-number">{helperTime(duration)}</span>
     </div>
   );

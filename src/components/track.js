@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectSong } from '../actions/selectSong';
-import { toggleStart } from '../actions/controls';
+import { setPlay, setPause } from '../actions/controls';
 
 class Track extends React.Component {
   state = {
@@ -14,10 +14,16 @@ class Track extends React.Component {
     song: PropTypes.object.isRequired,
   }
   handleSong = () => {
+    // selected song
     this.props.selectSong(this.props.song);
-    this.props.toggleStart();
+    // start other song
+    if (this.props.controls.paused) {
+      this.props.setPlay();
+    }else {
+      this.props.setPause();
+    }
+    this.props.setPlay();
   }
-
   render() {
     const { customStyle, selectedSong, song, controls: { paused } } = this.props;
     return (
@@ -27,7 +33,7 @@ class Track extends React.Component {
             <img className="artist-image" width="100%" src={`${song.album.images[0].url}`} alt={`${song.album.name}`} height="auto" />
           </span>
           {/*Here*/}
-          {this.state.hover === false
+          {this.state.hover === false && selectedSong.id !== song.id
             ? null
             : <i onClick={this.handleSong} className={selectedSong.id === song.id && paused === false ? 'fas fa-pause play' : 'fas fa-play play'}></i>
           }
@@ -46,6 +52,7 @@ const mapStateToProps = ({ selectedSong, controls }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   selectSong: bindActionCreators(selectSong, dispatch),
-  toggleStart: bindActionCreators(toggleStart, dispatch),
+  setPlay: bindActionCreators(setPlay, dispatch),
+  setPause: bindActionCreators(setPause, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Track);

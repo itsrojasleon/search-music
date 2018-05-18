@@ -6,7 +6,7 @@ import IconVolume from './icon-volume';
 import Progress from './progress';
 
 import { connect } from 'react-redux';
-import { togglePlay, setVolume, setLastVolume, setDuration, setTimeUpdate } from '../actions/controls';
+import { setPlay, setPause, setVolume, setLastVolume, setDuration, setTimeUpdate } from '../actions/controls';
 
 class Controls extends React.Component {
   static propTypes = {
@@ -16,14 +16,18 @@ class Controls extends React.Component {
   handleRef = (audio) => {
     this.audio = audio;
   }
+  // componentWillReceiveProps(p, s) {
+
+  // }
   togglePlay = () => {
     if (!this.props.preview_url) return null;
     if (this.props.controls.paused) {
+      this.props.setPlay();
       this.audio.play();
     }else {
+      this.props.setPause();
       this.audio.pause();
     }
-    this.props.togglePlay();
   }
   // Volume
   onInputChange = (e) => {
@@ -81,4 +85,4 @@ class Controls extends React.Component {
 const mapStateToProps = ({ controls }) => ({
   controls,
 });
-export default connect(mapStateToProps, { togglePlay, setVolume, setLastVolume, setDuration, setTimeUpdate })(Controls);
+export default connect(mapStateToProps, { setPlay,setPause, setVolume, setLastVolume, setDuration, setTimeUpdate })(Controls);

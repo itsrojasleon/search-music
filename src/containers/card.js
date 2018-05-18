@@ -8,6 +8,7 @@ import ButtonView from '../components/button-view';
 class Card extends Component {
   render() {
     const { track, toggle, toggleView } = this.props;
+    //Here
     return (
       <div className="track-container">
         <ButtonView
@@ -28,11 +29,12 @@ class Card extends Component {
     );
   }
 }
-const mapStateToProps = ({ songs, toggle }) => {
+const mapStateToProps = ({ songs, toggle, controls }) => {
   const track = songs.filter((song) => song.preview_url !== null)
   return {
     track,
     toggle,
+    controls,
   }
 };
 const mapDispatchToProps = (dispatch) => ({

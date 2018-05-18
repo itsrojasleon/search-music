@@ -1,16 +1,18 @@
-export const TOGGLE_PLAY = 'TOGGLE_PLAY';
+export const SET_PLAY = 'SET_PLAY';
+export const SET_PAUSE = 'SET_PAUSE';
 export const TOGGLE_START = 'TOGGLE_START';
 export const SET_VOLUME = 'SET_VOLUME';
 export const SET_LAST_VOLUME = 'SET_LAST_VOLUME';
 export const SET_DURATION = 'SET_DURATION';
 export const SET_TIME_UPDATE = 'SET_TIME_UPDATE';
 
-export const togglePlay = () => ({
-  type: TOGGLE_PLAY,
-});
-export const toggleStart = () => ({
-  type: TOGGLE_START,
+export const setPlay = () => ({
+  type: SET_PLAY,
   play: false,
+});
+export const setPause = () => ({
+  type: SET_PAUSE,
+  play: true,
 });
 export const setVolume = (volume) => ({
   type: SET_VOLUME,
