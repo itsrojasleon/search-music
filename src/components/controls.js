@@ -16,9 +16,6 @@ class Controls extends React.Component {
   handleRef = (audio) => {
     this.audio = audio;
   }
-  // componentWillReceiveProps(p, s) {
-
-  // }
   togglePlay = () => {
     if (!this.props.preview_url) return null;
     if (this.props.controls.paused) {
@@ -51,6 +48,7 @@ class Controls extends React.Component {
 
   onLoadedMetadata = (e) => {
     this.props.setDuration(this.audio.duration);
+    console.log(this.props)
   }
   onTimeUpdate = (e) => {
     this.props.setTimeUpdate(this.audio.currentTime);

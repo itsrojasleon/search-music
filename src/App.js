@@ -18,8 +18,7 @@ import Player from './containers/player';
 
 class App extends Component {
   render() {
-    const { songs, theme, controls } = this.props;
-    console.log(controls)
+    const { songs, theme } = this.props;
     return (
       <Router>
         <div className={theme === false ? 'parent' : 'parent-dark'}>
@@ -52,7 +51,6 @@ const mapStateToProps = ({ songs, selectedSong, theme, controls }) => ({
   songs,
   selectedSong,
   theme,
-  controls,
 });
 
 export default connect(mapStateToProps)(App);

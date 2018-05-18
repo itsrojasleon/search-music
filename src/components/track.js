@@ -22,7 +22,9 @@ class Track extends React.Component {
     }else {
       this.props.setPause();
     }
-    this.props.setPlay();
+    if(this.props.selectedSong.id !== this.props.song.id) {
+      this.props.setPlay();
+    }
   }
   render() {
     const { customStyle, selectedSong, song, controls: { paused } } = this.props;
