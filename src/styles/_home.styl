@@ -1,0 +1,30 @@
+.home
+  height: 70vh
+  width: 100%
+.title
+  text-align: center
+  font-size: 40px
+.image-container
+  display: grid
+  grid-template-columns: 1.2fr 1fr
+  justify-items: center
+  align-items: center
+  height: 100%
+  width: 100%
+.light-web
+  width: 100%
+.light-mobile
+  width: 40%
+@media(max-width: 769px)
+  .title
+    font-size: 30px
+  .image-container
+    text-align: center
+    grid-template-columns: 1fr
+  .light-mobile
+    width: 76%
+    display: block
+    margin: auto
+    text-align: center
+  .light-web
+    display: none
