@@ -1,10 +1,8 @@
 {
-  "main.css": "static/css/main.9b990f7b.css",
-  "main.css.map": "static/css/main.9b990f7b.css.map",
-  "main.js": "static/js/main.f2ba33a9.js",
-  "main.js.map": "static/js/main.f2ba33a9.js.map",
-  "static/media/dark-mobile.png": "static/media/dark-mobile.f1b181a0.png",
-  "static/media/dark-web.png": "static/media/dark-web.610f7ed7.png",
+  "main.css": "static/css/main.523ef8dd.css",
+  "main.css.map": "static/css/main.523ef8dd.css.map",
+  "main.js": "static/js/main.bec52b58.js",
+  "main.js.map": "static/js/main.bec52b58.js.map",
   "static/media/light-mobile.png": "static/media/light-mobile.87a6dc4b.png",
   "static/media/light-web.png": "static/media/light-web.b16951fd.png"
 }
