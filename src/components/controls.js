@@ -48,7 +48,6 @@ class Controls extends React.Component {
 
   onLoadedMetadata = (e) => {
     this.props.setDuration(this.audio.duration);
-    console.log(this.props)
   }
   onTimeUpdate = (e) => {
     this.props.setTimeUpdate(this.audio.currentTime);
