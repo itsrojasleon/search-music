@@ -12,8 +12,8 @@ class Home extends Component {
       <div className="home">
         <h1 style={{ color: theme === false ? 'black' : 'white' }} className="title">Search Music</h1>
         <div className="image-container">
-          <img className="light-web" src={lightWeb} />
-          <img className="light-mobile" src={lightMobile} />
+          <img className="light-web" src={lightWeb} alt="jsx-a11y/alt-text" />
+          <img className="light-mobile" src={lightMobile} alt="jsx-a11y/alt-text" />
         </div>
       </div>
     );
