@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Header';
 import SearchBar from './SearchBar';
 import Dashboard from './Dashboard';
@@ -14,11 +14,11 @@ function App(props) {
   return (
     <div className="ui container-fluid">
       <BrowserRouter>
-        <Switch>
+        <div>
           <Header />
           <SearchBar />
           <Route path="/" exact component={Dashboard} />
-        </Switch>
+        </div>
       </BrowserRouter>
     </div>
   );
