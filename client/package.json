@@ -15,7 +15,7 @@
     "react-scripts": "^2.1.5",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "semantic-ui-css": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -6,7 +6,6 @@ function SearchBar() {
   const songs = useSongs(value);
 
   const onChange = e => setValue(e.target.value);
-  console.log(songs);
   return (
     <div>
       <input value={value} onChange={onChange} />
