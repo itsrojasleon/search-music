@@ -5,7 +5,9 @@ function Header() {
     <div className="ui pointing  menu">
       <button className="active item">Home</button>
       <div className="right menu">
-        <button className="ui item">Login With Google</button>
+        <a href="/auth/google" className="ui item">
+          Login With Google
+        </a>
       </div>
     </div>
   );
