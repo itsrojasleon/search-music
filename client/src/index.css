@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Colfax Regular';
+}
 :root {
 }
 a {

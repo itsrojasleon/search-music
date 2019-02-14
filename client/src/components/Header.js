@@ -6,10 +6,17 @@ import {
   HeaderWrapper,
   Nav,
   Title,
-  GoogleButton
+  GoogleButton,
+  Logout
 } from './styled-components/header';
 
 function Header({ auth }) {
+  const renderLogout = () => (
+    <div>
+      <p>{auth.userName}</p>
+      <Logout href="/api/logout">Logout</Logout>
+    </div>
+  );
   return (
     <HeaderWrapper>
       <Nav>
@@ -18,7 +25,7 @@ function Header({ auth }) {
         </Link>
         <>
           {auth ? (
-            <a href="/api/logout">Logout</a>
+            renderLogout()
           ) : (
             <GoogleButton href="/auth/google">Login with Google</GoogleButton>
           )}
