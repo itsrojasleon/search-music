@@ -4,6 +4,7 @@
   "private": false,
   "homepage": "https://rojasleon.github.io/search-music",
   "dependencies": {
+    "axios": "^0.18.0",
     "http-proxy-middleware": "^0.19.1",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
@@ -15,7 +16,8 @@
     "react-scripts": "^2.1.5",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "semantic-ui-css": "^2.4.1"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",

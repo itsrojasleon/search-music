@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import reducers from './reducers';
 
+import './index.css';
+
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(

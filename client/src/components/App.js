@@ -6,17 +6,21 @@ import Dashboard from './Dashboard';
 
 import { fetchUser } from '../actions';
 
+import { Layout } from './styled-components/app';
+
 function App(props) {
   useEffect(() => {
     props.fetchUser();
   }, []);
   return (
-    <div className="ui container-fluid">
+    <div>
       <BrowserRouter>
-        <div>
+        <React.Fragment>
           <Header />
-          <Route path="/" exact component={Dashboard} />
-        </div>
+          <Layout>
+            <Route path="/" exact component={Dashboard} />
+          </Layout>
+        </React.Fragment>
       </BrowserRouter>
     </div>
   );
