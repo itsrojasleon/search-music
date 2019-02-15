@@ -1,11 +1,7 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+import { Layout } from './styled-components/dashboard';
 
 function Dashboard() {
-  return (
-    <div>
-      <SearchBar />
-    </div>
-  );
+  return <Layout />;
 }
 export default Dashboard;

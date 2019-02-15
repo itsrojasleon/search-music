@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Header';
 import Dashboard from './Dashboard';
+import SideBar from './SideBar';
 
 import { fetchUser } from '../actions';
-
-import { Layout } from './styled-components/app';
 
 function App(props) {
   useEffect(() => {
@@ -17,9 +16,10 @@ function App(props) {
       <BrowserRouter>
         <React.Fragment>
           <Header />
-          <Layout>
+          <SideBar />
+          <div>
             <Route path="/" exact component={Dashboard} />
-          </Layout>
+          </div>
         </React.Fragment>
       </BrowserRouter>
     </div>

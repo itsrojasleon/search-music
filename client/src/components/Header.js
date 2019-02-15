@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import SearchBar from './SearchBar';
+
 import {
   HeaderWrapper,
   Nav,
@@ -21,7 +23,7 @@ function Header({ auth }) {
     <HeaderWrapper>
       <Nav>
         <Link to="/">
-          <Title>SearchMusic</Title>
+          <SearchBar />
         </Link>
         <>
           {auth ? (
