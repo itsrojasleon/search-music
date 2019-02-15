@@ -7,7 +7,6 @@ import SearchBar from './SearchBar';
 import {
   HeaderWrapper,
   Nav,
-  Title,
   GoogleButton,
   Logout
 } from './styled-components/header';

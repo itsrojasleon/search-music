@@ -22,10 +22,6 @@ export const Nav = styled.nav`
     width: 98%;
   }
 `;
-export const Title = styled.h2`
-  color: black;
-  font-family: 'Colfax Bold';
-`;
 export const GoogleButton = styled.a`
   color: black;
   border: 1px solid #ccc;
