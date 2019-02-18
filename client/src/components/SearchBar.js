@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import useSongs from './hooks/useSongs';
-import { Input } from './styled-components/search-bar';
+import { InputContainer, Icon, Input } from './styled-components/search-bar';
 
 function SearchBar() {
   const [value, setValue] = useState('');
@@ -8,14 +8,15 @@ function SearchBar() {
 
   const onChange = e => setValue(e.target.value);
   return (
-    <div>
+    <InputContainer>
       <Input
         className="input"
         value={value}
         onChange={onChange}
         placeholder="Search on me..."
       />
-    </div>
+      <Icon className="fas fa-search" />
+    </InputContainer>
   );
 }
 export default SearchBar;

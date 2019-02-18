@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import SearchBar from './SearchBar';
-
 import {
   HeaderWrapper,
   Nav,
+  Title,
   GoogleButton,
   Logout
 } from './styled-components/header';
@@ -22,7 +21,7 @@ function Header({ auth }) {
     <HeaderWrapper>
       <Nav>
         <Link to="/">
-          <SearchBar />
+          <Title>SearchBar</Title>
         </Link>
         <>
           {auth ? (

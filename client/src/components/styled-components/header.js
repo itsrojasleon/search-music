@@ -3,16 +3,9 @@ import styled from 'styled-components';
 export const HeaderWrapper = styled.header`
   background-color: #fff;
   box-shadow: 0 5px 9px rgba(0, 0, 0, 0.05);
-  left: 220px;
-  min-width: 770px;
-  padding: 0 24px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 200;
 `;
 export const Nav = styled.nav`
-  width: 100%;
+  width: 80%;
   margin: auto;
   padding: 14px;
   display: flex;
@@ -30,4 +23,11 @@ export const GoogleButton = styled.a`
 `;
 export const Logout = styled.a`
   color: black;
+`;
+export const Title = styled.span`
+  color: black;
+  font-size: 22px;
+  font-family: 'Colfax Bold';
+  text-align: center;
+  padding-top: 22px;
 `;
