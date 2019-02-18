@@ -24,6 +24,7 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log(profile.photos[0].value);
       const existingUser = await User.findOne({ googleId: profile.id });
 
       if (existingUser) {
@@ -33,7 +34,8 @@ passport.use(
       // We don't have a user record with this ID, make a new record
       const user = await new User({
         googleId: profile.id,
-        userName: profile.displayName
+        userName: profile.displayName,
+        userImage: profile.photos[0].value
       }).save();
       done(null, user);
     }

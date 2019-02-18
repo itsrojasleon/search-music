@@ -8,8 +8,9 @@ export const InputContainer = styled.div`
 export const Icon = styled.i`
   position: absolute;
   top: 10px;
-  right: 0px;
+  right: 10px;
   font-size: 15px;
+  color: #ccc;
 `;
 export const Input = styled.input`
   width: 100%;
@@ -18,7 +19,7 @@ export const Input = styled.input`
   padding: 8px 10px;
   border-radius: 5px;
   font-size: 16px;
-  text-indent: 30px;
+  text-indent: 10px;
   &:focus {
     outline: 0;
   }

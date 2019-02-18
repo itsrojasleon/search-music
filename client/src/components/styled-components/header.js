@@ -31,3 +31,12 @@ export const Title = styled.span`
   text-align: center;
   padding-top: 22px;
 `;
+export const Img = styled.img`
+  border-radius: 50%;
+  width: 38px;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`;

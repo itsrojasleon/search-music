@@ -7,16 +7,12 @@ import {
   Nav,
   Title,
   GoogleButton,
-  Logout
+  Logout,
+  Img
 } from './styled-components/header';
 
 function Header({ auth }) {
-  const renderLogout = () => (
-    <div>
-      <p>{auth.userName}</p>
-      <Logout href="/api/logout">Logout</Logout>
-    </div>
-  );
+  const renderLogout = () => <Img src={auth.userImage} alt={auth.userName} />;
   return (
     <HeaderWrapper>
       <Nav>
