@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './Header';
+import Header from './header/Header';
 import Dashboard from './Dashboard';
 
 import { fetchUser } from '../actions';

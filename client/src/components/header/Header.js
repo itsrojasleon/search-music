@@ -9,10 +9,16 @@ import {
   GoogleButton,
   Logout,
   Img
-} from './styled-components/header';
+} from '../styled-components/header';
 
 function Header({ auth }) {
-  const renderLogout = () => <Img src={auth.userImage} alt={auth.userName} />;
+  const renderLogout = () => (
+    <Img
+      onClick={() => console.log('ok')}
+      src={auth.userImage}
+      alt={auth.userName}
+    />
+  );
   return (
     <HeaderWrapper>
       <Nav>
