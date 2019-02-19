@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   background-color: #fff;
-  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 5px 9px rgba(0, 0, 0, 0.05); */
+  border-bottom: 1px solid rgb(240, 240, 240);
 `;
 export const Nav = styled.nav`
   width: 80%;
@@ -20,9 +21,6 @@ export const GoogleButton = styled.a`
   border: 1px solid #ccc;
   padding: 7px 10px;
   border-radius: 5px;
-`;
-export const Logout = styled.a`
-  color: black;
 `;
 export const Title = styled.span`
   color: black;

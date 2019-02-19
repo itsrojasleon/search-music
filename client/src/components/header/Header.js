@@ -9,25 +9,23 @@ import {
   GoogleButton,
   Logout,
   Img
-} from '../styled-components/header';
+} from '../styled-components/header/header';
 
 function Header({ auth }) {
-  const renderLogout = () => (
-    <Img
-      onClick={() => console.log('ok')}
-      src={auth.userImage}
-      alt={auth.userName}
-    />
-  );
   return (
     <HeaderWrapper>
       <Nav>
         <Link to="/">
           <Title>SearchBar</Title>
         </Link>
+        {/* Validate... If exists a user */}
         <>
           {auth ? (
-            renderLogout()
+            <Img
+              onClick={() => console.log('ok')}
+              src={auth.userImage}
+              alt={auth.userName}
+            />
           ) : (
             <GoogleButton href="/auth/google">Login with Google</GoogleButton>
           )}
