@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+import HeaderSettings from './HeaderSettings';
 
 import {
   HeaderWrapper,
   Nav,
   Title,
   GoogleButton,
-  Logout,
   Img
 } from '../styled-components/header/header';
 
 function Header({ auth }) {
+  const [on, setOn] = useState(false);
   return (
     <HeaderWrapper>
       <Nav>
@@ -21,11 +23,14 @@ function Header({ auth }) {
         {/* Validate... If exists a user */}
         <>
           {auth ? (
-            <Img
-              onClick={() => console.log('ok')}
-              src={auth.userImage}
-              alt={auth.userName}
-            />
+            <>
+              <Img
+                onClick={() => setOn(!on)}
+                src={auth.userImage}
+                alt={auth.userName}
+              />
+              {on && <HeaderSettings />}
+            </>
           ) : (
             <GoogleButton href="/auth/google">Login with Google</GoogleButton>
           )}
