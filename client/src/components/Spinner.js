@@ -1,6 +1,10 @@
 import React from 'react';
 
 function Spinner() {
-  return <div className="ui active inline loader" />;
+  return (
+    <div>
+      <div>Loading</div>
+    </div>
+  );
 }
 export default Spinner;
