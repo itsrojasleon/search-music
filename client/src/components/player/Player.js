@@ -1,6 +1,12 @@
 import React from 'react';
 
+import { PlayerContainer } from '../styled-components/player/player';
+
 function Player() {
-  return <div>Hello there</div>;
+  return (
+    <PlayerContainer>
+      <div />
+    </PlayerContainer>
+  );
 }
 export default Player;
