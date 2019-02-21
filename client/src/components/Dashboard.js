@@ -1,8 +1,12 @@
 import React from 'react';
-import { Layout } from './styled-components/dashboard';
+
 import SearchBar from './SearchBar';
 import Tracks from './tracks/Tracks';
 import Player from './player/Player';
+
+import { TrackContext } from '../contexts/TrackContext';
+
+import { Layout } from './styled-components/dashboard';
 
 // Structure:
 // 1) Header

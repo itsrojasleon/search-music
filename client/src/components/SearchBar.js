@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-// import useSongs from './hooks/useSongs';
+import useSongs from './hooks/useSongs';
+// import { TrackContext } from '../contexts/TrackContext';
 import { InputContainer, Icon, Input } from './styled-components/search-bar';
 
-function SearchBar() {
-  const [value, setValue] = useState('');
-  // const songs = useSongs(value);
+function SearchBar(props) {
+  const [text, setText] = useState('');
+  // const songs = useSongs(text);
 
-  const onChange = e => setValue(e.target.value);
+  const onChange = e => setText(e.target.value);
   return (
     <InputContainer>
       <Input
         className="input"
-        value={value}
+        value={text}
         onChange={onChange}
         placeholder="Search on me..."
       />
