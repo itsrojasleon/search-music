@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useSongs from './hooks/useSongs';
-// import { TrackContext } from '../contexts/TrackContext';
 import { InputContainer, Icon, Input } from './styled-components/search-bar';
 
 function SearchBar(props) {
