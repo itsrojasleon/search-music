@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function Tracks() {
+function Songs(props) {
+  // Start here
   return (
     <div>
-      <div>Tracks</div>
+      <div>Songs</div>
     </div>
   );
 }
-export default Tracks;
+const mapStateToProps = ({ songs }) => ({ songs });
+export default connect(mapStateToProps)(Songs);

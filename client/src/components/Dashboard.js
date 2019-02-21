@@ -4,8 +4,6 @@ import SearchBar from './SearchBar';
 import Tracks from './tracks/Tracks';
 import Player from './player/Player';
 
-import { TrackContext } from '../contexts/TrackContext';
-
 import { Layout } from './styled-components/dashboard';
 
 // Structure:

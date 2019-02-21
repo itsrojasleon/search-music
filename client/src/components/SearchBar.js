@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import useSongs from './hooks/useSongs';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { fetchSongs } from '../actions';
 import { InputContainer, Icon, Input } from './styled-components/search-bar';
 
 function SearchBar(props) {
   const [text, setText] = useState('');
-  // const songs = useSongs(text);
-
   const onChange = e => setText(e.target.value);
+
+  useEffect(
+    () => {
+      props.fetchSongs(text);
+    },
+    [text]
+  );
   return (
     <InputContainer>
       <Input
@@ -19,4 +25,7 @@ function SearchBar(props) {
     </InputContainer>
   );
 }
-export default SearchBar;
+export default connect(
+  null,
+  { fetchSongs }
+)(SearchBar);
