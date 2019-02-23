@@ -8,7 +8,10 @@ function Songs(props) {
   return (
     <div>
       {props.songs.map((song => (
-        <div key={song.id}>{song.name}</div>
+        <div key={song.id}>
+          <img src={song.album.images[0].url} alt={song.name} />
+          <h2>{song.artists.name}</h2>
+        </div>
       )))}
     </div>
   );
