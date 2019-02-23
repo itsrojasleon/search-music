@@ -2,10 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Songs(props) {
-  // Start here
+  if (!props.songs) {
+    return null;
+  }
   return (
     <div>
-      <div>Songs</div>
+      {props.songs.map((song => (
+        <div key={song.id}>{song.name}</div>
+      )))}
     </div>
   );
 }
