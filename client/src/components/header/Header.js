@@ -18,7 +18,7 @@ function Header({ auth }) {
     <HeaderWrapper>
       <Nav>
         <Link to="/">
-          <Title>SearchBar</Title>
+          <Title>SearchMusic</Title>
         </Link>
         {/* Validate... If exists a user */}
         <>
