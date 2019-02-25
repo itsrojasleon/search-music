@@ -19,7 +19,7 @@ function SearchBar(props) {
         className="input"
         value={text}
         onChange={onChange}
-        placeholder="Search on me..."
+        placeholder="Search..."
       />
       <Icon className="fas fa-search" />
     </InputContainer>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import TrackDetail from './TrackDetails';
 
-import { Container, Image } from '../styled-components/tracks/tracks';
+import { Container } from '../styled-components/tracks/track';
 
-function Songs(props) {
+function Track(props) {
   if (!props.songs) {
     return null;
   }
@@ -11,12 +12,11 @@ function Songs(props) {
     <Container>
       {props.songs.map((song => (
         <div key={song.id}>
-          <Image src={song.album.images[0].url} alt={song.name} />
-          <h2>{song.artists.name}</h2>
+          <TrackDetail {...song} />
         </div>
       )))}
     </Container>
   );
 }
 const mapStateToProps = ({ songs }) => ({ songs });
-export default connect(mapStateToProps)(Songs);
+export default connect(mapStateToProps)(Track);

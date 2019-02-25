@@ -1,7 +1,6 @@
 import React from 'react';
-
 import SearchBar from './SearchBar';
-import Tracks from './tracks/Tracks';
+import Track from './tracks/Track';
 import Player from './player/Player';
 
 import { Layout } from './styled-components/dashboard';
@@ -17,7 +16,7 @@ function Dashboard() {
     <>
       <Layout>
         <SearchBar />
-        <Tracks />
+        <Track />
       </Layout>
       <Player />
     </>
