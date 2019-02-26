@@ -6,7 +6,7 @@ import { Container } from '../styled-components/tracks/track';
 
 function Track(props) {
   if (!props.songs) {
-    return null;
+    return '';
   }
   return (
     <Container>
