@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TrackDetail from './TrackDetails';
 
-import { Container } from '../styled-components/tracks/track';
+import { Container, Box } from '../styled-components/tracks/track';
 import { selectSong } from '../../actions/index';
 
 function Track(props) {
   return (
     <Container>
       {props.songs.map((song => (
-        <div onClick={() => props.selectSong(song)} key={song.id}>
+        <Box isSelected={song.id === props.selectedSong.id} onClick={() => props.selectSong(song)} key={song.id}>
           <TrackDetail {...song} />
-        </div>
+        </Box>
       )))}
     </Container>
   );

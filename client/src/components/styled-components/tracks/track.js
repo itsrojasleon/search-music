@@ -15,3 +15,6 @@ export const Container = styled.div`
     cursor: pointer;
   }
 `;
+export const Box = styled.div`
+  background-color: ${props => props.isSelected ? '#ccc' : ''};
+`;
