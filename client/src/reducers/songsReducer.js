@@ -1,11 +1,24 @@
-import { FETCH_SONGS } from '../actions/types';
+import { FETCH_SONGS, SELECT_SONG } from '../actions/types';
 
-export default function(state = null, action) {
+const initialState = {
+  fetchedSongs: [],
+  selectedSong: {}
+};
+
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_SONGS:
-      return action.payload.filter(
-        song => song.preview_url !== null
-      );
+      return {
+        ...state,
+        fetchedSongs: action.payload.filter(
+          song => song.preview_url !== null
+        )
+      }
+    case SELECT_SONG:
+      return {
+        ...state,
+        selectedSong: action.payload
+      }
     default:
       return state;
   }

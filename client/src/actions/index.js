@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_USER, FETCH_SONGS } from './types';
+import { FETCH_USER, FETCH_SONGS, SELECT_SONG } from './types';
 
 export const fetchUser = () => async dispatch => {
   const { data } = await axios.get('/api/current_user');
@@ -24,3 +24,9 @@ export const fetchSongs = song => async dispatch => {
     throw new Error('What is up!');
   }
 };
+export const selectSong = (song) => {
+  return {
+    type: SELECT_SONG,
+    payload: song
+  };
+}
