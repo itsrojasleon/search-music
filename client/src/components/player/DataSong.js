@@ -1,11 +1,16 @@
 import React from 'react';
+import {
+  Image,
+  Description,
+  Name
+} from '../styled-components/player/data-song';
 
 function DataSong({ name, image }) {
   return (
-    <div>
-      <img src={`${image[0].url}`} />
-      <p>{name}</p>
-    </div>
+    <Description>
+      <Image src={`${image[0].url}`} />
+      <Name>{name}</Name>
+    </Description>
   );
 }
 export default DataSong;
