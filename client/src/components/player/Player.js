@@ -9,10 +9,16 @@ import { PlayerContainer } from '../styled-components/player/player';
 //DataSong ===== MusicControl ===== MusicVolume
 
 function Player({ selectedSong }) {
-  const { name } = selectedSong;
+  if (Object.entries(selectedSong).length === 0) {
+    return null;
+  }
+  const {
+    name,
+    album: { images }
+  } = selectedSong;
   return (
     <PlayerContainer>
-      <DataSong name={name} />
+      <DataSong image={images} name={name} />
       <MusicControl />
       <MusicVolume />
     </PlayerContainer>
