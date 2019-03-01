@@ -6,15 +6,13 @@ import MusicVolume from './MusicVolume';
 
 import { PlayerContainer } from '../styled-components/player/player';
 
-/* 
-        Left                 Center          Right
-  DataSong ===== MusicControl ===== MusicVolume
-*/
-function Player(props) {
+//DataSong ===== MusicControl ===== MusicVolume
+
+function Player({ selectedSong }) {
+  const { name } = selectedSong;
   return (
     <PlayerContainer>
-      <DataSong />
-      {props.selectedSong.name}
+      <DataSong name={name} />
       <MusicControl />
       <MusicVolume />
     </PlayerContainer>
@@ -22,5 +20,5 @@ function Player(props) {
 }
 const mapStateToProps = ({ songs }) => ({
   selectedSong: songs.selectedSong
-})
+});
 export default connect(mapStateToProps)(Player);

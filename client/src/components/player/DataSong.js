@@ -1,8 +1,11 @@
 import React from 'react';
 
-function DataSong() {
+function DataSong({ name }) {
   return (
-    <div>DATA SONG</div>
+    <div>
+      {/* <img src={image} /> */}
+      <p>{name}</p>
+    </div>
   );
 }
 export default DataSong;

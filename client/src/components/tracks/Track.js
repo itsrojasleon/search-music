@@ -8,11 +8,14 @@ import { selectSong } from '../../actions/index';
 function Track(props) {
   return (
     <Container>
-      {props.songs.map((song => (
-        <Box isSelected={song.id === props.selectedSong.id} onClick={() => props.selectSong(song)} key={song.id}>
+      {props.songs.map(song => (
+        <Box
+          isSelected={song.id === props.selectedSong.id}
+          onClick={() => props.selectSong(song)}
+          key={song.id}>
           <TrackDetail {...song} />
         </Box>
-      )))}
+      ))}
     </Container>
   );
 }
@@ -20,4 +23,7 @@ const mapStateToProps = ({ songs }) => ({
   songs: songs.fetchedSongs,
   selectedSong: songs.selectedSong
 });
-export default connect(mapStateToProps, { selectSong })(Track);
+export default connect(
+  mapStateToProps,
+  { selectSong }
+)(Track);
