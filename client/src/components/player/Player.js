@@ -14,12 +14,14 @@ function Player({ selectedSong }) {
   }
   const {
     name,
-    album: { images }
+    album: { images },
+    preview_url
   } = selectedSong;
+  console.log(selectedSong);
   return (
     <PlayerContainer>
       <DataSong image={images} name={name} />
-      <MusicControl />
+      <MusicControl track={preview_url} />
       <MusicVolume />
     </PlayerContainer>
   );
