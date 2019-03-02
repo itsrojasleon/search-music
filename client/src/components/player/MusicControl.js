@@ -2,9 +2,12 @@ import React from 'react';
 import { Container } from '../styled-components/player/music-control';
 
 function MusicControl(props) {
+  const audioEl = React.useRef();
+  console.log(audioEl);
+  const click = () => console.log(audioEl.current.play());
   return (
-    <Container>
-      <audio controls src={props.track} />
+    <Container onClick={click}>
+      <audio ref={audioEl} controls src={props.track} />
     </Container>
   );
 }
