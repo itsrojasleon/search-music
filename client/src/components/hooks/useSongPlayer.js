@@ -19,7 +19,7 @@ function useSongPlayer(audioElement) {
     audioEl.addEventListener('loadeddata', setAudioData);
     audioEl.addEventListener('timeupdate', setAudioTime);
 
-    playing ? audioEl.play() : audioEl.pause();
+    // playing ? audioEl.play() : audioEl.pause();
 
     if (clickedTime && clickedTime !== currentTime) {
       audioEl.currentTime = clickedTime;

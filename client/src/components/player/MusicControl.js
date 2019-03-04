@@ -5,11 +5,17 @@ import { Container } from '../styled-components/player/music-control';
 function MusicControl(props) {
   const audioEl = React.useRef();
 
-  const [playing, duration, currentTime, clickedTime] = useSongPlayer(audioEl);
-  // console.log(duration);
+  const [
+    currentTime,
+    duration,
+    playing,
+    setPlaying,
+    setClickedTime
+  ] = useSongPlayer(audioEl);
+  console.log(playing);
   return (
     <Container onClick={() => console.log('ookokok')}>
-      <audio ref={audioEl} controls src={props.track} />
+      <audio ref={audioEl} controls autoPlay src={props.track} />
     </Container>
   );
 }
