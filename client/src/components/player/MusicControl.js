@@ -12,10 +12,14 @@ function MusicControl(props) {
     setPlaying,
     setClickedTime
   ] = useSongPlayer(audioEl);
-  console.log(playing);
   return (
     <Container onClick={() => console.log('ookokok')}>
-      <audio ref={audioEl} controls autoPlay src={props.track} />
+      <audio ref={audioEl} controls src={props.track} />
+      {playing ? (
+        <div onClick={() => setPlaying(false)}>Pause ⏸</div>
+      ) : (
+        <div onClick={() => setPlaying(true)}>Play ▶️</div>
+      )}
     </Container>
   );
 }
