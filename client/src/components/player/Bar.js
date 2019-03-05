@@ -37,17 +37,17 @@ function Bar(props) {
     });
   }
   return (
-    <Container className="bar">
+    <Container>
       <BarTime>{currentTime}</BarTime>
       <BarProgress
         ref={barEl}
         style={{
-          background: `linear-gradient(to right, orange ${curPercentage}%, white 0)`
+          background: `linear-gradient(to right, #000 ${curPercentage}%, white 0)`
         }}
         onMouseDown={e => handleTimeDrag(e)}>
         <BarProgressKnob style={{ left: `${curPercentage - 2}%` }} />
       </BarProgress>
-      <span className="bar__time">{duration}</span>
+      <span>{duration}</span>
     </Container>
   );
 }
