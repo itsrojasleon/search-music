@@ -7,8 +7,9 @@ export const Container = styled.div`
   align-items: center;
 `;
 export const BarTime = styled.span`
-  color: white;
+  color: black;
   font-size: 16px;
+  width: 50px;
 `;
 export const BarProgress = styled.div`
   flex: 1;

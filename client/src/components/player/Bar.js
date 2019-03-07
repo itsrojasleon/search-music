@@ -11,7 +11,7 @@ function Bar(props) {
 
   const barEl = React.useRef();
 
-  const curPercentage = (currentTime / duration) * 100;
+  const currentPercentage = (currentTime / duration) * 100;
 
   function calcClickedTime(e) {
     const clickPositionInPage = e.pageX;
@@ -38,16 +38,18 @@ function Bar(props) {
   }
   return (
     <Container>
-      <BarTime>{currentTime}</BarTime>
+      <BarTime>
+        {typeof currentTime !== 'number' ? '' : currentTime.toFixed(2)}
+      </BarTime>
       <BarProgress
         ref={barEl}
         style={{
-          background: `linear-gradient(to right, #000 ${curPercentage}%, white 0)`
+          background: `linear-gradient(to right, #000 ${currentPercentage}%, white 0)`
         }}
         onMouseDown={e => handleTimeDrag(e)}>
-        <BarProgressKnob style={{ left: `${curPercentage - 2}%` }} />
+        <BarProgressKnob style={{ left: `${currentPercentage - 2}%` }} />
       </BarProgress>
-      <span>{duration}</span>
+      <span>{typeof duration !== 'number' ? '' : duration.toFixed(2)}</span>
     </Container>
   );
 }
