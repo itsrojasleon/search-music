@@ -14,13 +14,13 @@ function MusicControl(props) {
     setClickedTime
   ] = useSongPlayer(audioEl);
   return (
-    <Container onClick={() => console.log('ookokok')}>
+    <Container>
       <audio ref={audioEl} src={props.track} />
       <Controls>
         {playing ? (
-          <div onClick={() => setPlaying(false)}>Pause ⏸</div>
+          <i onClick={() => setPlaying(false)} className="fas fa-pause" />
         ) : (
-          <div onClick={() => setPlaying(true)}>Play ▶️</div>
+          <i onClick={() => setPlaying(true)} className="fas fa-play" />
         )}
         <Bar
           currentTime={currentTime}

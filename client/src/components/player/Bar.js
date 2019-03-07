@@ -5,6 +5,7 @@ import {
   BarProgress,
   BarProgressKnob
 } from '../styled-components/player/bar';
+import { helperTime } from '../../utils/helperTime';
 
 function Bar(props) {
   const { duration, currentTime, onTimeUpdate } = props;
@@ -39,7 +40,7 @@ function Bar(props) {
   return (
     <Container>
       <BarTime>
-        {typeof currentTime !== 'number' ? '' : currentTime.toFixed(2)}
+        {typeof currentTime !== 'number' ? '' : helperTime(currentTime)}
       </BarTime>
       <BarProgress
         ref={barEl}

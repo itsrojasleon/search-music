@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function useSongPlayer(audioElement) {
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [duration, setDuration] = useState();
   const [currentTime, setCurrentTime] = useState();
   const [clickedTime, setClickedTime] = useState();

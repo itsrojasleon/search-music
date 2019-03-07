@@ -17,7 +17,6 @@ function Player({ selectedSong }) {
     album: { images },
     preview_url
   } = selectedSong;
-  console.log(selectedSong);
   return (
     <PlayerContainer>
       <DataSong image={images} name={name} />
