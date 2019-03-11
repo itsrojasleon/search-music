@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-import { FETCH_USER, FETCH_SONGS, SELECT_SONG } from './types';
+import {
+  FETCH_USER,
+  FETCH_SONGS,
+  LOADING_SONGS,
+  SELECT_SONG,
+  LOADED_SONGS
+} from './types';
 
 export const fetchUser = () => async dispatch => {
   const { data } = await axios.get('/api/current_user');
@@ -11,6 +17,7 @@ export const fetchUser = () => async dispatch => {
 };
 export const fetchSongs = song => async dispatch => {
   if (!song) return;
+  dispatch({ type: LOADING_SONGS });
   try {
     const response = await fetch(
       `https://spotify-demo-api.now.sh/search?q=${song}&type=track`
@@ -20,13 +27,14 @@ export const fetchSongs = song => async dispatch => {
       type: FETCH_SONGS,
       payload: data.tracks.items
     });
+    dispatch({ type: LOADED_SONGS });
   } catch (err) {
     throw new Error('What is up!');
   }
 };
-export const selectSong = (song) => {
+export const selectSong = song => {
   return {
     type: SELECT_SONG,
     payload: song
   };
-}
+};

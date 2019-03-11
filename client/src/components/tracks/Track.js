@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TrackDetail from './TrackDetails';
-
 import { Container, Box } from '../styled-components/tracks/track';
 import { selectSong } from '../../actions/index';
 
