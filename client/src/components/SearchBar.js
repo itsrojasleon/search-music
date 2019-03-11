@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchSongs } from '../actions';
-import { InputContainer, Icon, Input } from './styled-components/search-bar';
+import {
+  InputContainer,
+  Icon,
+  Spinner,
+  Input
+} from './styled-components/search-bar';
 
 function SearchBar(props) {
   const [text, setText] = useState('');
@@ -21,8 +26,7 @@ function SearchBar(props) {
         onChange={onChange}
         placeholder="Search..."
       />
-      <Icon className="fas fa-search" />
-      {props.loading && <div>Loading...</div>}
+      {props.loading ? <Spinner /> : <Icon className="fas fa-search" />}
     </InputContainer>
   );
 }

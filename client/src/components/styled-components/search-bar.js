@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const InputContainer = styled.div`
   position: relative;
@@ -8,12 +8,31 @@ export const InputContainer = styled.div`
     width: 95%;
   }
 `;
-export const Icon = styled.i`
+const cssIcon = css`
   position: absolute;
   top: 16px;
   right: 10px;
   font-size: 17px;
   color: #ccc;
+`;
+export const Icon = styled.i`
+  ${cssIcon}
+`;
+export const Spinner = styled.span`
+  ${cssIcon}
+  content: '';
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner 0.6s linear infinite;
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
 export const Input = styled.input`
   width: 100%;
