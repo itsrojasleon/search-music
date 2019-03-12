@@ -13,3 +13,12 @@ export const Controls = styled.div`
   align-items: center;
   width: 100%;
 `;
+export const I = styled.i`
+  border-radius: 50%;
+  padding: 13px;
+  transition: 0.2s;
+  &:hover {
+    background: rgb(239, 239, 239);
+    cursor: pointer;
+  }
+`;

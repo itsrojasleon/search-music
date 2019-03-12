@@ -45,7 +45,7 @@ function Bar(props) {
       <BarProgress
         ref={barEl}
         style={{
-          background: `linear-gradient(to right, #000 ${currentPercentage}%, white 0)`
+          background: `linear-gradient(to right, rgb(50,50,50) ${currentPercentage}%, white 0)`
         }}
         onMouseDown={e => handleTimeDrag(e)}>
         <BarProgressKnob style={{ left: `${currentPercentage - 2}%` }} />

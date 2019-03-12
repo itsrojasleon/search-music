@@ -20,12 +20,13 @@ export const BarProgress = styled.div`
   align-items: center;
   cursor: pointer;
   width: 100%;
+  border: 1px solid rgb(245, 245, 245);
 `;
 export const BarProgressKnob = styled.span`
   position: relative;
-  height: 16px;
-  width: 16px;
-  /* border: 1.5px solid white; */
+  height: 15px;
+  width: 15px;
+  border: 1px solid white;
   border-radius: 50%;
-  background-color: green;
+  background-color: black;
 `;
