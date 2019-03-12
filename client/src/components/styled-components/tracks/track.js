@@ -5,8 +5,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 196px);
   grid-gap: 40px;
-  margin-bottom: 80px;
-  @media(max-width: 769px) {
+  margin-bottom: 120px;
+  @media (max-width: 769px) {
     grid-template-columns: repeat(auto-fill, 230px);
     justify-items: center;
     justify-content: center;
@@ -16,5 +16,5 @@ export const Container = styled.div`
   }
 `;
 export const Box = styled.div`
-  background-color: ${props => props.isSelected ? '#ccc' : ''};
+  background-color: ${props => (props.isSelected ? '#ccc' : '')};
 `;
