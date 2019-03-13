@@ -16,11 +16,7 @@ function useSongPlayer(audioElement) {
       setVolume(audioEl.volume);
     };
 
-    // Handle progress
     const setAudioTime = () => setCurrentTime(audioEl.currentTime);
-
-    // Handle volume
-    //const setVolume = () => setVolume(audioEl.volume);
 
     audioEl.addEventListener('loadeddata', setAudioData);
     audioEl.addEventListener('timeupdate', setAudioTime);
