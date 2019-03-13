@@ -21,7 +21,6 @@ function Player({ selectedSong }) {
     <PlayerContainer>
       <DataSong image={images} name={name} />
       <MusicControl track={preview_url} />
-      <MusicVolume />
     </PlayerContainer>
   );
 }
