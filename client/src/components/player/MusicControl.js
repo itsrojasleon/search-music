@@ -6,6 +6,7 @@ import {
   Container,
   Controls,
   I
+  // Icon
 } from '../styled-components/player/music-control';
 
 function MusicControl(props) {
@@ -17,14 +18,13 @@ function MusicControl(props) {
     duration,
     playing,
     setPlaying,
-    setClickedTime,
-    volume,
-    setVolume
+    setClickedTime
   ] = useSongPlayer(audioEl);
   // Dont make console.log for  inputEl.current.something
   // Because always is going to be undefined
   // Make sure the song is saved in localStorage
   // Or do it in useSongPlayer.js (Hook)
+
   return (
     <React.Fragment>
       <Container>
@@ -43,7 +43,7 @@ function MusicControl(props) {
         </Controls>
       </Container>
       {/* Here's the volume component */}
-      <MusicVolume setVolume={volume => setVolume(volume)} volume={volume} />
+      <MusicVolume />
     </React.Fragment>
   );
 }

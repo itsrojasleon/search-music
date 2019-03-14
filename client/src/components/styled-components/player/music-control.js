@@ -22,3 +22,7 @@ export const I = styled.i`
     cursor: pointer;
   }
 `;
+export const Icon = styled.span`
+  justify-self: end;
+  padding-right: 8px;
+`;

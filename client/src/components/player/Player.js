@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DataSong from './DataSong';
 import MusicControl from './MusicControl';
-import MusicVolume from './MusicVolume';
 
 import { PlayerContainer } from '../styled-components/player/player';
 
