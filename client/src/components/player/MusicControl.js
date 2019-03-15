@@ -18,7 +18,9 @@ function MusicControl(props) {
     duration,
     playing,
     setPlaying,
-    setClickedTime
+    setClickedTime,
+    setClickedVolume,
+    currentVolume
   ] = useSongPlayer(audioEl);
   // Dont make console.log for  inputEl.current.something
   // Because always is going to be undefined
@@ -43,7 +45,10 @@ function MusicControl(props) {
         </Controls>
       </Container>
       {/* Here's the volume component */}
-      <MusicVolume />
+      <MusicVolume
+        currentVolume={currentVolume}
+        onVolumeChange={vol => setClickedVolume(vol)}
+      />
     </React.Fragment>
   );
 }

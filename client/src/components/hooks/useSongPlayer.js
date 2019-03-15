@@ -5,6 +5,8 @@ function useSongPlayer(audioElement) {
   const [duration, setDuration] = useState();
   const [currentTime, setCurrentTime] = useState();
   const [clickedTime, setClickedTime] = useState();
+  const [currentVolume, setCurrentVolume] = useState();
+  const [clickedVolume, setClickedVolume] = useState();
 
   useEffect(() => {
     const audioEl = audioElement.current;
@@ -12,12 +14,14 @@ function useSongPlayer(audioElement) {
     const setAudioData = () => {
       setDuration(audioEl.duration);
       setCurrentTime(audioEl.currentTime);
+      setCurrentVolume(audioEl.volume);
     };
 
     const setAudioTime = () => setCurrentTime(audioEl.currentTime);
 
     audioEl.addEventListener('loadeddata', setAudioData);
     audioEl.addEventListener('timeupdate', setAudioTime);
+    audioEl.addEventListener('onvolumechange', setAudioData);
 
     playing ? audioEl.play() : audioEl.pause();
 
@@ -25,14 +29,28 @@ function useSongPlayer(audioElement) {
       audioEl.currentTime = clickedTime;
       setClickedTime(null);
     }
+    // Volume
+    if (clickedVolume && clickedVolume !== currentVolume) {
+      audioEl.volume = clickedVolume;
+      setClickedVolume(null);
+    }
 
     // effect cleanup
     return () => {
       audioEl.removeEventListener('loadeddata', setAudioData);
       audioEl.removeEventListener('timeupdate', setAudioTime);
+      audioEl.removeEventListener('onvolumechange', setAudioData);
     };
   });
 
-  return [currentTime, duration, playing, setPlaying, setClickedTime];
+  return [
+    currentTime,
+    duration,
+    playing,
+    setPlaying,
+    setClickedTime,
+    setClickedVolume,
+    currentVolume
+  ];
 }
 export default useSongPlayer;
