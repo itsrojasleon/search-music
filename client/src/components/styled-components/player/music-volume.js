@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   text-align: right;
   user-select: none;
-  width: 80%;
-  display: flex;
-  align-items: center;
+  width: 50%;
 `;
 export const BarProgress = styled.div`
   flex: 1;

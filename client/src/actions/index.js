@@ -4,6 +4,7 @@ import {
   FETCH_USER,
   FETCH_SONGS,
   LOADING_SONGS,
+  FETCH_FAILED,
   SELECT_SONG,
   LOADED_SONGS
 } from './types';
@@ -29,7 +30,7 @@ export const fetchSongs = song => async dispatch => {
     });
     dispatch({ type: LOADED_SONGS });
   } catch (err) {
-    throw new Error('What is up!');
+    dispatch({ type: FETCH_FAILED });
   }
 };
 export const selectSong = song => {

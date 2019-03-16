@@ -1,5 +1,6 @@
 import {
   FETCH_SONGS,
+  FETCH_FAILED,
   SELECT_SONG,
   LOADING_SONGS,
   LOADED_SONGS
@@ -8,7 +9,8 @@ import {
 const initialState = {
   fetchedSongs: [],
   selectedSong: {},
-  loadingSong: false
+  loadingSong: false,
+  error: false
 };
 
 export default function(state = initialState, action) {
@@ -17,6 +19,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         fetchedSongs: action.payload.filter(song => song.preview_url !== null)
+      };
+    case FETCH_FAILED:
+      return {
+        ...state,
+        error: true
       };
     case LOADING_SONGS:
       return {
