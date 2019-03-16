@@ -6,7 +6,8 @@ import {
 } from '../styled-components/player/music-volume';
 
 function MusicVolume(props) {
-  const { currentVolume, onVolumeUpdate } = props;
+  const [click, setClick] = React.useState(true);
+  const { currentVolume, onVolumeUpdate, resetVolume } = props;
 
   const volumeEl = React.useRef();
 
@@ -41,8 +42,22 @@ function MusicVolume(props) {
       document.removeEventListener('mousemove', updateTimeOnMove);
     });
   }
+  const _resetVolume = () => {
+    setClick(!click);
+    resetVolume(click);
+  };
+  const renderIcons = () => (
+    <span onClick={_resetVolume}>
+      {currentVolume === 0 && <i className="fas fa-volume-off" />}
+      {currentVolume > 0 && currentVolume <= 0.5 && (
+        <i className="fas fa-volume-down" />
+      )}
+      {currentVolume > 0.5 && <i className="fas fa-volume-up" />}
+    </span>
+  );
   return (
     <Container>
+      {renderIcons()}
       <BarProgress
         ref={volumeEl}
         style={{

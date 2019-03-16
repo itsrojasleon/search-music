@@ -9,6 +9,7 @@ function useSongPlayer(audioElement) {
   // Volume
   const [currentVolume, setCurrentVolume] = useState();
   const [clickedVolume, setClickedVolume] = useState();
+  const [resetVolume, setResetVolume] = useState(false);
 
   useEffect(() => {
     const audioEl = audioElement.current;
@@ -19,7 +20,14 @@ function useSongPlayer(audioElement) {
       setCurrentVolume(audioEl.volume);
     };
 
-    const setAudioTime = () => setCurrentTime(audioEl.currentTime);
+    const setAudioTime = () => {
+      if (resetVolume) {
+        audioEl.volume = 0;
+      } else {
+        audioEl.volume = 1;
+      }
+      setCurrentTime(audioEl.currentTime);
+    };
 
     const setVolume = () => {
       setCurrentVolume(audioEl.volume);
@@ -58,7 +66,8 @@ function useSongPlayer(audioElement) {
     setPlaying,
     setClickedTime,
     setClickedVolume,
-    currentVolume
+    currentVolume,
+    setResetVolume
   ];
 }
 export default useSongPlayer;

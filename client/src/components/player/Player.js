@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DataSong from './DataSong';
 import MusicControl from './MusicControl';
 
-import { PlayerContainer } from '../styled-components/player/player';
+import { Container } from '../styled-components/player/player';
 
 //DataSong ===== MusicControl ===== MusicVolume
 
@@ -17,10 +17,10 @@ function Player({ selectedSong }) {
     preview_url
   } = selectedSong;
   return (
-    <PlayerContainer>
+    <Container>
       <DataSong image={images} name={name} />
       <MusicControl track={preview_url} />
-    </PlayerContainer>
+    </Container>
   );
 }
 const mapStateToProps = ({ songs }) => ({

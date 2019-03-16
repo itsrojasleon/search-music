@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const PlayerContainer = styled.div`
-background-color: white;
-  border-top: 1px solid rgb(240,240,240);
+export const Container = styled.div`
+  background-color: white;
+  border-top: 1px solid rgb(240, 240, 240);
   box-shadow: 2px 0px 9px rgba(0, 0, 0, 0.05);
   position: fixed;
   bottom: 0;

@@ -4,6 +4,11 @@ export const Container = styled.div`
   text-align: right;
   user-select: none;
   width: 50%;
+  justify-self: end;
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 export const BarProgress = styled.div`
   flex: 1;
