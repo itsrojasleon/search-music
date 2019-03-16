@@ -25,7 +25,6 @@ export const InputRange = styled.input`
   cursor: grab;
   justify-self: center;
   &:hover {
-    input-range: hover;
     opacity: 1;
   }
   &::-webkit-slider-runnable-track {

@@ -20,6 +20,12 @@ function MusicVolume(props) {
     const volumeWidth = volume.offsetWidth;
     const clickPositionInVolume = clickPositionInPage - volumeStart;
     const timePerPixel = 1 / volumeWidth;
+    const value = timePerPixel * clickPositionInVolume;
+
+    //  Validate from 0 to 1
+    // Sometimes the value is > 1 or < 0
+    // That's why exists this validation
+    if (value > 1 || value < 0) return;
     return timePerPixel * clickPositionInVolume;
   }
 
@@ -27,10 +33,8 @@ function MusicVolume(props) {
     onVolumeUpdate(calcClickedTime(e));
 
     const updateTimeOnMove = eMove => {
-      if (calcClickedTime(eMove) > 1 || calcClickedTime(eMove) < 0) return;
       onVolumeUpdate(calcClickedTime(eMove));
     };
-
     document.addEventListener('mousemove', updateTimeOnMove);
 
     document.addEventListener('mouseup', () => {
