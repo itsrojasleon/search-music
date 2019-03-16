@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 function useSongPlayer(audioElement) {
   const [playing, setPlaying] = useState(true);
   const [duration, setDuration] = useState();
+  // Time
   const [currentTime, setCurrentTime] = useState();
   const [clickedTime, setClickedTime] = useState();
+  // Volume
   const [currentVolume, setCurrentVolume] = useState();
   const [clickedVolume, setClickedVolume] = useState();
 
@@ -19,18 +21,24 @@ function useSongPlayer(audioElement) {
 
     const setAudioTime = () => setCurrentTime(audioEl.currentTime);
 
+    const setVolume = () => {
+      setCurrentVolume(audioEl.volume);
+    };
+
     audioEl.addEventListener('loadeddata', setAudioData);
     audioEl.addEventListener('timeupdate', setAudioTime);
-    audioEl.addEventListener('onvolumechange', setAudioData);
+    audioEl.addEventListener('volumechange', setVolume);
 
     playing ? audioEl.play() : audioEl.pause();
 
     if (clickedTime && clickedTime !== currentTime) {
+      // update currentTime value
       audioEl.currentTime = clickedTime;
       setClickedTime(null);
     }
     // Volume
     if (clickedVolume && clickedVolume !== currentVolume) {
+      // Update volume value
       audioEl.volume = clickedVolume;
       setClickedVolume(null);
     }
@@ -39,7 +47,7 @@ function useSongPlayer(audioElement) {
     return () => {
       audioEl.removeEventListener('loadeddata', setAudioData);
       audioEl.removeEventListener('timeupdate', setAudioTime);
-      audioEl.removeEventListener('onvolumechange', setAudioData);
+      audioEl.removeEventListener('volumechange', setVolume);
     };
   });
 

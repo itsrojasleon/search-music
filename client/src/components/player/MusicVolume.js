@@ -6,13 +6,16 @@ import {
 } from '../styled-components/player/music-volume';
 
 function MusicVolume(props) {
-  const { currentVolume, onVolumeChange } = props;
+  const { currentVolume, onVolumeUpdate } = props;
+
   const volumeEl = React.useRef();
 
-  const currentPercentage = (currentVolume / 1) * 100;
+  const currentPercentage = currentVolume * 100;
+
   function calcClickedTime(e) {
     const clickPositionInPage = e.pageX;
     const volume = volumeEl.current;
+    if (!volume) return;
     const volumeStart = volume.getBoundingClientRect().left + window.scrollX;
     const volumeWidth = volume.offsetWidth;
     const clickPositionInVolume = clickPositionInPage - volumeStart;
@@ -21,10 +24,11 @@ function MusicVolume(props) {
   }
 
   function handleTimeDrag(e) {
-    onVolumeChange(calcClickedTime(e));
+    onVolumeUpdate(calcClickedTime(e));
 
     const updateTimeOnMove = eMove => {
-      onVolumeChange(calcClickedTime(eMove));
+      if (calcClickedTime(eMove) > 1 || calcClickedTime(eMove) < 0) return;
+      onVolumeUpdate(calcClickedTime(eMove));
     };
 
     document.addEventListener('mousemove', updateTimeOnMove);

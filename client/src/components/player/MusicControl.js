@@ -27,6 +27,7 @@ function MusicControl(props) {
   // Make sure the song is saved in localStorage
   // Or do it in useSongPlayer.js (Hook)
 
+  // console.log(currentVolume);
   return (
     <React.Fragment>
       <Container>
@@ -47,7 +48,7 @@ function MusicControl(props) {
       {/* Here's the volume component */}
       <MusicVolume
         currentVolume={currentVolume}
-        onVolumeChange={vol => setClickedVolume(vol)}
+        onVolumeUpdate={vol => setClickedVolume(vol)}
       />
     </React.Fragment>
   );
