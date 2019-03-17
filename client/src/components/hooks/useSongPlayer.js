@@ -10,6 +10,7 @@ function useSongPlayer(audioElement) {
   const [currentVolume, setCurrentVolume] = useState();
   const [clickedVolume, setClickedVolume] = useState();
   const [resetVolume, setResetVolume] = useState(false);
+  const [lastVolume, setLastVolume] = useState();
 
   useEffect(() => {
     const audioEl = audioElement.current;
@@ -21,11 +22,6 @@ function useSongPlayer(audioElement) {
     };
 
     const setAudioTime = () => {
-      if (resetVolume) {
-        audioEl.volume = 0;
-      } else {
-        audioEl.volume = 1;
-      }
       setCurrentTime(audioEl.currentTime);
     };
 
@@ -37,7 +33,19 @@ function useSongPlayer(audioElement) {
     audioEl.addEventListener('timeupdate', setAudioTime);
     audioEl.addEventListener('volumechange', setVolume);
 
+    // Play or pause the song
     playing ? audioEl.play() : audioEl.pause();
+
+    // When somebody clicks volumeIcon
+    // This is going to set the value to 0 or 1
+    // 0 = No sound
+    // 1 = Sound
+    // And it's important save the latestValue before update.
+    if (resetVolume) {
+      audioEl.volume = 0;
+    } else {
+      audioEl.volume = 1;
+    }
 
     if (clickedTime && clickedTime !== currentTime) {
       // update currentTime value

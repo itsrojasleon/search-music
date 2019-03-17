@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Container,
   BarProgress,
-  BarProgressKnob
+  BarProgressKnob,
+  Icons
 } from '../styled-components/player/music-volume';
 
 function MusicVolume(props) {
@@ -47,13 +48,13 @@ function MusicVolume(props) {
     resetVolume(click);
   };
   const renderIcons = () => (
-    <span onClick={_resetVolume}>
+    <Icons onClick={_resetVolume}>
       {currentVolume === 0 && <i className="fas fa-volume-off" />}
       {currentVolume > 0 && currentVolume <= 0.5 && (
         <i className="fas fa-volume-down" />
       )}
       {currentVolume > 0.5 && <i className="fas fa-volume-up" />}
-    </span>
+    </Icons>
   );
   return (
     <Container>

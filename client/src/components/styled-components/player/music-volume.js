@@ -29,3 +29,6 @@ export const BarProgressKnob = styled.span`
   border-radius: 50%;
   background-color: rgb(240, 240, 240);
 `;
+export const Icons = styled.span`
+  cursor: pointer;
+`;
