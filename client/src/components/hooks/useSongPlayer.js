@@ -44,20 +44,17 @@ function useSongPlayer(audioElement) {
     }
     // Volume
     if (clickedVolume && clickedVolume !== currentVolume) {
-      console.log(audioEl.volume);
       audioEl.volume = clickedVolume;
-      console.log(audioEl.volume);
       setClickedVolume(null);
     }
-    if (resetVolume) {
-      if (resetVolume) {
-        audioEl.volume = 0;
-        setResetVolume(null);
-      }
-      if (resetVolume === 'no') {
-        audioEl.volume = 1;
-        setResetVolume(null);
-      }
+    if (resetVolume === 'yes') {
+      setLastVolume(currentVolume);
+      audioEl.volume = 0;
+      setResetVolume(null);
+    } else if (resetVolume === 'no') {
+      console.log(lastVolume);
+      audioEl.volume = lastVolume;
+      setResetVolume(null);
     }
 
     // Effect cleanup
