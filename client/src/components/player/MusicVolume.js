@@ -7,7 +7,7 @@ import {
 } from '../styled-components/player/music-volume';
 
 function MusicVolume(props) {
-  const [click, setClick] = React.useState(true);
+  const [click, setClick] = React.useState('yes');
   const { currentVolume, onVolumeUpdate, resetVolume } = props;
 
   const volumeEl = React.useRef();
@@ -44,7 +44,7 @@ function MusicVolume(props) {
     });
   }
   const _resetVolume = () => {
-    setClick(!click);
+    setClick(click === 'yes' ? 'no' : 'yes');
     resetVolume(click);
   };
   const renderIcons = () => (

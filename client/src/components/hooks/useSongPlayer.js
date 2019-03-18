@@ -9,7 +9,7 @@ function useSongPlayer(audioElement) {
   // Volume
   const [currentVolume, setCurrentVolume] = useState();
   const [clickedVolume, setClickedVolume] = useState();
-  const [resetVolume, setResetVolume] = useState(false);
+  const [resetVolume, setResetVolume] = useState();
   const [lastVolume, setLastVolume] = useState();
 
   useEffect(() => {
@@ -36,17 +36,7 @@ function useSongPlayer(audioElement) {
     // Play or pause the song
     playing ? audioEl.play() : audioEl.pause();
 
-    // When somebody clicks volumeIcon
-    // This is going to set the value to 0 or 1
-    // 0 = No sound
-    // 1 = Sound
-    // And it's important save the latestValue before update.
-    if (resetVolume) {
-      audioEl.volume = 0;
-    } else {
-      audioEl.volume = 1;
-    }
-
+    // When the people clicks BarProgress and get the value
     if (clickedTime && clickedTime !== currentTime) {
       // update currentTime value
       audioEl.currentTime = clickedTime;
@@ -54,12 +44,23 @@ function useSongPlayer(audioElement) {
     }
     // Volume
     if (clickedVolume && clickedVolume !== currentVolume) {
-      // Update volume value
+      console.log(audioEl.volume);
       audioEl.volume = clickedVolume;
+      console.log(audioEl.volume);
       setClickedVolume(null);
     }
+    if (resetVolume) {
+      if (resetVolume) {
+        audioEl.volume = 0;
+        setResetVolume(null);
+      }
+      if (resetVolume === 'no') {
+        audioEl.volume = 1;
+        setResetVolume(null);
+      }
+    }
 
-    // effect cleanup
+    // Effect cleanup
     return () => {
       audioEl.removeEventListener('loadeddata', setAudioData);
       audioEl.removeEventListener('timeupdate', setAudioTime);
