@@ -52,7 +52,6 @@ function useSongPlayer(audioElement) {
       audioEl.volume = 0;
       setResetVolume(null);
     } else if (resetVolume === 'no') {
-      console.log(lastVolume);
       audioEl.volume = lastVolume;
       setResetVolume(null);
     }
