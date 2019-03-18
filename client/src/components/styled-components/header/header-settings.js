@@ -17,9 +17,10 @@ export const Logout = styled.div`
     cursor: pointer;
   }
   @media (max-width: 769px) {
-    display: none;
+    width: 100%;
+    z-index: 999;
   }
 `;
 export const Text = styled.p`
-  color: rgb(107, 107, 107);
+  color: rgb(0, 0, 0);
 `;

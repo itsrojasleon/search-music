@@ -5,10 +5,7 @@ function HeaderSettings() {
   return (
     <Logout href="/api/logout">
       <Text>Logout</Text>
-      <i
-        style={{ color: 'rgb(107, 107, 107)' }}
-        className="fas fa-sign-out-alt"
-      />
+      <i style={{ color: 'rgb(0, 0, 0)' }} className="fas fa-sign-out-alt" />
     </Logout>
   );
 }
