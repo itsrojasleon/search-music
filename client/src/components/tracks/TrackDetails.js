@@ -8,9 +8,13 @@ import {
 
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
-  const { name, album, artists } = props;
+  const { name, album, artists, selectedSong } = props;
+
   return (
     <Container
+      style={{
+        backgroundColor: props.selectedSong.id === props.id ? 'red' : ''
+      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}>
       <Image src={album.images[0].url} alt={name} />
