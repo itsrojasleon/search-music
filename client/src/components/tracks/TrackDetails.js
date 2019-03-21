@@ -3,7 +3,9 @@ import {
   Container,
   Image,
   Name,
-  ArtistName
+  ArtistName,
+  Icons,
+  I
 } from '../styled-components/tracks/track-details';
 
 function TrackDetail(props) {
@@ -12,18 +14,16 @@ function TrackDetail(props) {
 
   return (
     <Container
-      style={{
-        backgroundColor: props.selectedSong.id === props.id ? 'red' : ''
-      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}>
       <Image src={album.images[0].url} alt={name} />
       <Name>{name}</Name>
       <ArtistName>{artists[0]['name']}</ArtistName>
       {hover && (
-        <div>
-          <i className="fas fa-play" />
-        </div>
+        <Icons>
+          <I className="fas fa-play" />
+          <I className="fas fa-heart" />
+        </Icons>
       )}
     </Container>
   );
