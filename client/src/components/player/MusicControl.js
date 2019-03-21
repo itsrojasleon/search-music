@@ -28,7 +28,6 @@ function MusicControl(props) {
   // Make sure the song is saved in localStorage
   // Or do it in useSongPlayer.js (Hook)
 
-  // console.log(currentVolume);
   return (
     <React.Fragment>
       <Container>
