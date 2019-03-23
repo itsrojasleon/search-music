@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div``;
+export const ImageContainer = styled.div`
   position: relative;
 `;
-
 export const Image = styled.img`
   width: 100%;
-  border-radius: 6px;
-  transition: 0.2s;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s;
+  position: relative;
   &:hover {
-    opacity: 0.8;
-    transform: scale(1.3);
+    transform: scale(1.05);
   }
 `;
 export const Name = styled.p`
@@ -23,9 +24,10 @@ export const ArtistName = styled.p`
 `;
 export const Icons = styled.div`
   position: absolute;
-  width: 100%;
-  top: 0;
   bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +38,7 @@ export const I = styled.i`
   opacity: 1;
   font-size: 16px;
   padding: 10px;
+  transition: 0.3s;
   background-color: black;
   border-radius: 50%;
   :nth-child(2) {

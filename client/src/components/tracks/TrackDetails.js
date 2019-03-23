@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Container,
+  ImageContainer,
   Image,
   Name,
   ArtistName,
@@ -16,15 +17,17 @@ function TrackDetail(props) {
     <Container
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}>
-      <Image src={album.images[0].url} alt={name} />
+      <ImageContainer>
+        <Image src={album.images[0].url} alt={name} />
+        {hover && (
+          <Icons>
+            <I className="fas fa-play" />
+            <I className="fas fa-heart" />
+          </Icons>
+        )}
+      </ImageContainer>
       <Name>{name}</Name>
       <ArtistName>{artists[0]['name']}</ArtistName>
-      {hover && (
-        <Icons>
-          <I className="fas fa-play" />
-          <I className="fas fa-heart" />
-        </Icons>
-      )}
     </Container>
   );
 }
