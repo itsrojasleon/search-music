@@ -24,14 +24,13 @@ export const ArtistName = styled.p`
 `;
 export const Icons = styled.div`
   position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
+  top: 50%;
+  left: 50%;
+  padding: 5px;
+  margin-top: -14px;
+  margin-left: -50px;
+  width: 100px;
+  text-align: center;
 `;
 export const I = styled.i`
   color: white;
