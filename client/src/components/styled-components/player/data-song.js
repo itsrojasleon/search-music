@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Description = styled.div`
+export const Container = styled.span`
   display: flex;
   align-items: center;
 `;
