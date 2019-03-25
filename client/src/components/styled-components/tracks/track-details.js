@@ -12,7 +12,7 @@ export const Image = styled.img`
   position: relative;
   &:hover {
     transform: scale(1.05);
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
 export const Name = styled.p`

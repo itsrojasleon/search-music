@@ -12,7 +12,7 @@ function Track(props) {
           // isSelected={song.id === props.selectedSong.id}
           onClick={() => props.selectSong(song)}
           key={song.id}>
-          <TrackDetail selectedSong={props.selectedSong} {...song} />
+          <TrackDetail {...song} />
         </Box>
       ))}
     </Container>

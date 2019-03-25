@@ -11,7 +11,7 @@ import {
 
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
-  const { name, album, artists, selectedSong } = props;
+  const { name, album, artists } = props;
 
   return (
     <Container
