@@ -13,12 +13,12 @@ function Player({ selectedSong }) {
   }
   const {
     name,
-    album: { images },
+    album: { images, artists },
     preview_url
   } = selectedSong;
   return (
     <Container>
-      <DataSong image={images} name={name} />
+      <DataSong artist={artists[0].name} image={images} name={name} />
       <MusicControl track={preview_url} />
     </Container>
   );
