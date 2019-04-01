@@ -3,6 +3,7 @@ import {
   FETCH_FAILED,
   SELECT_SONG,
   LOADING_SONGS,
+  EMPTY_SONGS,
   LOADED_SONGS
 } from '../actions/types';
 
@@ -10,6 +11,7 @@ const initialState = {
   fetchedSongs: [],
   selectedSong: {},
   loadingSong: false,
+  fallback: false,
   error: false
 };
 
@@ -29,6 +31,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         loadingSong: true
+      };
+    case EMPTY_SONGS:
+      return {
+        ...state,
+        fallback: true
       };
     case LOADED_SONGS:
       return {

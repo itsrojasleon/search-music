@@ -5,7 +5,8 @@ import {
   InputContainer,
   Icon,
   Spinner,
-  Input
+  Input,
+  EmptySong
 } from './styled-components/search-bar';
 
 function SearchBar(props) {
@@ -27,11 +28,17 @@ function SearchBar(props) {
         placeholder="Search..."
       />
       {props.loading ? <Spinner /> : <Icon className="fas fa-search" />}
+      {props.fallback && (
+        <EmptySong>
+          <p>It does not exists, look for another song</p>
+        </EmptySong>
+      )}
     </InputContainer>
   );
 }
-const mapStateToProps = ({ songs: { loadingSong } }) => ({
-  loading: loadingSong
+const mapStateToProps = ({ songs: { loadingSong, fallback } }) => ({
+  loading: loadingSong,
+  fallback
 });
 export default connect(
   mapStateToProps,
