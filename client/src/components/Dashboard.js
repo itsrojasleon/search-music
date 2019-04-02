@@ -13,7 +13,7 @@ import { Layout } from './styled-components/dashboard';
 // 3) Music
 // 4) Player (Music Player)
 
-function Dashboard({ error }) {
+function Dashboard({ error, songs }) {
   if (error) return <Error />;
   return (
     <>

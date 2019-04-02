@@ -4,8 +4,8 @@ import {
   FETCH_USER,
   FETCH_SONGS,
   LOADING_SONGS,
-  EMPTY_SONGS,
   FETCH_FAILED,
+  EMPTY_SEARCH,
   SELECT_SONG,
   LOADED_SONGS
 } from './types';
@@ -25,13 +25,22 @@ export const fetchSongs = song => async dispatch => {
       `https://spotify-demo-api.now.sh/search?q=${song}&type=track`
     );
     const data = await response.json();
-    if (data.tracks.items.length === 0) {
-      dispatch({ type: EMPTY_SONGS });
-    }
     dispatch({
       type: FETCH_SONGS,
       payload: data.tracks.items
     });
+    if (data.tracks.items.length === 0) {
+      dispatch({
+        type: EMPTY_SEARCH,
+        payload: true
+      });
+    }
+    if (data.tracks.items.length > 0) {
+      dispatch({
+        type: EMPTY_SEARCH,
+        payload: false
+      });
+    }
     dispatch({ type: LOADED_SONGS });
   } catch (err) {
     dispatch({ type: FETCH_FAILED });

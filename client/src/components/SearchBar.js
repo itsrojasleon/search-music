@@ -6,7 +6,7 @@ import {
   Icon,
   Spinner,
   Input,
-  EmptySong
+  EmptySearch
 } from './styled-components/search-bar';
 
 function SearchBar(props) {
@@ -29,9 +29,9 @@ function SearchBar(props) {
       />
       {props.loading ? <Spinner /> : <Icon className="fas fa-search" />}
       {props.fallback && (
-        <EmptySong>
+        <EmptySearch>
           <p>It does not exists, look for another song</p>
-        </EmptySong>
+        </EmptySearch>
       )}
     </InputContainer>
   );

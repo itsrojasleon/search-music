@@ -3,8 +3,8 @@ import {
   FETCH_FAILED,
   SELECT_SONG,
   LOADING_SONGS,
-  EMPTY_SONGS,
-  LOADED_SONGS
+  LOADED_SONGS,
+  EMPTY_SEARCH
 } from '../actions/types';
 
 const initialState = {
@@ -32,15 +32,15 @@ export default function(state = initialState, action) {
         ...state,
         loadingSong: true
       };
-    case EMPTY_SONGS:
-      return {
-        ...state,
-        fallback: true
-      };
     case LOADED_SONGS:
       return {
         ...state,
         loadingSong: false
+      };
+    case EMPTY_SEARCH:
+      return {
+        ...state,
+        fallback: action.payload
       };
     case SELECT_SONG:
       return {

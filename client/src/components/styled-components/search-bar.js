@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { EMPTY_SONGS } from '../../actions/types';
 
 export const InputContainer = styled.div`
   position: relative;
@@ -51,7 +52,7 @@ export const Input = styled.input`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(26, 26, 29, 0.08);
   }
 `;
-export const EmptySong = styled.div`
+export const EmptySearch = styled.div`
   margin-top: 30px;
   font-size: 20px;
   color: rgb(100, 100, 100);
