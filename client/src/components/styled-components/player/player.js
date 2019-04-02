@@ -13,7 +13,7 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   align-items: center;
-  @media (max-width: 720px) {
+  @media (max-width: 769px) {
     height: 100vh;
     box-shadow: 5px 0px 12px rgba(0, 0, 0, 0.05);
     grid-template-columns: repeat(1, 1fr);

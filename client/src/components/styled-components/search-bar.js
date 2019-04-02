@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { EMPTY_SONGS } from '../../actions/types';
 
 export const InputContainer = styled.div`
   position: relative;

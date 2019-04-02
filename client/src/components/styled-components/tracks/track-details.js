@@ -16,11 +16,11 @@ export const Image = styled.img`
   }
 `;
 export const Name = styled.p`
-  font-size: 16px;
+  font-size: 18px;
 `;
 export const ArtistName = styled.p`
   color: rgb(140, 140, 148);
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 3px;
 `;
 export const Icons = styled.div`

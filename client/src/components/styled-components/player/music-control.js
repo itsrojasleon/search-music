@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin: auto;
   width: 100%;
+  /* background: red; */
 `;
 export const Controls = styled.div`
   flex-grow: 1;
@@ -12,6 +13,12 @@ export const Controls = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media (max-width: 769px) {
+    flex-direction: row;
+    background: red;
+    margin: 0;
+    flex-grow: 0;
+  }
 `;
 export const I = styled.i`
   border-radius: 50%;
