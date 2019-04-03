@@ -19,5 +19,6 @@ export const Container = styled.div`
     grid-template-columns: repeat(1, 1fr);
     align-content: space-between;
     align-items: center;
+    z-index: 999;
   }
 `;

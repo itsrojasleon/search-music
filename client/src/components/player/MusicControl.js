@@ -5,6 +5,7 @@ import Bar from './Bar';
 import {
   Container,
   Controls,
+  Icons,
   I
   // Icon
 } from '../styled-components/player/music-control';
@@ -33,11 +34,13 @@ function MusicControl(props) {
       <Container>
         <audio ref={audioEl} src={props.track} />
         <Controls>
-          {playing ? (
-            <I onClick={() => setPlaying(false)} className="fas fa-pause" />
-          ) : (
-            <I onClick={() => setPlaying(true)} className="fas fa-play" />
-          )}
+          <Icons>
+            {playing ? (
+              <I onClick={() => setPlaying(false)} className="fas fa-pause" />
+            ) : (
+              <I onClick={() => setPlaying(true)} className="fas fa-play" />
+            )}
+          </Icons>
           <Bar
             currentTime={currentTime}
             duration={duration}

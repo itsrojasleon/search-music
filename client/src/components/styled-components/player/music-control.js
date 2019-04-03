@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: auto;
+  margin: 0 auto 30px auto;
   width: 100%;
   /* background: red; */
 `;
@@ -14,11 +14,13 @@ export const Controls = styled.div`
   align-items: center;
   width: 100%;
   @media (max-width: 769px) {
-    flex-direction: row;
-    background: red;
+    flex-direction: column;
     margin: 0;
     flex-grow: 0;
   }
+`;
+export const Icons = styled.span`
+  margin-bottom: 25px;
 `;
 export const I = styled.i`
   border-radius: 50%;
@@ -27,6 +29,9 @@ export const I = styled.i`
   &:hover {
     background: rgb(239, 239, 239);
     cursor: pointer;
+  }
+  @media (max-width: 769px) {
+    font-size: 20px;
   }
 `;
 export const Icon = styled.span`

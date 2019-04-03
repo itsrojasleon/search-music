@@ -9,6 +9,9 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 769px) {
+    display: none;
+  }
 `;
 export const BarProgress = styled.div`
   flex: 1;

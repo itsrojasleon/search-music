@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DataSong from './DataSong';
 import MusicControl from './MusicControl';
 
-import { Container } from '../styled-components/player/player';
+import { Container, A } from '../styled-components/player/player';
 
 //DataSong ===== MusicControl ===== MusicVolume
 
