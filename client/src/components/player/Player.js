@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import DataSong from './DataSong';
 import MusicControl from './MusicControl';
 
-import { Container, A } from '../styled-components/player/player';
-
-//DataSong ===== MusicControl ===== MusicVolume
+import { Container, I } from '../styled-components/player/player';
 
 function Player({ selectedSong }) {
+  const [hide, setHide] = React.useState(false);
   if (Object.entries(selectedSong).length === 0) {
     return null;
   }
@@ -17,7 +16,8 @@ function Player({ selectedSong }) {
     preview_url
   } = selectedSong;
   return (
-    <Container>
+    <Container hide={hide}>
+      <I onClick={() => setHide(!hide)} className="fas fa-chevron-down" />
       <DataSong artist={artists[0].name} image={images} name={name} />
       <MusicControl track={preview_url} />
     </Container>

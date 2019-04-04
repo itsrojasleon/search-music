@@ -9,7 +9,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   padding: 15px;
-  display: grid;
+  display: ${props => (props.hide ? 'none' : 'grid')};
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   align-items: center;
@@ -20,5 +20,16 @@ export const Container = styled.div`
     align-content: space-between;
     align-items: center;
     z-index: 999;
+  }
+`;
+export const I = styled.i`
+  display: none;
+  @media (max-width: 769px) {
+    font-size: 24px;
+    display: block;
+    color: black;
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
