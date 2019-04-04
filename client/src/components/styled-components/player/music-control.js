@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 auto 30px auto;
   width: 100%;
+  @media (max-width: 769px) {
+    margin: 0 auto 30px auto;
+  }
   /* background: red; */
 `;
 export const Controls = styled.div`
@@ -20,7 +22,10 @@ export const Controls = styled.div`
   }
 `;
 export const Icons = styled.span`
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  @media (max-width: 769px) {
+    margin-bottom: 25px;
+  }
 `;
 export const I = styled.i`
   border-radius: 50%;
