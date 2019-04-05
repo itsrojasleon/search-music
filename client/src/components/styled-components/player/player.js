@@ -33,3 +33,15 @@ export const I = styled.i`
     }
   }
 `;
+export const Open = styled.div`
+  display: none;
+  @media (max-width: 769px) {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: red;
+    z-index: 999;
+    font-size: 18px;
+  }
+`;
