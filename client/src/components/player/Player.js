@@ -23,7 +23,9 @@ function Player({ selectedSong }) {
         <DataSong artist={artists[0].name} image={images} name={name} />
         <MusicControl track={preview_url} />
       </Container>
-      <Open>open bro</Open>
+      <Open onClick={() => setHide(false)} hide={hide}>
+        <I className="fas fa-chevron-up" />
+      </Open>
     </React.Fragment>
   );
 }

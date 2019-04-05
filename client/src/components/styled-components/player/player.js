@@ -36,12 +36,19 @@ export const I = styled.i`
 export const Open = styled.div`
   display: none;
   @media (max-width: 769px) {
-    display: block;
+    display: ${props => (props.hide ? 'block' : 'none')};
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: red;
+    background: white;
     z-index: 999;
     font-size: 18px;
+    padding: 10px;
+    border-top: 2px solid rgb(240, 240, 240);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(26, 26, 29, 0.08);
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
