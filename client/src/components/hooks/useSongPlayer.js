@@ -16,6 +16,7 @@ function useSongPlayer(audioElement) {
     const audioEl = audioElement.current;
 
     const setAudioData = () => {
+      setPlaying(true);
       setDuration(audioEl.duration);
       setCurrentTime(audioEl.currentTime);
       setCurrentVolume(audioEl.volume);
