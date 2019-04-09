@@ -3,14 +3,23 @@ import { connect } from 'react-redux';
 import DataSong from './DataSong';
 import MusicControl from './MusicControl';
 
-import { Container, I, Open } from '../styled-components/player/player';
+import { Container, I, Banner } from '../styled-components/player/player';
 
 function Player({ selectedSong }) {
   // This only works on mobile devices
   const [hide, setHide] = React.useState(false);
+
+  // This only needs to works in mobile devices
+  React.useEffect(() => {
+    if (window.innerWidth <= 769) {
+      setHide(false);
+    }
+  }, [selectedSong]);
+
   if (Object.entries(selectedSong).length === 0) {
     return null;
   }
+
   const {
     name,
     album: { images, artists },
@@ -23,9 +32,9 @@ function Player({ selectedSong }) {
         <DataSong artist={artists[0].name} image={images} name={name} />
         <MusicControl track={preview_url} />
       </Container>
-      <Open onClick={() => setHide(false)} hide={hide}>
+      <Banner onClick={() => setHide(false)} hide={hide}>
         <I className="fas fa-chevron-up" />
-      </Open>
+      </Banner>
     </React.Fragment>
   );
 }

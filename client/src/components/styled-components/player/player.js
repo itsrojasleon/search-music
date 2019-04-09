@@ -33,7 +33,7 @@ export const I = styled.i`
     }
   }
 `;
-export const Open = styled.div`
+export const Banner = styled.div`
   display: none;
   @media (max-width: 769px) {
     display: ${props => (props.hide ? 'block' : 'none')};
