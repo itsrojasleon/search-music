@@ -46,9 +46,9 @@ export const fetchSongs = song => async dispatch => {
     dispatch({ type: FETCH_FAILED });
   }
 };
-export const selectSong = song => {
+export const selectSong = (song, index) => {
   return {
     type: SELECT_SONG,
-    payload: song
+    payload: { song, index }
   };
 };

@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import useSongPlayer from '../hooks/useSongPlayer';
 import MusicVolume from './MusicVolume';
 import Bar from './Bar';
+import { selectSong } from '../../actions/index';
 import {
   Container,
   Controls,
@@ -35,11 +37,13 @@ function MusicControl(props) {
         <audio ref={audioEl} src={props.track} />
         <Controls>
           <Icons>
+            <i onClick={() => props.selectSong(props.data[props.index - 1], (props.index - 1)) } className="fas fa-step-backward"></i>
             {playing ? (
               <I onClick={() => setPlaying(false)} className="fas fa-pause" />
             ) : (
               <I onClick={() => setPlaying(true)} className="fas fa-play" />
             )}
+            <i onClick={() => props.selectSong(props.data[props.index + 1], (props.index + 1))} className="fas fa-step-forward"></i>
           </Icons>
           <Bar
             currentTime={currentTime}
@@ -57,4 +61,4 @@ function MusicControl(props) {
     </React.Fragment>
   );
 }
-export default MusicControl;
+export default connect(null, { selectSong })(MusicControl);

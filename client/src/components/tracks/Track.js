@@ -7,10 +7,10 @@ import { selectSong } from '../../actions/index';
 function Track(props) {
   return (
     <Container>
-      {props.songs.map(song => (
+      {props.songs.map((song, i) => (
         <Box
-          // isSelected={song.id === props.selectedSong.id}
-          onClick={() => props.selectSong(song)}
+          isSelected={song.id === props.selectedSong.id}
+          onClick={() => props.selectSong(song, i)}
           key={song.id}>
           <TrackDetail {...song} />
         </Box>
