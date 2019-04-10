@@ -5,7 +5,7 @@ import MusicControl from './MusicControl';
 
 import { Container, I, Banner } from '../styled-components/player/player';
 
-function Player({ selectedSong }) {
+function Player({ selectedSong, songs }) {
   // This only works on mobile devices
   const [hide, setHide] = React.useState(false);
 
@@ -19,12 +19,12 @@ function Player({ selectedSong }) {
   if (Object.entries(selectedSong).length === 0) {
     return null;
   }
-
   const {
     name,
     album: { images, artists },
     preview_url
   } = selectedSong;
+  console.log(songs);
   return (
     <React.Fragment>
       <Container hide={hide}>
@@ -39,6 +39,7 @@ function Player({ selectedSong }) {
   );
 }
 const mapStateToProps = ({ songs }) => ({
-  selectedSong: songs.selectedSong
+  selectedSong: songs.selectedSong,
+  songs: songs.fetchedSongs
 });
 export default connect(mapStateToProps)(Player);
