@@ -31,19 +31,29 @@ function MusicControl(props) {
   // Make sure the song is saved in localStorage
   // Or do it in useSongPlayer.js (Hook)
 
+  const previousTrack = () => {
+    if (props.index === 0) return null;
+    return props.selectSong(props.data[props.index - 1], (props.index - 1))
+  };
+
+  const nextTrack = () => {
+    if (props.index === props.data.length - 1) return null;
+    props.selectSong(props.data[props.index + 1], (props.index + 1));
+  }
+
   return (
     <React.Fragment>
       <Container>
         <audio ref={audioEl} src={props.track} />
         <Controls>
           <Icons>
-            <i onClick={() => props.selectSong(props.data[props.index - 1], (props.index - 1)) } className="fas fa-step-backward"></i>
+            <I onClick={previousTrack} opacity={props.index === 0 && true} size="small" className="fas fa-step-backward" />
             {playing ? (
               <I onClick={() => setPlaying(false)} className="fas fa-pause" />
             ) : (
               <I onClick={() => setPlaying(true)} className="fas fa-play" />
             )}
-            <i onClick={() => props.selectSong(props.data[props.index + 1], (props.index + 1))} className="fas fa-step-forward"></i>
+            <I onClick={nextTrack} opacity={(props.index === props.data.length - 1) && true} size="small" className="fas fa-step-forward" />
           </Icons>
           <Bar
             currentTime={currentTime}
@@ -62,3 +72,4 @@ function MusicControl(props) {
   );
 }
 export default connect(null, { selectSong })(MusicControl);
+
