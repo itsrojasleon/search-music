@@ -1,9 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import useSongPlayer from '../hooks/useSongPlayer';
 import MusicVolume from './MusicVolume';
 import Bar from './Bar';
-import { selectSong } from '../../actions/index';
 import {
   Container,
   Controls,
@@ -31,16 +29,6 @@ function MusicControl(props) {
   // Make sure the song is saved in localStorage
   // Or do it in useSongPlayer.js (Hook)
 
-  const previousTrack = () => {
-    if (props.index === 0) return null;
-    return props.selectSong(props.songs[props.index - 1], props.index - 1);
-  };
-
-  const nextTrack = () => {
-    if (props.index === props.songs.length - 1) return null;
-    props.selectSong(props.songs[props.index + 1], props.index + 1);
-  };
-
   return (
     <React.Fragment>
       <Container>
@@ -48,8 +36,8 @@ function MusicControl(props) {
         <Controls>
           <Icons>
             <I
-              onClick={previousTrack}
-              opacity={props.index === 0 && true}
+              onClick={props.previousTrack}
+              opacity={props.opacityPrevious}
               size="small"
               className="fas fa-step-backward"
             />
@@ -59,8 +47,8 @@ function MusicControl(props) {
               <I onClick={() => setPlaying(true)} className="fas fa-play" />
             )}
             <I
-              onClick={nextTrack}
-              opacity={props.index === props.songs.length - 1 && true}
+              onClick={props.nextTrack}
+              opacity={props.opacityNext}
               size="small"
               className="fas fa-step-forward"
             />
@@ -81,7 +69,4 @@ function MusicControl(props) {
     </React.Fragment>
   );
 }
-export default connect(
-  null,
-  { selectSong }
-)(MusicControl);
+export default MusicControl;
