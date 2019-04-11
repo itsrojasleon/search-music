@@ -33,13 +33,13 @@ function MusicControl(props) {
 
   const previousTrack = () => {
     if (props.index === 0) return null;
-    return props.selectSong(props.data[props.index - 1], (props.index - 1))
+    return props.selectSong(props.songs[props.index - 1], props.index - 1);
   };
 
   const nextTrack = () => {
-    if (props.index === props.data.length - 1) return null;
-    props.selectSong(props.data[props.index + 1], (props.index + 1));
-  }
+    if (props.index === props.songs.length - 1) return null;
+    props.selectSong(props.songs[props.index + 1], props.index + 1);
+  };
 
   return (
     <React.Fragment>
@@ -47,13 +47,23 @@ function MusicControl(props) {
         <audio ref={audioEl} src={props.track} />
         <Controls>
           <Icons>
-            <I onClick={previousTrack} opacity={props.index === 0 && true} size="small" className="fas fa-step-backward" />
+            <I
+              onClick={previousTrack}
+              opacity={props.index === 0 && true}
+              size="small"
+              className="fas fa-step-backward"
+            />
             {playing ? (
               <I onClick={() => setPlaying(false)} className="fas fa-pause" />
             ) : (
               <I onClick={() => setPlaying(true)} className="fas fa-play" />
             )}
-            <I onClick={nextTrack} opacity={(props.index === props.data.length - 1) && true} size="small" className="fas fa-step-forward" />
+            <I
+              onClick={nextTrack}
+              opacity={props.index === props.songs.length - 1 && true}
+              size="small"
+              className="fas fa-step-forward"
+            />
           </Icons>
           <Bar
             currentTime={currentTime}
@@ -71,5 +81,7 @@ function MusicControl(props) {
     </React.Fragment>
   );
 }
-export default connect(null, { selectSong })(MusicControl);
-
+export default connect(
+  null,
+  { selectSong }
+)(MusicControl);

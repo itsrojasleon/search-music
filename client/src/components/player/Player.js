@@ -5,7 +5,7 @@ import MusicControl from './MusicControl';
 
 import { Container, I, Banner } from '../styled-components/player/player';
 
-function Player({ selectedSong, songs, index }) { 
+function Player({ selectedSong, songs, index }) {
   // This only works on mobile devices
   const [hide, setHide] = React.useState(false);
 
@@ -32,7 +32,7 @@ function Player({ selectedSong, songs, index }) {
       <Container hide={hide}>
         <I onClick={() => setHide(true)} className="fas fa-chevron-down" />
         <DataSong artist={artists[0].name} image={images} name={name} />
-        <MusicControl index={index} data={songs} track={preview_url} />
+        <MusicControl index={index} songs={songs} track={preview_url} />
       </Container>
       <Banner onClick={() => setHide(false)} hide={hide}>
         <I className="fas fa-chevron-up" />
