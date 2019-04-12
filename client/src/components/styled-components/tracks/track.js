@@ -7,9 +7,10 @@ export const Container = styled.div`
   grid-gap: 40px;
   margin-bottom: 120px;
   @media (max-width: 769px) {
-    grid-template-columns: repeat(auto-fill, 230px);
-    justify-items: center;
-    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
   }
   &:hover {
     cursor: pointer;

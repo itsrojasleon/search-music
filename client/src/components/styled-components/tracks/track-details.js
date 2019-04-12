@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 
-export const ImageContainer = styled.div`
+export const Container = styled.span`
+  @media(max-width: 769px) {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+`;
+export const ImageContainer = styled.picture`
   position: relative;
 `;
 export const Image = styled.img`
@@ -12,6 +22,17 @@ export const Image = styled.img`
   &:hover {
     transform: scale(1.05);
     opacity: 0.9;
+  }
+  @media(max-width: 769px) {
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+`;
+export const Data = styled.span`
+  @media(max-width: 769px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 export const Name = styled.p`
@@ -27,10 +48,12 @@ export const Icons = styled.div`
   top: 50%;
   left: 50%;
   padding: 5px;
-  margin-top: -14px;
-  margin-left: -50px;
+  
   width: 100px;
   text-align: center;
+  @media(max-width: 769px) {
+    display: none;
+  }
 `;
 export const I = styled.i`
   color: white;
