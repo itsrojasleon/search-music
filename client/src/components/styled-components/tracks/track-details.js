@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
 export const ImageContainer = styled.div`
   position: relative;
 `;

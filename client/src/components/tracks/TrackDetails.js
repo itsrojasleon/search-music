@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Container,
   ImageContainer,
   Image,
   Name,
@@ -14,7 +13,7 @@ function TrackDetail(props) {
   const { name, album, artists } = props;
 
   return (
-    <Container
+    <React.Fragment
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}>
       <ImageContainer>
@@ -28,7 +27,7 @@ function TrackDetail(props) {
       </ImageContainer>
       <Name>{name}</Name>
       <ArtistName>{artists[0]['name']}</ArtistName>
-    </Container>
+    </React.Fragment>
   );
 }
 export default TrackDetail;
