@@ -5,7 +5,8 @@ import MusicControl from './MusicControl';
 import { selectSong } from '../../actions/index';
 import { Container, I, Banner } from '../styled-components/player/player';
 
-function Player({ selectedSong, songs, index, selectSong }) {
+function Player(props) {
+  const { selectedSong, songs, index, selectSong } = props;
   const [hide, setHide] = React.useState(false);
 
   // This only needs to works in mobile devices
@@ -25,9 +26,8 @@ function Player({ selectedSong, songs, index, selectSong }) {
     if (index === songs.length - 1) return null;
     selectSong(songs[index + 1], index + 1);
   };
-  if (!selectedSong) {
-    return null;
-  }
+
+  if (!selectedSong) return null;
 
   const {
     name,

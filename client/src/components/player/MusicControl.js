@@ -7,7 +7,6 @@ import {
   Controls,
   Icons,
   I
-  // Icon
 } from '../styled-components/player/music-control';
 
 function MusicControl(props) {
@@ -22,7 +21,7 @@ function MusicControl(props) {
     setClickedTime,
     setClickedVolume,
     currentVolume,
-    resetVolume
+    resetVolume,
   ] = useSongPlayer(audioEl);
   // Dont make console.log for  inputEl.current.something
   // Because always is going to be undefined

@@ -21,7 +21,6 @@ function Bar(props) {
     const barWidth = bar.offsetWidth;
     const clickPositionInBar = clickPositionInPage - barStart;
     const timePerPixel = duration / barWidth;
-    console.log(timePerPixel * clickPositionInBar);
     return timePerPixel * clickPositionInBar;
   }
 

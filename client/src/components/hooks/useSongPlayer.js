@@ -73,7 +73,7 @@ function useSongPlayer(audioElement) {
     setClickedTime,
     setClickedVolume,
     currentVolume,
-    setResetVolume
+    setResetVolume,
   ];
 }
 export default useSongPlayer;
