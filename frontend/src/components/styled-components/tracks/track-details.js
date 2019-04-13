@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.span`
-  @media(max-width: 769px) {
+  @media (max-width: 769px) {
     display: flex;
     flex-direction: row;
     border: 1px solid rgb(240, 240, 240);
@@ -23,14 +23,14 @@ export const Image = styled.img`
     transform: scale(1.05);
     opacity: 0.9;
   }
-  @media(max-width: 769px) {
+  @media (max-width: 769px) {
     width: 20%;
     padding: 10px;
     border-radius: 10px;
   }
 `;
 export const Data = styled.span`
-  @media(max-width: 769px) {
+  @media (max-width: 769px) {
     display: flex;
     flex-direction: column;
   }
@@ -45,13 +45,13 @@ export const ArtistName = styled.p`
 `;
 export const Icons = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%;
+  left: 50%; */
+  top: -50px;
+  right: 0;
   padding: 5px;
-  
-  width: 100px;
   text-align: center;
-  @media(max-width: 769px) {
+  @media (max-width: 769px) {
     display: none;
   }
 `;
