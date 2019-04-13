@@ -11,10 +11,8 @@ function Player(props) {
 
   // This only needs to works in mobile devices
   React.useEffect(() => {
-    if (window.innerWidth <= 769) {
-      // Open new data track
-      setHide(false);
-    }
+    if (window.innerWidth <= 769) setHide(false);
+    else setHide(false);
   }, [selectedSong]);
 
   const previousTrack = () => {
