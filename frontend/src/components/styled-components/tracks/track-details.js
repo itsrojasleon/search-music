@@ -4,14 +4,24 @@ export const Container = styled.span`
   @media (max-width: 769px) {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     border: 1px solid rgb(240, 240, 240);
     border-radius: 5px;
     margin-bottom: 10px;
     align-items: center;
+    width: 100%;
+    padding: 3px;
   }
 `;
 export const ImageContainer = styled.picture`
   position: relative;
+  width: 100%;
+  height: 100%;
+  @media (max-width: 769px) {
+    width: 35%;
+  }
 `;
 export const Image = styled.img`
   width: 100%;
@@ -24,29 +34,35 @@ export const Image = styled.img`
     opacity: 0.9;
   }
   @media (max-width: 769px) {
-    width: 20%;
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
   }
 `;
 export const Data = styled.span`
   @media (max-width: 769px) {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
   }
 `;
 export const Name = styled.p`
   font-size: 18px;
+  @media (max-width: 769px) {
+    font-size: 15px;
+  }
 `;
 export const ArtistName = styled.p`
   color: rgb(140, 140, 148);
   font-size: 16px;
   margin-top: 3px;
+  @media (max-width: 769px) {
+    font-size: 13px;
+  }
 `;
 export const Icons = styled.div`
   position: absolute;
-  /* top: 50%;
-  left: 50%; */
   top: -50px;
   right: 0;
   padding: 5px;
@@ -65,5 +81,18 @@ export const I = styled.i`
   border-radius: 50%;
   :nth-child(2) {
     margin-left: 10px;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  display: ${props => props.small && 'none'};
+  @media (max-width: 769px) {
+    display: ${props => props.small && 'block'};
+    font-size: 12px;
+    background: ${props => (props.light ? 'white' : 'black')};
+    color: ${props => (props.light ? 'black' : 'white')};
+    border: 1px solid rgb(235, 235, 235);
+    margin-left: 5px;
+    margin-right: 5px;
   }
 `;

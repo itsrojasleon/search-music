@@ -13,11 +13,15 @@ import {
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
   const { name, album, artists } = props;
-
   return (
     <Container
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}>
+      onMouseEnter={() => {
+        if (window.innerWidth > 769) setHover(true);
+      }}
+      onMouseLeave={() => {
+        if (window.innerWidth > 769) setHover(false);
+      }}>
+      <I small className="fas fa-play" />
       <ImageContainer>
         <Image src={album.images[0].url} alt={name} />
         {hover && (
@@ -31,6 +35,7 @@ function TrackDetail(props) {
         <Name>{name}</Name>
         <ArtistName>{artists[0]['name']}</ArtistName>
       </Data>
+      <I small light className="fas fa-heart" />
     </Container>
   );
 }

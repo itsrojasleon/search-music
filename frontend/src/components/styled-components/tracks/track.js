@@ -10,7 +10,9 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px; 
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
   }
   &:hover {
     cursor: pointer;
