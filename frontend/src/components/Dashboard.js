@@ -1,28 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import Error from './Error';
+import { Layout } from './styled-components/dashboard';
 import SearchBar from './SearchBar';
 import Track from './tracks/Track';
 import Player from './player/Player';
+import Error from './Error';
 
-import { Layout } from './styled-components/dashboard';
-
-// Structure:
-// 1) Header
-// 2) SearchBar
-// 3) Music
-// 4) Player (Music Player)
-
-function Dashboard({ error, songs }) {
+function Dashboard({ error }) {
   if (error) return <Error />;
   return (
-    <>
+    <Fragment>
       <Layout>
         <SearchBar />
         <Track />
       </Layout>
       <Player />
-    </>
+    </Fragment>
   );
 }
 const mapStateToProps = ({ songs }) => ({

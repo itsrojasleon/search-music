@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TrackDetail from './TrackDetails';
 import { Container, Box } from '../styled-components/tracks/track';
 import { selectSong } from '../../actions/index';
+import TrackDetail from './TrackDetails'
 
 function Track(props) {
+  const { songs, selectSong } = props;
+  if (songs.length === 0) return null;
   return (
     <Container>
-      {props.songs.map((song, i) => (
+      {songs.map((song, i) => (
         <Box
           isSelected={song.id === props.selectedSong.id}
-          onClick={() => props.selectSong(song, i)}
+          onClick={() => selectSong(song, i)}
           key={song.id}>
           <TrackDetail {...song} />
         </Box>

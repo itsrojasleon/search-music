@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 
 function useSongPlayer(audioElement) {
   const [playing, setPlaying] = useState(true);
-  const [duration, setDuration] = useState();
+  const [duration, setDuration] = useState(null);
   // Time
-  const [currentTime, setCurrentTime] = useState();
-  const [clickedTime, setClickedTime] = useState();
+  const [currentTime, setCurrentTime] = useState(null);
+  const [clickedTime, setClickedTime] = useState(null);
   // Volume
-  const [currentVolume, setCurrentVolume] = useState();
-  const [clickedVolume, setClickedVolume] = useState();
-  const [resetVolume, setResetVolume] = useState();
-  const [lastVolume, setLastVolume] = useState();
+  const [currentVolume, setCurrentVolume] = useState(null);
+  const [clickedVolume, setClickedVolume] = useState(null);
+  const [resetVolume, setResetVolume] = useState(null);
+  const [lastVolume, setLastVolume] = useState(null);
 
   useEffect(() => {
     const audioEl = audioElement.current;

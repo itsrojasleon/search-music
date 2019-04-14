@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import DataSong from './DataSong';
-import MusicControl from './MusicControl';
 import { selectSong } from '../../actions/index';
 import { Container, I, Banner } from '../styled-components/player/player';
+import DataSong from './DataSong';
+import MusicControl from './MusicControl';
 
 function Player(props) {
   const { selectedSong, songs, index, selectSong } = props;
   const [hide, setHide] = React.useState(false);
 
   // This only needs to works in mobile devices
-  React.useEffect(() => {
+  useEffect(() => {
     if (window.innerWidth <= 769) setHide(false);
     else setHide(false);
   }, [selectedSong]);
@@ -33,7 +33,7 @@ function Player(props) {
     preview_url
   } = selectedSong;
   return (
-    <React.Fragment>
+    <Fragment>
       <Container hide={hide}>
         <I onClick={() => setHide(true)} className="fas fa-chevron-down" />
         <DataSong artist={artists[0].name} image={images} name={name} />
@@ -50,7 +50,7 @@ function Player(props) {
       <Banner onClick={() => setHide(false)} hide={hide}>
         <I className="fas fa-chevron-up" />
       </Banner>
-    </React.Fragment>
+    </Fragment>
   );
 }
 const mapStateToProps = ({ songs }) => ({

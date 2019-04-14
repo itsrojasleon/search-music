@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './header/Header';
-import Dashboard from './Dashboard';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { fetchUser } from '../actions';
+
+const Header = lazy(() => import('./header/Header'));
+const Dashboard = lazy(() => import('./Dashboard'));
 
 function App(props) {
   useEffect(() => {
     props.fetchUser();
   }, []);
   return (
-    <div>
-      <BrowserRouter>
-        <React.Fragment>
-          <Header />
-          <div>
-            <Route path="/" exact component={Dashboard} />
-          </div>
-        </React.Fragment>
-      </BrowserRouter>
-    </div>
+    <Fragment>
+      <Suspense fallback={null}>
+        <BrowserRouter>
+          <Fragment>
+            <Header />
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+            </Switch>
+          </Fragment>
+        </BrowserRouter>
+      </Suspense>
+    </Fragment>
   );
 }
 export default connect(
