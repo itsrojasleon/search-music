@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, Suspense, lazy } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { fetchUser } from '../actions';
 import Header from './header/Header';
-const Dashboard = lazy(() => import('./Dashboard'));
+import Dashboard from './Dashboard';
 
 function App(props) {
   useEffect(() => {
@@ -13,11 +13,9 @@ function App(props) {
     <BrowserRouter>
       <Fragment>
         <Header />
-        <Suspense fallback={null}>
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-          </Switch>
-        </Suspense>
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+        </Switch>
       </Fragment>
     </BrowserRouter>
   );
