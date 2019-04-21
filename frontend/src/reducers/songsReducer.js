@@ -5,7 +5,7 @@ import {
   LOADED_SONGS,
   EMPTY_SEARCH,
   SELECT_SONG,
-  SELECT_FAVORITE_SONG
+  FETCH_FAVORITES
 } from '../actions/types';
 
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
   fallback: false,
   error: false,
   selectedSong: {},
-  favoriteSong: {}
+  favoriteSongs: {}
 };
 
 export default function(state = initialState, action) {
@@ -49,10 +49,10 @@ export default function(state = initialState, action) {
         ...state,
         selectedSong: action.payload
       };
-    case SELECT_FAVORITE_SONG:
+    case FETCH_FAVORITES:
       return {
         ...state,
-        favoriteSong: action.payload
+        favoriteSongs: action.payload
       };
     default:
       return state;

@@ -8,7 +8,7 @@ import {
   EMPTY_SEARCH,
   SELECT_SONG,
   LOADED_SONGS,
-  SELECT_FAVORITE_SONG
+  FETCH_FAVORITES
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -53,15 +53,14 @@ export const selectSong = (song, index) => {
     payload: { song, index }
   };
 };
-export const selectFavoriteSong = song => {
-  return {
-    type: SELECT_FAVORITE_SONG,
-    payload: song
-  };
-};
 
 export const submitFavorite = values => async dispatch => {
   const res = await axios.post('/api/favorites', values);
 
   dispatch({ type: FETCH_USER, payload: res.data });
+};
+export const fetchFavorites = () => async dispatch => {
+  const res = await axios.get('/api/favorites');
+
+  dispatch({ type: FETCH_FAVORITES, payload: res.data });
 };
