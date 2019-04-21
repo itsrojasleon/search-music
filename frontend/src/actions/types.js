@@ -5,3 +5,4 @@ export const LOADING_SONGS = 'LOADING_SONGS';
 export const EMPTY_SEARCH = 'EMPTY_SEARCH';
 export const LOADED_SONGS = 'LOADED_SONGS';
 export const SELECT_SONG = 'SELECT_SONG';
+export const SELECT_FAVORITE_SONG = 'SELECT_FAVORITE_SONG';

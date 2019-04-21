@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { submitFavorite } from '../../actions/index';
 import {
   Container,
   ImageContainer,
@@ -27,7 +29,10 @@ function TrackDetail(props) {
         {hover && (
           <Icons>
             <I className="fas fa-play" />
-            <I className="fas fa-heart" />
+            <I
+              onClick={() => props.submitFavorite(name)}
+              className="fas fa-heart"
+            />
           </Icons>
         )}
       </ImageContainer>
@@ -39,4 +44,7 @@ function TrackDetail(props) {
     </Container>
   );
 }
-export default TrackDetail;
+export default connect(
+  null,
+  { submitFavorite }
+)(TrackDetail);

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Box } from '../styled-components/tracks/track';
 import { selectSong } from '../../actions/index';
-import TrackDetail from './TrackDetails'
+import TrackDetail from './TrackDetails';
 
 function Track(props) {
   const { songs, selectSong } = props;

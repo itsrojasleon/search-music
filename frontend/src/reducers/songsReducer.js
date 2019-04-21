@@ -1,18 +1,20 @@
 import {
   FETCH_SONGS,
   FETCH_FAILED,
-  SELECT_SONG,
   LOADING_SONGS,
   LOADED_SONGS,
-  EMPTY_SEARCH
+  EMPTY_SEARCH,
+  SELECT_SONG,
+  SELECT_FAVORITE_SONG
 } from '../actions/types';
 
 const initialState = {
   fetchedSongs: [],
-  selectedSong: {},
   loadingSong: false,
   fallback: false,
-  error: false
+  error: false,
+  selectedSong: {},
+  favoriteSong: {}
 };
 
 export default function(state = initialState, action) {
@@ -46,6 +48,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         selectedSong: action.payload
+      };
+    case SELECT_FAVORITE_SONG:
+      return {
+        ...state,
+        favoriteSong: action.payload
       };
     default:
       return state;
