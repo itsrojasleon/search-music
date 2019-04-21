@@ -61,7 +61,6 @@ export const selectFavoriteSong = song => {
 };
 
 export const submitFavorite = values => async dispatch => {
-  console.log(values);
   const res = await axios.post('/api/favorites', values);
 
   dispatch({ type: FETCH_USER, payload: res.data });
