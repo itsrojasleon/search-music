@@ -1,6 +1,6 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 
-const { Schema } = moongose;
+const { Schema } = mongoose;
 
 const songSchema = new Schema({
   name: String

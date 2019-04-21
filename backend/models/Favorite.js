@@ -1,10 +1,10 @@
-const moongose = require('moongose');
-const SongSchema = require('./Song');
+const mongoose = require('mongoose');
+//const SongSchema = require('./Song');
 
-const { Schema } = moongose;
+const { Schema } = mongoose;
 
 const favoriteSchema = new Schema({
-  user: String,
-  songs: [SongSchema]
+  user: String
+  //songs: [SongSchema]
 });
-moongose.model('favorites', favoriteSchema);
+mongoose.model('favorites', favoriteSchema);
