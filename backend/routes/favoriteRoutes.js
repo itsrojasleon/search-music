@@ -11,10 +11,12 @@ module.exports = app => {
   });
 
   app.post('/api/favorites', requireLogin, async (req, res) => {
-    // const { name } = req.body;
-    const name = Object.keys(req.body).join('');
+    const { name, id } = req.body;
+    // console.log('BOOOODYYYY', req.body);
     const favorite = new Favorites({
-      name
+      user: req.user.id,
+      song_id: id,
+      song_name: name
       //: songs.split(',').map(song => ({ song: song.trim() }))
     });
     try {

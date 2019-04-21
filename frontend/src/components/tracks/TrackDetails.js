@@ -14,7 +14,7 @@ import {
 
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
-  const { name, album, artists } = props;
+  const { name, album, artists, id } = props;
   return (
     <Container
       onMouseEnter={() => {
@@ -30,7 +30,7 @@ function TrackDetail(props) {
           <Icons>
             <I className="fas fa-play" />
             <I
-              onClick={() => props.submitFavorite(name)}
+              onClick={() => props.submitFavorite({ name, id })}
               className="fas fa-heart"
             />
           </Icons>
