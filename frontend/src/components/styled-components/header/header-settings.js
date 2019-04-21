@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Logout = styled.div`
+export const Logout = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;
