@@ -14,7 +14,7 @@ const initialState = {
   fallback: false,
   error: false,
   selectedSong: {},
-  favoriteSongs: {}
+  favoriteSongs: []
 };
 
 export default function(state = initialState, action) {

@@ -24,7 +24,7 @@ module.exports = app => {
     });
     try {
       if (songId) return null;
-
+      // If doesn't exist a user... Save the favourite songs
       await favorite.save();
       const user = await req.user.save();
       res.send(user);
