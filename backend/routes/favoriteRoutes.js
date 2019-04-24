@@ -5,22 +5,25 @@ const Favorites = mongoose.model('favorites');
 
 module.exports = app => {
   app.get('/api/favorites', requireLogin, async (req, res) => {
-    const favorites = await Favorites.find({ user: req.user.id });
+    console.log('fetched');
+    const favorites = await Favorites.find({ user_id: req.user.id });
     // Send favorite songs to the client
     res.send(favorites);
   });
 
   app.post('/api/favorites', requireLogin, async (req, res) => {
-    const { name, id } = req.body;
+    const { name, album, artists, id, preview_url } = req.body;
 
     // Query for get the id (Song)
-    const songId = await Favorites.findOne({ song_id: id });
+    const songId = await Favorites.findOne({ id: id });
 
     const favorite = new Favorites({
-      user: req.user.id,
-      song_id: id,
-      song_name: name
-      //: songs.split(',').map(song => ({ song: song.trim() }))
+      user_id: req.user.id,
+      name,
+      album,
+      artists,
+      id,
+      preview_url
     });
     try {
       if (songId) return null;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function FavoriteDetails(props) {
-  const { user } = props;
-  return <div>{user}</div>;
+  const { name } = props;
+  return <div>{name}</div>;
 }
 export default FavoriteDetails;

@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-//const SongSchema = require('./Song');
 
 const { Schema } = mongoose;
 
 const favoriteSchema = new Schema({
-  user: String,
-  song_name: String,
-  song_id: String
-  //songs: [SongSchema]
+  user_id: String,
+  name: String,
+  album: Object,
+  artists: Array,
+  id: String,
+  preview_url: String
 });
 mongoose.model('favorites', favoriteSchema);

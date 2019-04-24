@@ -26,7 +26,7 @@ function Player(props) {
   };
 
   if (!selectedSong) return null;
-
+  console.log(selectedSong);
   const {
     name,
     album: { images, artists },
