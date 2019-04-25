@@ -1,27 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Container,
-  Titles,
   Bold,
   Data,
   Light
 } from '../styled-components/favorites/favoriteDetails';
 
 function FavoriteDetails(props) {
-  const { name, artists, album } = props;
+  const [hover, setHover] = useState(false);
+  const { name, artists, album, index } = props;
   return (
-    <Container>
-      <Titles>
-        <Bold>Track</Bold>
-        <Bold>Artist</Bold>
-        <Bold style={{ textAlign: 'left' }}>Album</Bold>
-      </Titles>
-      <Data>
-        <Light>{name}</Light>
-        <Light>{artists[0]['name']}</Light>
-        <Light>{album.name}</Light>
-      </Data>
-    </Container>
+    <Data
+      onMouseLeave={() => setHover(false)}
+      onMouseEnter={() => setHover(true)}>
+      <div>{hover ? <i className="fas fa-play" /> : index + 1}</div>
+      <Light>{name}</Light>
+      <Light>{artists[0]['name']}</Light>
+      <Light>{album.name}</Light>
+    </Data>
   );
 }
 export default FavoriteDetails;
