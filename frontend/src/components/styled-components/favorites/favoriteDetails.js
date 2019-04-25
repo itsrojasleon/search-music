@@ -2,22 +2,29 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   background: white;
-  border: 1px solid rgb(230, 230, 230);
   padding: 10px;
+  margin-top: 10px;
 `;
 const sameStyle = css`
-  display: flex;
-  flex-direction: row;
+  display: grid;
   width: 100%;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  text-align: left;
+  justify-items: center;
   border-bottom: 1px solid #ccc;
   padding: 10px;
 `;
 export const Titles = styled.div`
   ${sameStyle};
+  font-weight: bolder;
+`;
+export const Bold = styled.div`
+  color: black;
+  font-family: 'Colfax Medium';
 `;
 export const Data = styled.div`
   ${sameStyle};
+`;
+export const Light = styled.div`
+  color: rgb(20, 20, 20);
 `;

@@ -2,7 +2,9 @@ import React from 'react';
 import {
   Container,
   Titles,
-  Data
+  Bold,
+  Data,
+  Light
 } from '../styled-components/favorites/favoriteDetails';
 
 function FavoriteDetails(props) {
@@ -10,14 +12,14 @@ function FavoriteDetails(props) {
   return (
     <Container>
       <Titles>
-        <div>Track</div>
-        <div>Artist</div>
-        <div>Album</div>
+        <Bold>Track</Bold>
+        <Bold>Artist</Bold>
+        <Bold style={{ textAlign: 'left' }}>Album</Bold>
       </Titles>
       <Data>
-        <div>{name}</div>
-        <div>{artists[0]['name']}</div>
-        <div>{album.name}</div>
+        <Light>{name}</Light>
+        <Light>{artists[0]['name']}</Light>
+        <Light>{album.name}</Light>
       </Data>
     </Container>
   );
