@@ -17,7 +17,6 @@ function Favorites(props) {
   useEffect(() => {
     fetchFavorites();
   }, []);
-  // console.log(favoriteSongs);
   return (
     <Fragment>
       <Suspense fallback={<Spinner />}>
