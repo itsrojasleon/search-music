@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Layout } from './styled-components/dashboard';
 import SearchBar from './SearchBar';
 import Track from './tracks/Track';
-import Player from './player/Player';
 import Error from './Error';
 
 function Dashboard({ error }) {
@@ -14,7 +13,6 @@ function Dashboard({ error }) {
         <SearchBar />
         <Track />
       </Layout>
-      <Player />
     </Fragment>
   );
 }
