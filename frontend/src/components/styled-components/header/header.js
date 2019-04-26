@@ -16,12 +16,6 @@ export const Nav = styled.nav`
     width: 98%;
   }
 `;
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 30%;
-`;
 export const GoogleButton = styled.a`
   color: black;
   border: 1px solid #ccc;

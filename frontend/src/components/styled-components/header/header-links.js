@@ -4,7 +4,10 @@ export const Element = styled.span`
   color: black;
   transition: 0.2s;
   padding: 10px 15px;
-  &:hover {
-    border-bottom: 2px solid black;
-  }
+  font-family: 'Colfax Medium';
+`;
+export const I = styled.i`
+  color: black;
+  margin-right: 5px;
+  font-size: 18px;
 `;

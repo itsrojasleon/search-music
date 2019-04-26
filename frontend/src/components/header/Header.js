@@ -7,7 +7,6 @@ import HeaderSettings from './HeaderSettings';
 import {
   HeaderWrapper,
   Nav,
-  Container,
   Title,
   GoogleButton,
   Img
@@ -18,27 +17,25 @@ function Header({ auth }) {
   return (
     <HeaderWrapper>
       <Nav>
+        <HeaderLinks />
         <Link to="/">
           <Title>SearchMusic</Title>
         </Link>
-        {/* Validate... If exists a user */}
-        <Container>
-          <HeaderLinks />
-          <>
-            {auth ? (
-              <>
-                <Img
-                  onClick={() => setOn(!on)}
-                  src={auth.userImage}
-                  alt={auth.userName}
-                />
-                {on && <HeaderSettings />}
-              </>
-            ) : (
-              <GoogleButton href="/auth/google">Login with Google</GoogleButton>
-            )}
-          </>
-        </Container>
+        <>
+          {/* Validate... If exists a user */}
+          {auth ? (
+            <>
+              <Img
+                onClick={() => setOn(!on)}
+                src={auth.userImage}
+                alt={auth.userName}
+              />
+              {on && <HeaderSettings />}
+            </>
+          ) : (
+            <GoogleButton href="/auth/google">Login with Google</GoogleButton>
+          )}
+        </>
       </Nav>
     </HeaderWrapper>
   );

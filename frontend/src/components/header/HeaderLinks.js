@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Element } from '../styled-components/header/header-links';
+import { Element, I } from '../styled-components/header/header-links';
 
 function HeaderLinks() {
   return (
     <>
       <Link to="/favorites">
-        <Element>Favorites</Element>
+        <Element>
+          <I className="far fa-heart" />
+          Favorites
+        </Element>
       </Link>
     </>
   );
