@@ -1,6 +1,6 @@
 import React, { Fragment, Suspense, lazy, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchFavorites } from '../../actions';
+import { fetchFavorites, selectSong } from '../../actions';
 import { Spinner } from '../styled-components/favorites/favorites';
 
 import {
@@ -12,7 +12,7 @@ import {
 const FavoriteDetails = lazy(() => import('./FavoriteDetails'));
 
 function Favorites(props) {
-  const { fetchFavorites, favoriteSongs } = props;
+  const { fetchFavorites, selectSong, favoriteSongs } = props;
 
   useEffect(() => {
     fetchFavorites();
@@ -28,7 +28,12 @@ function Favorites(props) {
             <Bold>Album</Bold>
           </Titles>
           {favoriteSongs.map((song, i) => (
-            <FavoriteDetails key={song.id} index={i} {...song} />
+            <FavoriteDetails
+              selectSong={selectSong}
+              key={song.id}
+              index={i}
+              track={song}
+            />
           ))}
         </Container>
       </Suspense>
@@ -38,5 +43,5 @@ function Favorites(props) {
 const mapStateToProps = ({ songs: { favoriteSongs } }) => ({ favoriteSongs });
 export default connect(
   mapStateToProps,
-  { fetchFavorites }
+  { fetchFavorites, selectSong }
 )(Favorites);

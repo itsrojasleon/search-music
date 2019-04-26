@@ -15,3 +15,8 @@ export const Data = styled.div`
 export const Light = styled.div`
   color: rgb(20, 20, 20);
 `;
+export const I = styled.i`
+  &:hover {
+    cursor: pointer;
+  }
+`;
