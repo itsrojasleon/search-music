@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import HeaderLinks from './HeaderLinks';
 import HeaderSettings from './HeaderSettings';
 
 import {
   HeaderWrapper,
   Nav,
+  Container,
   Title,
   GoogleButton,
   Img
@@ -20,20 +22,23 @@ function Header({ auth }) {
           <Title>SearchMusic</Title>
         </Link>
         {/* Validate... If exists a user */}
-        <>
-          {auth ? (
-            <>
-              <Img
-                onClick={() => setOn(!on)}
-                src={auth.userImage}
-                alt={auth.userName}
-              />
-              {on && <HeaderSettings />}
-            </>
-          ) : (
-            <GoogleButton href="/auth/google">Login with Google</GoogleButton>
-          )}
-        </>
+        <Container>
+          <HeaderLinks />
+          <>
+            {auth ? (
+              <>
+                <Img
+                  onClick={() => setOn(!on)}
+                  src={auth.userImage}
+                  alt={auth.userName}
+                />
+                {on && <HeaderSettings />}
+              </>
+            ) : (
+              <GoogleButton href="/auth/google">Login with Google</GoogleButton>
+            )}
+          </>
+        </Container>
       </Nav>
     </HeaderWrapper>
   );

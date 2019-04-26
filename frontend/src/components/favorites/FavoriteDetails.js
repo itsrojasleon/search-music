@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Bold,
-  Data,
-  Light
-} from '../styled-components/favorites/favoriteDetails';
+import { Data, Light } from '../styled-components/favorites/favoriteDetails';
 
 function FavoriteDetails(props) {
   const [hover, setHover] = useState(false);
