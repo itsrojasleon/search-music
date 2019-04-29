@@ -12,8 +12,10 @@ function useMobile() {
       }
     };
     window.addEventListener('resize', setWidth);
+    window.addEventListener('load', setWidth);
     return () => {
       window.removeEventListener('resize', setWidth);
+      window.removeEventListener('load', setWidth);
     };
   });
 
