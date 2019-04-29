@@ -2,8 +2,6 @@ import React, { Fragment, Suspense, lazy, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchFavorites, selectSong } from '../../actions';
 import { Spinner } from '../styled-components/favorites/favorites';
-import useMobile from '../hooks/useMobile';
-
 import {
   Container,
   Titles,
@@ -13,7 +11,6 @@ import {
 const FavoriteDetails = lazy(() => import('./FavoriteDetails'));
 
 function Favorites(props) {
-  const [mobile] = useMobile();
   const { fetchFavorites, selectSong, favoriteSongs } = props;
 
   useEffect(() => {
@@ -28,7 +25,7 @@ function Favorites(props) {
               <Bold>#</Bold>
               <Bold>Track</Bold>
               <Bold>Artist</Bold>
-              {!mobile && <Bold>Album</Bold>}
+              <Bold watch>Album</Bold>
             </Titles>
             {favoriteSongs.map((song, i) => (
               <FavoriteDetails
@@ -36,7 +33,6 @@ function Favorites(props) {
                 key={song.id}
                 index={i}
                 track={song}
-                mobile={mobile}
               />
             ))}
           </Container>

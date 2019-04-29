@@ -18,6 +18,9 @@ export const Data = styled.div`
 `;
 export const Light = styled.div`
   color: rgb(20, 20, 20);
+  @media (max-width: 769px) {
+    display: ${props => (props.watch ? 'none' : '')};
+  }
 `;
 export const I = styled.i`
   &:hover {
