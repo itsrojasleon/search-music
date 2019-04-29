@@ -22,10 +22,9 @@ export const fetchSongs = song => async dispatch => {
   if (!song) return;
   dispatch({ type: LOADING_SONGS });
   try {
-    const response = await fetch(
+    const { data } = await axios.get(
       `https://spotify-demo-api.now.sh/search?q=${song}&type=track`
     );
-    const data = await response.json();
     dispatch({
       type: FETCH_SONGS,
       payload: data.tracks.items
@@ -55,11 +54,11 @@ export const selectSong = (song, index) => {
 };
 
 export const submitFavorite = values => async dispatch => {
-  const res = await axios.post('/api/favorites', values);
-  dispatch({ type: FETCH_USER, payload: res.data });
+  const { data } = await axios.post('/api/favorites', values);
+  dispatch({ type: FETCH_USER, payload: data });
 };
 
 export const fetchFavorites = () => async dispatch => {
-  const res = await axios.get('/api/favorites');
-  dispatch({ type: FETCH_FAVORITES, payload: res.data });
+  const { data } = await axios.get('/api/favorites');
+  dispatch({ type: FETCH_FAVORITES, payload: data });
 };

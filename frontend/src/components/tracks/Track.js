@@ -7,6 +7,7 @@ import TrackDetail from './TrackDetails';
 function Track(props) {
   const { songs, selectSong } = props;
   if (songs.length === 0) return null;
+
   return (
     <Container>
       {songs.map((song, i) => (
@@ -22,7 +23,8 @@ function Track(props) {
 }
 const mapStateToProps = ({ songs }) => ({
   songs: songs.fetchedSongs,
-  selectedSong: songs.selectedSong
+  selectedSong: songs.selectedSong,
+  favoriteSongs: songs.favoriteSongs
 });
 export default connect(
   mapStateToProps,
