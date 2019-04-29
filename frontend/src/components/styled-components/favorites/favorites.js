@@ -55,7 +55,7 @@ export const Titles = styled.div`
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgb(240, 240, 240);
   padding: 10px;
   font-weight: bolder;
 `;

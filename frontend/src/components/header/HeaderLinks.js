@@ -7,7 +7,7 @@ function HeaderLinks() {
     <>
       <Link to="/favorites">
         <Element>
-          <I className="far fa-heart" />
+          <I className="fas fa-heart" />
           Favorites
         </Element>
       </Link>

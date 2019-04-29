@@ -2,6 +2,7 @@ import React, { Fragment, Suspense, lazy, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchFavorites, selectSong } from '../../actions';
 import { Spinner } from '../styled-components/favorites/favorites';
+import useMobile from '../hooks/useMobile';
 
 import {
   Container,
@@ -12,6 +13,7 @@ import {
 const FavoriteDetails = lazy(() => import('./FavoriteDetails'));
 
 function Favorites(props) {
+  const [mobile] = useMobile();
   const { fetchFavorites, selectSong, favoriteSongs } = props;
 
   useEffect(() => {
@@ -19,24 +21,27 @@ function Favorites(props) {
   }, []);
   return (
     <Fragment>
-      <Suspense fallback={<Spinner />}>
-        <Container>
-          <Titles>
-            <Bold>#</Bold>
-            <Bold>Track</Bold>
-            <Bold>Artist</Bold>
-            <Bold>Album</Bold>
-          </Titles>
-          {favoriteSongs.map((song, i) => (
-            <FavoriteDetails
-              selectSong={selectSong}
-              key={song.id}
-              index={i}
-              track={song}
-            />
-          ))}
-        </Container>
-      </Suspense>
+      {favoriteSongs.length === 0 ? null : (
+        <Suspense fallback={<Spinner />}>
+          <Container>
+            <Titles>
+              <Bold>#</Bold>
+              <Bold>Track</Bold>
+              <Bold>Artist</Bold>
+              {!mobile && <Bold>Album</Bold>}
+            </Titles>
+            {favoriteSongs.map((song, i) => (
+              <FavoriteDetails
+                selectSong={selectSong}
+                key={song.id}
+                index={i}
+                track={song}
+                mobile={mobile}
+              />
+            ))}
+          </Container>
+        </Suspense>
+      )}
     </Fragment>
   );
 }
