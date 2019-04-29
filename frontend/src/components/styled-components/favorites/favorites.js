@@ -58,6 +58,9 @@ export const Titles = styled.div`
   border-bottom: 1px solid rgb(240, 240, 240);
   padding: 10px;
   font-weight: bolder;
+  @media (max-width: 769px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 export const Bold = styled.div`
   color: black;

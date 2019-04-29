@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-const sameStyle = css`
+export const Data = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
@@ -8,9 +8,9 @@ const sameStyle = css`
   justify-items: center;
   border-bottom: 1px solid rgb(240, 240, 240);
   padding: 10px;
-`;
-export const Data = styled.div`
-  ${sameStyle};
+  @media (max-width: 769px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   transition: 0.2s;
   &:hover {
     background: rgb(240, 240, 240);
