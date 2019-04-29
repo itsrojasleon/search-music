@@ -5,11 +5,7 @@ function useMobile() {
 
   useEffect(() => {
     const setWidth = () => {
-      if (window.innerWidth <= 769) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-      }
+      window.innerWidth <= 769 ? setMobile(true) : setMobile(false);
     };
     window.addEventListener('resize', setWidth);
     window.addEventListener('load', setWidth);
