@@ -25,6 +25,7 @@ export const fetchSongs = song => async dispatch => {
     const { data } = await axios.get(
       `https://spotify-demo-api.now.sh/search?q=${song}&type=track`
     );
+
     dispatch({
       type: FETCH_SONGS,
       payload: data.tracks.items

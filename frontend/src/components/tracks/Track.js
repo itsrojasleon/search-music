@@ -7,7 +7,6 @@ import TrackDetail from './TrackDetails';
 function Track(props) {
   const { songs, selectSong } = props;
   if (songs.length === 0) return null;
-
   return (
     <Container>
       {songs.map((song, i) => (
