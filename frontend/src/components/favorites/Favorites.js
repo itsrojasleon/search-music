@@ -1,8 +1,8 @@
 import React, { Fragment, Suspense, lazy, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchFavorites, selectSong } from '../../actions';
-import { Spinner } from '../styled-components/favorites/favorites';
 import {
+  Spinner,
   Container,
   Titles,
   Bold

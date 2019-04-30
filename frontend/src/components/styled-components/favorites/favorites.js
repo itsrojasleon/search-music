@@ -45,9 +45,9 @@ export const Spinner = styled.div`
   }
 `;
 export const Container = styled.div`
-  background: white;
-  padding: 10px;
+  border: 1px solid rgb(240, 240, 240);
   margin-top: 10px;
+  margin: 20px;
 `;
 export const Titles = styled.div`
   display: grid;
