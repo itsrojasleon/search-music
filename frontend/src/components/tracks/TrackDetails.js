@@ -15,7 +15,7 @@ import {
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
   const { name, album, artists, id, preview_url } = props.song;
-  const { selectSong, index } = props;
+  const { selectSong, submitFavorite, index } = props;
   return (
     <Container
       onMouseEnter={() => {
@@ -24,7 +24,11 @@ function TrackDetail(props) {
       onMouseLeave={() => {
         if (window.innerWidth > 769) setHover(false);
       }}>
-      <I small className="fas fa-play" />
+      <I
+        onClick={() => selectSong(props.song, index)}
+        small
+        className="fas fa-play"
+      />
       <ImageContainer>
         <Image src={album.images[0].url} alt={name} />
         {hover && (
@@ -35,7 +39,7 @@ function TrackDetail(props) {
             />
             <I
               onClick={() =>
-                props.submitFavorite({ name, album, artists, id, preview_url })
+                submitFavorite({ name, album, artists, id, preview_url })
               }
               className="fas fa-heart"
             />
@@ -46,7 +50,14 @@ function TrackDetail(props) {
         <Name>{name}</Name>
         <ArtistName>{artists[0]['name']}</ArtistName>
       </Data>
-      <I small light className="fas fa-heart" />
+      <I
+        onClick={() =>
+          submitFavorite({ name, album, artists, id, preview_url })
+        }
+        small
+        light
+        className="fas fa-heart"
+      />
     </Container>
   );
 }
