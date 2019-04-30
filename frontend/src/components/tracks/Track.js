@@ -12,9 +12,9 @@ function Track(props) {
       {songs.map((song, i) => (
         <Box
           isSelected={song.id === props.selectedSong.id}
-          onClick={() => selectSong(song, i)}
+          // onClick={() => selectSong(song, i)}
           key={song.id}>
-          <TrackDetail {...song} />
+          <TrackDetail index={i} selectSong={selectSong} song={song} />
         </Box>
       ))}
     </Container>

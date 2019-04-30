@@ -14,7 +14,8 @@ import {
 
 function TrackDetail(props) {
   const [hover, setHover] = React.useState(false);
-  const { name, album, artists, id, preview_url } = props;
+  const { name, album, artists, id, preview_url } = props.song;
+  const { selectSong, index } = props;
   return (
     <Container
       onMouseEnter={() => {
@@ -28,7 +29,10 @@ function TrackDetail(props) {
         <Image src={album.images[0].url} alt={name} />
         {hover && (
           <Icons>
-            <I className="fas fa-play" />
+            <I
+              onClick={() => selectSong(props.song, index)}
+              className="fas fa-play"
+            />
             <I
               onClick={() =>
                 props.submitFavorite({ name, album, artists, id, preview_url })

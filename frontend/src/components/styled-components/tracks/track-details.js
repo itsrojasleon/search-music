@@ -30,7 +30,7 @@ export const Image = styled.img`
   transition: 0.3s;
   position: relative;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     opacity: 0.9;
   }
   @media (max-width: 769px) {
@@ -83,7 +83,10 @@ export const I = styled.i`
     margin-left: 10px;
   }
   &:hover {
-    transform: scale(1.1);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1.2);
   }
   display: ${props => props.small && 'none'};
   @media (max-width: 769px) {
