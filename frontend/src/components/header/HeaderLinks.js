@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Element, I } from '../styled-components/header/header-links';
+import { NavLink } from 'react-router-dom';
+import { I } from '../styled-components/header/header-links';
 
 function HeaderLinks() {
   return (
     <>
-      <Link to="/favorites">
-        <Element>
-          <I className="fas fa-heart" />
-          Favorites
-        </Element>
-      </Link>
+      <NavLink
+        activeStyle={{
+          color: 'rgb(150, 150, 150)'
+        }}
+        to="/favorites">
+        <I className="far fa-heart" />
+      </NavLink>
     </>
   );
 }

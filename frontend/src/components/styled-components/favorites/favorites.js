@@ -58,6 +58,7 @@ export const Titles = styled.div`
   border-bottom: 1px solid rgb(240, 240, 240);
   padding: 10px;
   font-weight: bolder;
+  background-color: rgb(250, 250, 250);
   @media (max-width: 769px) {
     grid-template-columns: repeat(3, 1fr);
   }
