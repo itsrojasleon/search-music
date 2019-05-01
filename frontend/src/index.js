@@ -6,20 +6,8 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import reducers from './reducers';
 import './index.css';
-import throttle from 'lodash.throttle';
-import { loadState, saveState } from './localStorage';
 
-const persistedState = loadState();
-
-const store = createStore(reducers, persistedState, applyMiddleware(thunk));
-
-store.subscribe(
-  throttle(() => {
-    saveState({
-      songs: store.getState().songs
-    });
-  }, 1000)
-);
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

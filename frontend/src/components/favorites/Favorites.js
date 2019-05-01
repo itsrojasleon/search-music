@@ -15,7 +15,7 @@ function Favorites(props) {
 
   useEffect(() => {
     fetchFavorites();
-  }, []);
+  }, [fetchFavorites]);
   return (
     <Fragment>
       {favoriteSongs.length === 0 ? null : (

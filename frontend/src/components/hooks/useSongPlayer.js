@@ -22,20 +22,21 @@ function useSongPlayer(audioElement) {
       setCurrentVolume(audioEl.volume);
     };
 
-    const setAudioTime = () => {
-      setCurrentTime(audioEl.currentTime);
-    };
+    const setAudioTime = () => setCurrentTime(audioEl.currentTime);
 
-    const setVolume = () => {
-      setCurrentVolume(audioEl.volume);
-    };
+    const setVolume = () => setCurrentVolume(audioEl.volume);
 
+    // Event listeners
     audioEl.addEventListener('loadeddata', setAudioData);
     audioEl.addEventListener('timeupdate', setAudioTime);
     audioEl.addEventListener('volumechange', setVolume);
 
     // Play or pause the song
-    playing ? audioEl.play() : audioEl.pause();
+    try {
+      playing ? audioEl.play() : audioEl.pause();
+    } catch (err) {
+      // Ignore errors
+    }
 
     // When the people clicks BarProgress and get the value
     if (clickedTime && clickedTime !== currentTime) {
@@ -73,7 +74,7 @@ function useSongPlayer(audioElement) {
     setClickedTime,
     setClickedVolume,
     currentVolume,
-    setResetVolume,
+    setResetVolume
   ];
 }
 export default useSongPlayer;
