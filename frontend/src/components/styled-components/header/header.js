@@ -25,9 +25,9 @@ export const GoogleButton = styled.a`
 export const Title = styled.span`
   color: black;
   font-size: 22px;
-  font-family: 'Colfax Bold';
   text-align: center;
   padding-top: 22px;
+  font-weight: bolder;
 `;
 export const Img = styled.img`
   border-radius: 50%;

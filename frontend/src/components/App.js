@@ -7,8 +7,6 @@ import Player from './player/Player';
 
 const Dashboard = lazy(() => import('./Dashboard'));
 const Favorites = lazy(() => import('./favorites/Favorites'));
-// import Dashboard from './Dashboard';
-// import Favorites from './favorites/Favorites';
 
 function App(props) {
   useEffect(() => {

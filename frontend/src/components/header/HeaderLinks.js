@@ -9,6 +9,7 @@ function HeaderLinks() {
         activeStyle={{
           color: 'rgb(150, 150, 150)'
         }}
+        style={{ color: 'black' }}
         to="/favorites">
         <I className="far fa-heart" />
       </NavLink>

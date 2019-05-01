@@ -65,7 +65,6 @@ export const Titles = styled.div`
 `;
 export const Bold = styled.div`
   color: black;
-  font-family: 'Colfax Medium';
   @media (max-width: 769px) {
     display: ${props => (props.watch ? 'none' : '')};
   }

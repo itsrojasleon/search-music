@@ -12,11 +12,15 @@ import {
 } from './types';
 
 export const fetchUser = () => async dispatch => {
-  const { data } = await axios.get('/api/current_user');
-  dispatch({
-    type: FETCH_USER,
-    payload: data
-  });
+  try {
+    const { data } = await axios.get('/api/current_user');
+    dispatch({
+      type: FETCH_USER,
+      payload: data
+    });
+  } catch (err) {
+    console.log('Something went wrong', err);
+  }
 };
 export const fetchSongs = song => async dispatch => {
   if (!song) return;
