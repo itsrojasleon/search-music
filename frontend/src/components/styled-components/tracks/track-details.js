@@ -79,6 +79,7 @@ export const I = styled.i`
   transition: 0.3s;
   background-color: black;
   border-radius: 50%;
+  display: ${props => props.small && 'none'};
   :nth-child(2) {
     margin-left: 10px;
   }
@@ -88,7 +89,6 @@ export const I = styled.i`
   &:active {
     transform: scale(1.2);
   }
-  display: ${props => props.small && 'none'};
   @media (max-width: 769px) {
     display: ${props => props.small && 'block'};
     font-size: 12px;
