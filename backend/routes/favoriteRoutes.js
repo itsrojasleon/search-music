@@ -5,7 +5,6 @@ const Favorites = mongoose.model('favorites');
 
 module.exports = app => {
   app.get('/api/favorites', requireLogin, async (req, res) => {
-    console.log('fetched');
     const favorites = await Favorites.find({ user_id: req.user.id });
     // Send favorite songs to the client
     res.send(favorites);

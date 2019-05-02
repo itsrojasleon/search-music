@@ -69,3 +69,9 @@ export const Bold = styled.div`
     display: ${props => (props.watch ? 'none' : '')};
   }
 `;
+export const Login = styled.p`
+  text-align: center;
+  color: rgb(100, 100, 100);
+  font-size: 18px;
+  margin-top: 15px;
+`;

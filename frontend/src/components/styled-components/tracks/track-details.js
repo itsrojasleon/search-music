@@ -49,6 +49,7 @@ export const Data = styled.span`
 `;
 export const Name = styled.p`
   font-size: 18px;
+  font-weight: normal;
   @media (max-width: 769px) {
     font-size: 15px;
   }
@@ -57,6 +58,7 @@ export const ArtistName = styled.p`
   color: rgb(140, 140, 148);
   font-size: 16px;
   margin-top: 3px;
+  font-weight: lighter;
   @media (max-width: 769px) {
     font-size: 13px;
   }

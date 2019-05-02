@@ -5,7 +5,8 @@ import {
   Spinner,
   Container,
   Titles,
-  Bold
+  Bold,
+  Login
 } from '../styled-components/favorites/favorites';
 
 const FavoriteDetails = lazy(() => import('./FavoriteDetails'));
@@ -18,30 +19,38 @@ function Favorites(props) {
   }, [fetchFavorites]);
   return (
     <Fragment>
-      {favoriteSongs.length === 0 ? null : (
-        <Suspense fallback={<Spinner />}>
-          <Container>
-            <Titles>
-              <Bold>#</Bold>
-              <Bold>Track</Bold>
-              <Bold>Artist</Bold>
-              <Bold watch>Album</Bold>
-            </Titles>
-            {favoriteSongs.map((song, i) => (
-              <FavoriteDetails
-                selectSong={selectSong}
-                key={song.id}
-                index={i}
-                track={song}
-              />
-            ))}
-          </Container>
-        </Suspense>
+      {props.auth && (
+        <Fragment>
+          {favoriteSongs.length === 0 ? null : (
+            <Suspense fallback={<Spinner />}>
+              <Container>
+                <Titles>
+                  <Bold>#</Bold>
+                  <Bold>Track</Bold>
+                  <Bold>Artist</Bold>
+                  <Bold watch>Album</Bold>
+                </Titles>
+                {favoriteSongs.map((song, i) => (
+                  <FavoriteDetails
+                    selectSong={selectSong}
+                    key={song.id}
+                    index={i}
+                    track={song}
+                  />
+                ))}
+              </Container>
+            </Suspense>
+          )}
+        </Fragment>
       )}
+      {!props.auth && <Login>You need to login first</Login>}
     </Fragment>
   );
 }
-const mapStateToProps = ({ songs: { favoriteSongs } }) => ({ favoriteSongs });
+const mapStateToProps = ({ auth, songs: { favoriteSongs } }) => ({
+  favoriteSongs,
+  auth
+});
 export default connect(
   mapStateToProps,
   { fetchFavorites, selectSong }
