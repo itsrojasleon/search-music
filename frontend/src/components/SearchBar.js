@@ -12,9 +12,7 @@ import {
 function SearchBar(props) {
   const [text, setText] = useState('');
 
-  const onChange = e => {
-    setText(e.target.value);
-  };
+  const onChange = e => setText(e.target.value);
 
   useEffect(() => {
     props.fetchSongs(text);
