@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "client": "npm run start --prefix ./frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,13 +12,18 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/rojasleon/search-music/issues"
   },
   "homepage": "https://github.com/rojasleon/search-music#readme",
   "dependencies": {
-    "concurrently": "^4.1.0"
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
