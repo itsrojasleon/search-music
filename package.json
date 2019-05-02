@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "10.7.0",
-    "npm": "6.1.0"
+    "node": "11.13.0",
+    "npm": "6.9.0"
   },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix ./frontend",
+    "client": "npm run start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
