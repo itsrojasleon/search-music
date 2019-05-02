@@ -16,6 +16,12 @@ module.exports = app => {
     // Query for get the id (Song)
     const songId = await Favorites.findOne({ id: id });
 
+    // Query for count the number of collections
+    // So, I need ten collections
+    // No more
+    // It's a Sandbox database
+    const songsNumber = await Favorites.countDocuments();
+
     const favorite = new Favorites({
       user_id: req.user.id,
       name,
@@ -26,6 +32,9 @@ module.exports = app => {
     });
     try {
       if (songId) return null;
+      else if (songsNumber >= 10) {
+        return null;
+      }
       // If doesn't exist a user... Save the favourite songs
       await favorite.save();
       const user = await req.user.save();
