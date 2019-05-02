@@ -64,7 +64,16 @@ function useSongPlayer(audioElement) {
       audioEl.removeEventListener('timeupdate', setAudioTime);
       audioEl.removeEventListener('volumechange', setVolume);
     };
-  });
+  }, [
+    audioElement,
+    clickedTime,
+    currentTime,
+    clickedVolume,
+    currentVolume,
+    resetVolume,
+    playing,
+    lastVolume
+  ]);
 
   return [
     currentTime,
