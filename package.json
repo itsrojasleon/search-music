@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/rojasleon/search-music#readme",
   "dependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
