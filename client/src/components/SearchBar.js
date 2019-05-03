@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { fetchSongs } from '../actions';
+import useDocumentTitle from './hooks/useDocumentTitle';
 import {
   InputContainer,
   Icon,
@@ -12,7 +12,7 @@ import {
 
 function SearchBar(props) {
   const [text, setText] = useState('');
-
+  useDocumentTitle(text);
   const onChange = e => setText(e.target.value);
 
   useEffect(() => {
@@ -20,9 +20,6 @@ function SearchBar(props) {
   }, [text]);
   return (
     <InputContainer>
-      <Helmet>
-        <title>{text}</title>
-      </Helmet>
       <Input
         className="input"
         value={text}
