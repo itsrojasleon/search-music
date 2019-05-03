@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { fetchSongs } from '../actions';
 import {
   InputContainer,
@@ -19,6 +20,9 @@ function SearchBar(props) {
   }, [text]);
   return (
     <InputContainer>
+      <Helmet>
+        <title>{text}</title>
+      </Helmet>
       <Input
         className="input"
         value={text}
