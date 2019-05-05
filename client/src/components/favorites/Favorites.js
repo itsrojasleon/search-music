@@ -1,5 +1,6 @@
-import React, { Fragment, Suspense, lazy, useEffect } from 'react';
+import React, { Fragment, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
+import useFetchResource from '../hooks/useFetchResource';
 import { fetchFavorites, selectSong } from '../../actions';
 import {
   Spinner,
@@ -13,10 +14,7 @@ const FavoriteDetails = lazy(() => import('./FavoriteDetails'));
 
 function Favorites(props) {
   const { fetchFavorites, selectSong, favoriteSongs } = props;
-
-  useEffect(() => {
-    fetchFavorites();
-  }, [fetchFavorites]);
+  useFetchResource(fetchFavorites);
   return (
     <Fragment>
       {props.auth && (

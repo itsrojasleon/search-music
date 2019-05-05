@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-function useFetchResource(myfunction, value) {
+function useFetchResource(resource) {
   useEffect(() => {
-    myfunction();
-  }, [myfunction]);
+    resource();
+  }, [resource]);
 }
 export default useFetchResource;

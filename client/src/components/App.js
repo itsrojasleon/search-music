@@ -2,7 +2,7 @@ import React, { Suspense, lazy, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { fetchUser } from '../actions';
-import useFetchUser from './hooks/useFetchUser';
+import useFetchResource from './hooks/useFetchResource';
 import Header from './header/Header';
 import Player from './player/Player';
 
@@ -10,7 +10,7 @@ const Dashboard = lazy(() => import('./Dashboard'));
 const Favorites = lazy(() => import('./favorites/Favorites'));
 
 function App(props) {
-  useFetchUser(props.fetchUser);
+  useFetchResource(props.fetchUser);
   return (
     <BrowserRouter>
       <Fragment>
