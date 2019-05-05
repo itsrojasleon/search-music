@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchSongs } from '../actions';
 import useDocumentTitle from './hooks/useDocumentTitle';
+import useFormInput from './hooks/useFormInput';
 import {
   InputContainer,
   Icon,
@@ -11,21 +12,15 @@ import {
 } from './styled-components/search-bar';
 
 function SearchBar(props) {
-  const [text, setText] = useState('');
-  useDocumentTitle(text);
-  const onChange = e => setText(e.target.value);
+  const input = useFormInput('');
+  useDocumentTitle(input.value);
 
   useEffect(() => {
-    props.fetchSongs(text);
-  }, [text]);
+    props.fetchSongs(input.value);
+  }, [input.value]);
   return (
     <InputContainer>
-      <Input
-        className="input"
-        value={text}
-        onChange={onChange}
-        placeholder="Search..."
-      />
+      <Input className="input" {...input} placeholder="Search..." />
       {props.loading ? <Spinner /> : <Icon className="fas fa-search" />}
       {props.fallback && (
         <EmptySearch>
