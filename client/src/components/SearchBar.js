@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchSongs } from '../actions';
 import useDocumentTitle from './hooks/useDocumentTitle';
 import useFormInput from './hooks/useFormInput';
+import useFetchResource from './hooks/useFetchResource';
 
 import {
   InputContainer,
@@ -15,10 +16,8 @@ import {
 function SearchBar(props) {
   const input = useFormInput('');
   useDocumentTitle(input.value);
+  useFetchResource(props.fetchSongs, input.value);
 
-  useEffect(() => {
-    props.fetchSongs(input.value);
-  }, [input.value]);
   return (
     <InputContainer>
       <Input className="input" {...input} placeholder="Search..." />
