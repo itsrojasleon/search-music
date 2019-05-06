@@ -35,7 +35,7 @@ function TrackDetail(props) {
         if (window.innerWidth > 769) setHover(false);
       }}>
       {/* modal */}
-      {open && <div>OPEN BRO</div>}
+      {open && <LittleModal />}
       <I
         onClick={() => selectSong(props.song, index)}
         small

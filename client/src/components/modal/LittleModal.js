@@ -1,6 +1,11 @@
 import React from 'react';
+import Modal from './Modal';
 
 function LittleModal() {
-  return <div>This is my Little Modal</div>;
+  return (
+    <Modal>
+      <div>Element</div>
+    </Modal>
+  );
 }
 export default LittleModal;
