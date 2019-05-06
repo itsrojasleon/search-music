@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { submitFavorite } from '../../actions/index';
+import LittleModal from '../modal/LittleModal';
+import useModal from '../hooks/useModal';
 import {
   Container,
   ImageContainer,
@@ -13,9 +15,17 @@ import {
 } from '../styled-components/tracks/track-details';
 
 function TrackDetail(props) {
-  const [hover, setHover] = React.useState(false);
+  const [hover, setHover] = useState(false);
   const { name, album, artists, id, preview_url } = props.song;
   const { selectSong, submitFavorite, index } = props;
+
+  const { open, handleClick } = useModal(false);
+
+  const handleFavorite = () => {
+    handleClick();
+    submitFavorite({ name, album, artists, id, preview_url });
+  };
+
   return (
     <Container
       onMouseEnter={() => {
@@ -24,6 +34,8 @@ function TrackDetail(props) {
       onMouseLeave={() => {
         if (window.innerWidth > 769) setHover(false);
       }}>
+      {/* modal */}
+      {open && <div>OPEN BRO</div>}
       <I
         onClick={() => selectSong(props.song, index)}
         small
@@ -37,12 +49,7 @@ function TrackDetail(props) {
               onClick={() => selectSong(props.song, index)}
               className="fas fa-play"
             />
-            <I
-              onClick={() =>
-                submitFavorite({ name, album, artists, id, preview_url })
-              }
-              className="fas fa-heart"
-            />
+            <I onClick={handleFavorite} className="fas fa-heart" />
           </Icons>
         )}
       </ImageContainer>
@@ -50,14 +57,7 @@ function TrackDetail(props) {
         <Name>{name}</Name>
         <ArtistName>{artists[0]['name']}</ArtistName>
       </Data>
-      <I
-        onClick={() =>
-          submitFavorite({ name, album, artists, id, preview_url })
-        }
-        small
-        light
-        className="fas fa-heart"
-      />
+      <I onClick={handleFavorite} small light className="fas fa-heart" />
     </Container>
   );
 }
