@@ -1,10 +1,11 @@
 import React from 'react';
 import Modal from './Modal';
+import { Container } from '../styled-components/modal/littleModal';
 
 function LittleModal() {
   return (
     <Modal>
-      <div>Element</div>
+      <Container>Added to your favorites</Container>
     </Modal>
   );
 }
