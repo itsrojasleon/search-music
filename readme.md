@@ -3,7 +3,7 @@
 ## Prerequisites
 - [Node](https://nodejs.org/) 11.13.0 or greater
 - [Npm](https://npmjs.com) 6.9.0 or greater
-- [Git](https://git-scm.com/) 2.20.1 or greater 
+- [Git](https://git-scm.com/) 2.20.1 or greater
 
 All of these must be available in your `$PATH`. To verify things are set up properly, you can run this:
 
@@ -25,6 +25,8 @@ git clone git@github.com:rojasleon/search-music.git
 
 Install dependencies
 ```
+npm install
+or
 yarn install
 ```
 Configure your database in [mlab](mlab.com)
@@ -55,3 +57,24 @@ Configure your app in [google](https://console.developers.google.com)
 // It's already.
 ```
 
+## Running the app
+Server with client:
+```
+npm run dev (Recommended)
+```
+
+server:
+```
+npm run server
+```
+
+client
+```
+npm run client
+```
+
+## Author
+[Juan Luis Rojas León](https://twitter.com/rojas_leon_)
+
+## License
+MIT
