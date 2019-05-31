@@ -17,6 +17,6 @@ function Dashboard({ error }) {
   );
 }
 const mapStateToProps = ({ songs }) => ({
-  error: songs.error
+  error: songs.error,
 });
 export default connect(mapStateToProps)(Dashboard);
