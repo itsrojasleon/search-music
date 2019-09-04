@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "11.13.0",
-    "npm": "6.9.0"
+    "node": "12.7.0",
+    "npm": "6.10.0"
   },
   "scripts": {
     "start": "node index.js",
