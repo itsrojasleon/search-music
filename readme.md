@@ -1,4 +1,7 @@
-# SearchMusic
+<div align="center">
+<h1>SearchMusic</h1>
+Search your favorite song by the Spotify API
+</div>
 
 ## Prerequisites
 - [Node](https://nodejs.org/) 11.13.0 or greater
