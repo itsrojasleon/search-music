@@ -1,6 +1,8 @@
 <div align="center">
 <h1>SearchMusic</h1>
 Search your favorite song by the Spotify API
+
+<img src="https://raw.githubusercontent.com/rojasleon/search-music/master/example/search-music.png" width="1000" />
 </div>
 
 ## Prerequisites
