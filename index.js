@@ -12,7 +12,10 @@ require('./models/Favorite');
 // Services
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const app = express();
 
@@ -30,6 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Require and call the function
 require('./routes/authRoutes')(app);
 require('./routes/favoriteRoutes')(app);
+require('./routes/spotifyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
@@ -44,5 +48,5 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log('Listening...');
+  console.log(`Listening on port ${PORT}...`);
 });

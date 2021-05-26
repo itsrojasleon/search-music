@@ -26,7 +26,5 @@ function App(props) {
     </BrowserRouter>
   );
 }
-export default connect(
-  null,
-  { fetchUser }
-)(App);
+
+export default connect(null, { fetchUser })(App);

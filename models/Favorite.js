@@ -10,4 +10,5 @@ const favoriteSchema = new Schema({
   id: String,
   preview_url: String
 });
+
 mongoose.model('favorites', favoriteSchema);

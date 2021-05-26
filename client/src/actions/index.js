@@ -8,7 +8,7 @@ import {
   EMPTY_SEARCH,
   SELECT_SONG,
   LOADED_SONGS,
-  FETCH_FAVORITES
+  FETCH_FAVORITES,
 } from './types';
 
 export const fetchUser = () => async dispatch => {
@@ -16,7 +16,7 @@ export const fetchUser = () => async dispatch => {
     const { data } = await axios.get('/api/current_user');
     dispatch({
       type: FETCH_USER,
-      payload: data
+      payload: data,
     });
   } catch (err) {
     console.log('Something went wrong', err);
@@ -26,24 +26,22 @@ export const fetchSongs = song => async dispatch => {
   if (!song) return;
   dispatch({ type: LOADING_SONGS });
   try {
-    const { data } = await axios.get(
-      `https://spotify-demo-api.now.sh/search?q=${song}&type=track`
-    );
+    const { data } = await axios.get(`/api/search?q=${song}`);
 
     dispatch({
       type: FETCH_SONGS,
-      payload: data.tracks.items
+      payload: data.tracks.items,
     });
     if (data.tracks.items.length === 0) {
       dispatch({
         type: EMPTY_SEARCH,
-        payload: true
+        payload: true,
       });
     }
     if (data.tracks.items.length > 0) {
       dispatch({
         type: EMPTY_SEARCH,
-        payload: false
+        payload: false,
       });
     }
     dispatch({ type: LOADED_SONGS });
@@ -54,7 +52,7 @@ export const fetchSongs = song => async dispatch => {
 export const selectSong = (song, index) => {
   return {
     type: SELECT_SONG,
-    payload: { song, index }
+    payload: { song, index },
   };
 };
 

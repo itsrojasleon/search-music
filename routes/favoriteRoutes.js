@@ -3,7 +3,7 @@ const requireLogin = require('../middlewares/requireLogin');
 
 const Favorites = mongoose.model('favorites');
 
-module.exports = app => {
+module.exports = (app) => {
   app.get('/api/favorites', requireLogin, async (req, res) => {
     const favorites = await Favorites.find({ user_id: req.user.id });
     // Send favorite songs to the client
@@ -31,10 +31,8 @@ module.exports = app => {
       preview_url
     });
     try {
-      if (songId) return null;
-      else if (songsNumber >= 10) {
-        return null;
-      }
+      if (songId) return;
+      else if (songsNumber >= 10) sreturn;
       // If doesn't exist a user... Save the favourite songs
       await favorite.save();
       const user = await req.user.save();

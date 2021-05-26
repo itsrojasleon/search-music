@@ -5,4 +5,5 @@ function useFetchResource(resource, value = null) {
     resource(value);
   }, [resource, value]);
 }
+
 export default useFetchResource;

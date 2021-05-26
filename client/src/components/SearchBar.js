@@ -10,7 +10,7 @@ import {
   Icon,
   Spinner,
   Input,
-  EmptySearch
+  EmptySearch,
 } from './styled-components/search-bar';
 
 function SearchBar(props) {
@@ -32,9 +32,7 @@ function SearchBar(props) {
 }
 const mapStateToProps = ({ songs: { loadingSong, fallback } }) => ({
   loading: loadingSong,
-  fallback
+  fallback,
 });
-export default connect(
-  mapStateToProps,
-  { fetchSongs }
-)(SearchBar);
+
+export default connect(mapStateToProps, { fetchSongs })(SearchBar);

@@ -15,7 +15,8 @@ function useModal(initialValue) {
 
   return {
     open,
-    handleClick
+    handleClick,
   };
 }
+
 export default useModal;

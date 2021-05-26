@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 function useSongPlayer(audioElement) {
   const [playing, setPlaying] = useState(true);
   const [duration, setDuration] = useState(null);
-  // Time
   const [currentTime, setCurrentTime] = useState(null);
   const [clickedTime, setClickedTime] = useState(null);
-  // Volume
   const [currentVolume, setCurrentVolume] = useState(null);
   const [clickedVolume, setClickedVolume] = useState(null);
   const [resetVolume, setResetVolume] = useState(null);
@@ -72,7 +70,7 @@ function useSongPlayer(audioElement) {
     currentVolume,
     resetVolume,
     playing,
-    lastVolume
+    lastVolume,
   ]);
 
   return [
@@ -83,7 +81,8 @@ function useSongPlayer(audioElement) {
     setClickedTime,
     setClickedVolume,
     currentVolume,
-    setResetVolume
+    setResetVolume,
   ];
 }
+
 export default useSongPlayer;

@@ -5,4 +5,5 @@ function useDocumentTitle(title) {
     document.title = title === '' ? 'Search Music' : title;
   }, [title]);
 }
+
 export default useDocumentTitle;
